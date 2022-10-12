@@ -18,9 +18,9 @@ import { Subscription } from 'rxjs';
             </div>
             <ul #topbarMenu class="topbar-menu">
                 <li class="topbar-submenu">
-                    <a tabindex="0" (click)="toggleMenu($event, 0)">Themes</a>
+                    <a tabindex="0" (click)="toggleMenu($event, 0)">主题</a>
                     <ul [@overlayMenuAnimation]="'visible'" *ngIf="activeMenuIndex === 0" (@overlayMenuAnimation.start)="onOverlayMenuEnter($event)">
-                        <li class="topbar-submenu-header">THEMING</li>
+                        <li class="topbar-submenu-header">主题</li>
                         <li><a [routerLink]="['/theming']"><i class="pi pi-fw pi-file"></i><span>Guide</span></a></li>
                         <li><a href="https://www.primefaces.org/designer/primeng"><i class="pi pi-fw pi-palette"></i><span>Designer</span></a></li>
                         <li><a href="https://www.primefaces.org/designer-ng"><i class="pi pi-fw pi-desktop"></i><span>Visual Editor</span></a></li>
@@ -99,7 +99,7 @@ import { Subscription } from 'rxjs';
                     </ul>
                 </li>
                 <li class="topbar-submenu">
-                    <a tabindex="0" (click)="toggleMenu($event, 1)">Templates</a>
+                    <a tabindex="0" (click)="toggleMenu($event, 1)">模板</a>
                     <ul [@overlayMenuAnimation]="'visible'" *ngIf="activeMenuIndex === 1" (@overlayMenuAnimation.start)="onOverlayMenuEnter($event)">
                         <li class="topbar-submenu-header">FREE ADMIN TEMPLATE</li>
                         <li>
@@ -374,7 +374,7 @@ export class AppTopBarComponent implements OnInit, OnDestroy {
             }
           }
         }
-    
+
         window.addEventListener('scroll', this.scrollListener);
       }
 

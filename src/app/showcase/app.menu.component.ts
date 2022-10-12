@@ -17,57 +17,57 @@ declare let gtag: Function;
                 <img alt="logo" [src]="'assets/showcase/images/' + (config.dark ? 'primeng-logo-light.svg' : 'primeng-logo-dark.svg')" height="41"/>
             </a>
             <div class="layout-sidebar-filter p-fluid">
-                <p-autoComplete [group]="true" [(ngModel)]="selectedRoute" [minLength]="2" [suggestions]="filteredRoutes" scrollHeight="300px" (onSelect)="onSelect($event)" placeholder="Search" (completeMethod)="filterGroupedRoute($event)" field="label">
+                <p-autoComplete [group]="true" [(ngModel)]="selectedRoute" [minLength]="2" [suggestions]="filteredRoutes" scrollHeight="300px" (onSelect)="onSelect($event)" placeholder="搜索" (completeMethod)="filterGroupedRoute($event)" field="label">
                 </p-autoComplete>
             </div>
             <div class="layout-menu">
-                <div class="menu-category">General</div>
+                <div class="menu-category">通用</div>
                 <div class="menu-items">
-                    <a [routerLink]=" ['setup']" routerLinkActive="router-link-exact-active">Get Started</a>
-                    <a [routerLink]=" ['i18n']" routerLinkActive="router-link-exact-active">Locale</a>
-                    <a href="https://github.com/primefaces/primeng/wiki/Migration-Guide" target="_blank">Migration Guide</a>
+                    <a [routerLink]=" ['setup']" routerLinkActive="router-link-exact-active">开始使用</a>
+                    <a [routerLink]=" ['i18n']" routerLinkActive="router-link-exact-active">国际化</a>
+                    <a href="https://github.com/primefaces/primeng/wiki/Migration-Guide" target="_blank">迁移指南</a>
 
                 </div>
 
-                <div class="menu-category">Support</div>
+                <div class="menu-category">支持</div>
                 <div class="menu-items">
-                    <a href="https://forum.primefaces.org/viewforum.php?f=35" target="_blank">Community Forum</a>
+                    <a href="https://forum.primefaces.org/viewforum.php?f=35" target="_blank">社区论坛</a>
                     <a href="https://discord.gg/gzKFYnpmCY" target="_blank">Discord Server</a>
                     <!--<a [routerLink]="['lts']" routerLinkActive="router-link-exact-active">Long Term Support</a>-->
-                    <a [routerLink]="['support']" routerLinkActive="router-link-exact-active">PRO Support <span class="p-tag">New</span></a>
+                    <a [routerLink]="['support']" routerLinkActive="router-link-exact-active">PRO 支持 <span class="p-tag">新</span></a>
                 </div>
 
-                <div class="menu-category">Resources</div>
+                <div class="menu-category">资源</div>
                 <div class="menu-items">
                     <a href="https://www.youtube.com/channel/UCTgmp69aBOlLnPEqlUyetWw" target="_blank">PrimeTV</a>
-                    <a href="https://github.com/primefaces/primeng" target="_blank">Source Code</a>
-                    <a href="https://www.primefaces.org/store">Store</a>
+                    <a href="https://github.com/primefaces/primeng" target="_blank">源码</a>
+                    <a href="https://www.primefaces.org/store">商店</a>
                     <a href="https://twitter.com/prime_ng?lang=en">Twitter</a>
                 </div>
 
-                <div class="menu-category">Theming</div>
+                <div class="menu-category">主题</div>
                 <div class="menu-items">
-                    <a [routerLink]=" ['/theming']" routerLinkActive="router-link-exact-active">Guide</a>
-                    <a href="https://www.primefaces.org/designer/primeng">Theme Designer</a>
-                    <a href="https://www.primefaces.org/designer-ng">Visual Editor</a>
-                    <a [routerLink]="['/colors']" routerLinkActive="router-link-exact-active">Colors</a>
+                    <a [routerLink]=" ['/theming']" routerLinkActive="router-link-exact-active">指南</a>
+                    <a href="https://www.primefaces.org/designer/primeng">主题设计师</a>
+                    <a href="https://www.primefaces.org/designer-ng">可视化编辑器</a>
+                    <a [routerLink]="['/colors']" routerLinkActive="router-link-exact-active">颜色</a>
                     <a href="https://www.primefaces.org/designer/api/primeng/14.0.0">SASS API</a>
                 </div>
 
-                <div class="menu-category">UIKit</div>
+                <div class="menu-category">UI工具</div>
                 <div class="menu-items">
-                    <a [routerLink]=" ['/uikit']" routerLinkActive="router-link-exact-active">Figma <span class="p-tag">New</span></a>
+                    <a [routerLink]=" ['/uikit']" routerLinkActive="router-link-exact-active">Figma <span class="p-tag">新</span></a>
                 </div>
 
-                <div class="menu-category">Accessibility</div>
+                <div class="menu-category">无障碍性</div>
                 <div class="menu-items">
-                    <a [routerLink]=" ['/accessibility']" routerLinkActive="router-link-exact-active">Overview</a>
+                    <a [routerLink]=" ['/accessibility']" routerLinkActive="router-link-exact-active">概览</a>
                 </div>
 
                 <div class="menu-category">PrimeBlocks</div>
                 <div class="menu-items">
-                    <a href="https://www.primefaces.org/primeblocks-ng/#/free" target="_blank">Free Blocks</a>
-                    <a href="https://www.primefaces.org/primeblocks-ng/#/" target="_blank">All Blocks</a>
+                    <a href="https://www.primefaces.org/primeblocks-ng/#/free" target="_blank">免费块</a>
+                    <a href="https://www.primefaces.org/primeblocks-ng/#/" target="_blank">所有块</a>
                 </div>
 
                 <div class="menu-category">PrimeFlex</div>
@@ -78,7 +78,7 @@ declare let gtag: Function;
 
                 <div class="menu-category">PrimeIcons</div>
                 <div class="menu-items">
-                    <a [routerLink]=" ['/icons']" routerLinkActive="router-link-exact-active">Icons v6 <span class="p-tag">New</span></a>
+                    <a [routerLink]=" ['/icons']" routerLinkActive="router-link-exact-active">Icons v6 <span class="p-tag">新</span></a>
                 </div>
 
                 <div class="menu-category">Form</div>
@@ -211,7 +211,7 @@ declare let gtag: Function;
                     </div>
 
                     <a [routerLink]=" ['virtualscroller']" routerLinkActive="router-link-exact-active">VirtualScroller</a>
-                    <a [routerLink]=" ['scroller']" routerLinkActive="router-link-exact-active">Scroller <span class="p-tag">New</span></a>
+                    <a [routerLink]=" ['scroller']" routerLinkActive="router-link-exact-active">Scroller <span class="p-tag">新</span></a>
                 </div>
 
                 <div class="menu-category">Panel</div>
@@ -327,7 +327,7 @@ declare let gtag: Function;
                     <a [routerLink]=" ['focustrap']" routerLinkActive="router-link-exact-active">FocusTrap</a>
                     <a [routerLink]=" ['styleclass']" routerLinkActive="router-link-exact-active">StyleClass</a>
                     <a [routerLink]=" ['ripple']" routerLinkActive="router-link-exact-active">Ripple</a>
-                    <a [routerLink]=" ['autofocus']" routerLinkActive="router-link-exact-active">AutoFocus<span class="p-tag">New</span></a>
+                    <a [routerLink]=" ['autofocus']" routerLinkActive="router-link-exact-active">AutoFocus<span class="p-tag">新</span></a>
                 </div>
 
                 <div class="menu-category">Utilities</div>

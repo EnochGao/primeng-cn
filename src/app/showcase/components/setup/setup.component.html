@@ -1,32 +1,31 @@
 <div class="content-section documentation">
-    <h1>Get Started</h1>
-    <p>PrimeNG is a rich set of open source native Angular UI components.</p>
+    <h1>开始</h1>
+    <p>PrimeNG是一组丰富的开源原生Angular UI组件库。</p>
 
-    <h5>Video Tutorial</h5>
-    <p>Watch the video tutorial that goes through the steps documented on this guide.</p>
+    <h5>视频教程</h5>
+    <p>观看视频教程，了解本指南中所记录的步骤。</p>
     <div class="video-container">
         <iframe width="560" height="315" src="https://www.youtube.com/embed/pkOx7bSBQsg" frameborder="0" allowfullscreen></iframe>
     </div>
 
-    <h5>Download</h5>
-    <p>PrimeNG is available at npm, if you have an existing application run the following command to download it to your project.</p>
+    <h5>下载</h5>
+    <p>PrimeNG可用于npm中，如果你有一个现有的应用程序，运行以下命令将其下载到你的项目中。</p>
 <app-code lang="markup" ngNonBindable ngPreserveWhitespaces>
 npm install primeng --save
 npm install primeicons --save
 </app-code>
 
-    <h5>Import</h5>
-    <p>UI components are configured as modules, once PrimeNG is downloaded and configured, modules and apis can be imported from <i>primeng/&#123;module&#125;</i> shorthand in your application code. Documentation
-        of each component states the import path.</p>
+    <h5>导入</h5>
+    <p>UI组件被配置为模块，一旦PrimeNG被下载和配置，模块和api就可以从你的应用程序代码中以<i>primeng/&#123;module&#125;</i>简写形式导入。每个组件的文档都写明了导入路径。</p>
 <app-code lang="typescript" ngNonBindable ngPreserveWhitespaces>
-import &#123;AccordionModule&#125; from 'primeng/accordion';     //accordion and accordion tab
+import &#123;AccordionModule&#125; from 'primeng/accordion';     //手风琴和手风琴tab
 import &#123;MenuItem&#125; from 'primeng/api';                  //api
 </app-code>
 
-    <h5>Styles</h5>
+    <h5>样式表</h5>
 
-    <p>The css dependencies are as follows, Prime Icons, theme of your choice and structural css of components.</p>
-    <p>In angular.json file find the <i>styles</i> array and add the following:</p>
+    <p>css依赖如下，Prime的图标，你选择的主题和组件的结构css。</p>
+    <p>在angular.json文件中找到 <i>styles</i> 数组并且添加如下内容:</p>
 
 <app-code lang="markup" ngNonBindable ngPreserveWhitespaces>
 ...
@@ -38,8 +37,8 @@ import &#123;MenuItem&#125; from 'primeng/api';                  //api
 ]
 </app-code>
 
-    <h5>Free Themes</h5>
-<p>PrimeNG ships with 33 free themes to choose from.</p>
+    <h5>免费主题</h5>
+<p>PrimeNG提供33个免费主题供选择。</p>
 
 <app-code lang="markup" ngNonBindable ngPreserveWhitespaces>
 primeng/resources/themes/bootstrap4-light-blue/theme.css
@@ -86,15 +85,15 @@ primeng/resources/themes/luna-pink/theme.css
 primeng/resources/themes/rhea/theme.css
 </app-code>
 
-    <h5>Dependencies</h5>
-    <p>Majority of PrimeNG components (95%) are native and there are some exceptions having 3rd party dependencies. In addition, components require <a href="https://www.npmjs.com/package/primeicons">PrimeIcons</a> for icons.</p>
+    <h5>依赖项</h5>
+    <p>大多数PrimeNG组件(95%)是原生的，也有一些例外具有第三方依赖。此外，组件需要<a href="https://www.npmjs.com/package/primeicons">PrimeIcons</a>作为图标</p>
 
     <div class="doc-tablewrapper">
         <table class="doc-table">
             <thead>
                 <tr>
-                    <th>Component</th>
-                    <th>Dependency</th>
+                    <th>组件</th>
+                    <th>依赖</th>
                 </tr>
             </thead>
             <tbody>
@@ -122,9 +121,9 @@ primeng/resources/themes/rhea/theme.css
         </table>
     </div>
 
-    <h5>Ripple</h5>
-    <p>Ripple is an optional animation for the supported components such as buttons. It is disabled by default and needs to be enabled globally at your main component e.g. app.component.ts by injecting
-        <i>PrimeNGConfig</i>.</p>
+    <h5>涟漪</h5>
+    <p>涟漪是受支持组件(如按钮)的可选动画。它在默认情况下是禁用的，需要在你的主组件中全局启用，例如 app.component.ts中通过注入
+        <i>PrimeNGConfig</i>使用</p>
 
 <app-code lang="typescript" ngNonBindable ngPreserveWhitespaces>
 import &#123; PrimeNGConfig &#125; from 'primeng/api';
@@ -144,9 +143,8 @@ export class AppComponent implements OnInit &#123;
 &#125;
 </app-code>
 
-    <h5>Animations</h5>
-    <p>Various components utilize angular animations to improve the user experience, starting with Angular 4 animations have their own module so you need
-    to import <i>BrowserAnimationsModule</i> to your application. If you prefer to disable animations globally, import <i>NoopAnimationsModule</i> instead.</p>
+    <h5>动画</h5>
+    <p>各种组件利用angular动画来改善用户体验，从angular 4开始，动画有自己的模块，所以你需要将<i>BrowserAnimationsModule</i>导入到你的应用中。如果你喜欢全局禁用动画，导入<i>NoopAnimationsModule</i>代替它。</p>
 
 <app-code lang="markup" ngNonBindable ngPreserveWhitespaces>
 npm install @angular/animations --save
@@ -167,11 +165,11 @@ import &#123;BrowserAnimationsModule&#125; from '@angular/platform-browser/anima
 export class YourAppModule &#123; &#125;
 </app-code>
 
-    <h5>Angular CLI Integration</h5>
-    <p>Angular CLI is the official CLI tool for Angular. We strongly suggest using Angular CLI when starting an Angular project.</p>
+    <h5>Angular CLI 集成</h5>
+    <p>Angular CLI是Angular的官方CLI工具。我们强烈建议在启动Angular项目时使用Angular CLI。</p>
 
-    <h6>Dependencies</h6>
-    <p>Add PrimeNG and PrimeIcons as dependencies.</p>
+    <h6>依赖项</h6>
+    <p>添加primeng和primeicons作为依赖项。</p>
 
 <app-code lang="typescript" ngNonBindable ngPreserveWhitespaces>
 "dependencies": &#123;
@@ -181,8 +179,8 @@ export class YourAppModule &#123; &#125;
 &#125;,
 </app-code>
 
-    <h6>Styles Configuration</h6>
-    <p>Configure required styles at the styles section, example below uses the Saga Blue theme.</p>
+    <h6>样式配置</h6>
+    <p>在样式部分配置所需的样式，下面的例子使用Saga Blue主题。</p>
 
 <app-code lang="typescript" ngNonBindable ngPreserveWhitespaces>
 "styles": [
@@ -193,9 +191,9 @@ export class YourAppModule &#123; &#125;
 ],
 </app-code>
 
-    <p>That is all, you may now import PrimeNG components, for a working example visit the <a href="https://github.com/primefaces/primeng-quickstart-cli">PrimeNG CLI QuickStart</a> sample at GitHub.</p>
+    <p>就是这样，您现在可以导入 PrimeNG 组件，有关工作示例，请访问 GitHub 上的 <a href="https://github.com/primefaces/primeng-quickstart-cli">PrimeNG CLI 快速入门</a>示例</p>
 
-    <h6>Browser Support</h6>
+    <h6>浏览器支持</h6>
     <div class="doc-tablewrapper">
         <table class="doc-table browsers">
             <thead>
@@ -235,10 +233,10 @@ export class YourAppModule &#123; &#125;
             <tbody>
                 <tr>
                     <td>IE11, Edge</td>
-                    <td>Last 2 versions</td>
-                    <td>Last 2 versions</td>
-                    <td>Last 2 versions</td>
-                    <td>Last 2 versions</td>
+                    <td>最近的2个版本</td>
+                    <td>最近的2个版本</td>
+                    <td>最近的2个版本</td>
+                    <td>最近的2个版本</td>
                 </tr>
             </tbody>
         </table>
