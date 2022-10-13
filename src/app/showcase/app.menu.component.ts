@@ -48,7 +48,7 @@ declare let gtag: Function;
                 <div class="menu-category">主题</div>
                 <div class="menu-items">
                     <a [routerLink]=" ['/theming']" routerLinkActive="router-link-exact-active">指南</a>
-                    <a href="https://www.primefaces.org/designer/primeng">主题设计师</a>
+                    <a href="https://www.primefaces.org/designer/primeng">主题设计器</a>
                     <a href="https://www.primefaces.org/designer-ng">可视化编辑器</a>
                     <a [routerLink]="['/colors']" routerLinkActive="router-link-exact-active">颜色</a>
                     <a href="https://www.primefaces.org/designer/api/primeng/14.0.0">SASS API</a>
@@ -81,16 +81,16 @@ declare let gtag: Function;
                     <a [routerLink]=" ['/icons']" routerLinkActive="router-link-exact-active">Icons v6 <span class="p-tag">新</span></a>
                 </div>
 
-                <div class="menu-category">Form</div>
+                <div class="menu-category">表单</div>
                 <div class="menu-items">
-                    <a [routerLink]=" ['autocomplete']" routerLinkActive="router-link-exact-active">AutoComplete</a>
+                    <a [routerLink]=" ['autocomplete']" routerLinkActive="router-link-exact-active">AutoComplete自动完成</a>
                     <a [routerLink]=" ['calendar']" routerLinkActive="router-link-exact-active">Calendar</a>
                     <a [routerLink]=" ['cascadeselect']" routerLinkActive="router-link-exact-active">CascadeSelect</a>
                     <a [routerLink]=" ['checkbox']" routerLinkActive="router-link-exact-active">Checkbox</a>
                     <a [routerLink]=" ['chips']" routerLinkActive="router-link-exact-active">Chips</a>
                     <a [routerLink]=" ['colorpicker']" routerLinkActive="router-link-exact-active">ColorPicker</a>
                     <a [routerLink]=" ['dropdown']" routerLinkActive="router-link-exact-active">Dropdown</a>
-                    <a [routerLink]=" ['editor']" routerLinkActive="router-link-exact-active">Editor</a>
+                    <a [routerLink]=" ['editor']" routerLinkActive="router-link-exact-active">Editor文本编辑器</a>
                     <a [routerLink]=" ['floatlabel']" routerLinkActive="router-link-exact-active">FloatLabel</a>
                     <a [routerLink]=" ['inputgroup']" routerLinkActive="router-link-exact-active">InputGroup</a>
                     <a [routerLink]=" ['inputmask']" routerLinkActive="router-link-exact-active">InputMask</a>
@@ -113,14 +113,14 @@ declare let gtag: Function;
                     <a [routerLink]=" ['tristatecheckbox']" routerLinkActive="router-link-exact-active">TriCheckbox</a>
                 </div>
 
-                <div class="menu-category">Button</div>
+                <div class="menu-category">按钮</div>
                 <div class="menu-items">
                     <a [routerLink]=" ['button']" routerLinkActive="router-link-exact-active">Button</a>
                     <a [routerLink]=" ['splitbutton']" routerLinkActive="router-link-exact-active">SplitButton</a>
                     <a [routerLink]=" ['speeddial']" routerLinkActive="router-link-exact-active">SpeedDial</a>
                 </div>
 
-                <div class="menu-category">Data</div>
+                <div class="menu-category">数据展示</div>
                 <div class="menu-items">
                     <a [routerLink]=" ['dataview']" routerLinkActive="router-link-exact-active">DataView</a>
                     <a [routerLink]=" ['fullcalendar']" routerLinkActive="router-link-exact-active">FullCalendar</a>
@@ -214,7 +214,7 @@ declare let gtag: Function;
                     <a [routerLink]=" ['scroller']" routerLinkActive="router-link-exact-active">Scroller <span class="p-tag">新</span></a>
                 </div>
 
-                <div class="menu-category">Panel</div>
+                <div class="menu-category">控制板</div>
                 <div class="menu-items">
                     <a [routerLink]=" ['accordion']" routerLinkActive="router-link-exact-active">Accordion</a>
                     <a [routerLink]=" ['card']" routerLinkActive="router-link-exact-active">Card</a>
@@ -227,7 +227,7 @@ declare let gtag: Function;
                     <a [routerLink]=" ['toolbar']" routerLinkActive="router-link-exact-active">Toolbar</a>
                 </div>
 
-                <div class="menu-category">Overlay</div>
+                <div class="menu-category">覆盖层</div>
                 <div class="menu-items">
                     <a [routerLink]=" ['confirmdialog']" routerLinkActive="router-link-exact-active">ConfirmDialog</a>
                     <a [routerLink]=" ['confirmpopup']" routerLinkActive="router-link-exact-active">ConfirmPopup</a>
@@ -238,12 +238,12 @@ declare let gtag: Function;
                     <a [routerLink]=" ['tooltip']" routerLinkActive="router-link-exact-active">Tooltip</a>
                 </div>
 
-                <div class="menu-category">File</div>
+                <div class="menu-category">文件</div>
                 <div class="menu-items">
                     <a [routerLink]=" ['fileupload']" routerLinkActive="router-link-exact-active">Upload</a>
                 </div>
 
-                <div class="menu-category">Menu</div>
+                <div class="menu-category">菜单</div>
                 <div class="menu-items">
                     <a [routerLink]=" ['menumodel']" routerLinkActive="router-link-exact-active">MenuModel</a>
                     <a [routerLink]=" ['breadcrumb']" routerLinkActive="router-link-exact-active">Breadcrumb</a>
@@ -259,7 +259,7 @@ declare let gtag: Function;
                     <a [routerLink]=" ['tieredmenu']" routerLinkActive="router-link-exact-active">TieredMenu</a>
                 </div>
 
-                <div class="menu-category">Chart</div>
+                <div class="menu-category">图表</div>
                 <div class="menu-items">
                     <a [routerLink]=" ['chart']" routerLinkActive="router-link-exact-active" [routerLinkActiveOptions]="{exact:true}">ChartModel</a>
                     <a [routerLink]=" ['chart/bar']" routerLinkActive="router-link-exact-active">Bar</a>
@@ -271,13 +271,13 @@ declare let gtag: Function;
                     <a [routerLink]=" ['chart/combo']" routerLinkActive="router-link-exact-active">Combo</a>
                 </div>
 
-                <div class="menu-category">Messages</div>
+                <div class="menu-category">信息</div>
                 <div class="menu-items">
                     <a [routerLink]=" ['messages']" routerLinkActive="router-link-exact-active">Messages</a>
                     <a [routerLink]=" ['toast']" routerLinkActive="router-link-exact-active">Toast</a>
                 </div>
 
-                <div class="menu-category">Media</div>
+                <div class="menu-category">媒体</div>
                 <div class="menu-items">
                     <a [routerLink]=" ['/carousel']" routerLinkActive="router-link-exact-active">Carousel</a>
                     <div>
@@ -300,12 +300,12 @@ declare let gtag: Function;
                     <a [routerLink]=" ['image']" routerLinkActive="router-link-exact-active">Image</a>
                 </div>
 
-                <div class="menu-category">DragDrop</div>
+                <div class="menu-category">拖拽</div>
                 <div class="menu-items">
                     <a [routerLink]=" ['dragdrop']" routerLinkActive="router-link-exact-active">Drag&amp;Drop</a>
                 </div>
 
-                <div class="menu-category">Misc</div>
+                <div class="menu-category">其他</div>
                 <div class="menu-items">
                     <a [routerLink]=" ['avatar']" routerLinkActive="router-link-exact-active">Avatar</a>
                     <a [routerLink]=" ['badge']" routerLinkActive="router-link-exact-active">Badge</a>
@@ -321,7 +321,7 @@ declare let gtag: Function;
                     <a [routerLink]=" ['terminal']" routerLinkActive="router-link-exact-active">Terminal</a>
                 </div>
 
-                <div class="menu-category">Directives</div>
+                <div class="menu-category">指令</div>
                 <div class="menu-items">
                     <a [routerLink]=" ['defer']" routerLinkActive="router-link-exact-active">Defer</a>
                     <a [routerLink]=" ['focustrap']" routerLinkActive="router-link-exact-active">FocusTrap</a>
@@ -330,7 +330,7 @@ declare let gtag: Function;
                     <a [routerLink]=" ['autofocus']" routerLinkActive="router-link-exact-active">AutoFocus<span class="p-tag">新</span></a>
                 </div>
 
-                <div class="menu-category">Utilities</div>
+                <div class="menu-category">实用工具</div>
                 <div class="menu-items">
                     <a [routerLink]=" ['filterservice']" routerLinkActive="router-link-exact-active">FilterService</a>
                 </div>

@@ -1,17 +1,17 @@
 <div class="content-section introduction">
     <div class="feature-intro">
         <h1>Editor</h1>
-        <p>Editor is rich text editor component based on Quill.</p>
+        <p>Editor 是基于 Quill 的富文本编辑器组件。</p>
     </div>
     <app-demoActions github="editor"></app-demoActions>
 </div>
 
 <div class="content-section implementation">
     <div class="card">
-        <h5>Default</h5>
+        <h5>默认</h5>
         <p-editor [(ngModel)]="text1" [style]="{'height':'320px'}"></p-editor>
-        
-        <h5>Custom Toolbar</h5>
+
+        <h5>自定义 Toolbar</h5>
         <p-editor [(ngModel)]="text2" [style]="{'height':'320px'}">
             <ng-template pTemplate="header">
                 <span class="ql-formats">
@@ -26,35 +26,35 @@
 
 <div class="content-section documentation">
     <p-tabView>
-        <p-tabPanel header="Documentation">
-            <h5>Import</h5>
+        <p-tabPanel header="文档">
+            <h5>导入</h5>
 <app-code lang="typescript" ngNonBindable ngPreserveWhitespaces>
 import &#123;EditorModule&#125; from 'primeng/editor';
 </app-code>
 
-            <h5>Getting Started</h5>
-            <p>Two-way value binding is defined with ngModel.</p>
-            
+            <h5>开始使用</h5>
+            <p>双向值绑定是用 ngModel 定义的。</p>
+
 <app-code lang="markup" ngNonBindable ngPreserveWhitespaces>
 &lt;p-editor [(ngModel)]="text" [style]="&#123;'height':'320px'&#125;"&gt;&lt;/p-editor&gt;
 </app-code>
 
 <app-code lang="typescript" ngNonBindable ngPreserveWhitespaces>
 export class EditorDemo &#123;
-    
+
     text: string;
-        
+
 &#125;
 </app-code>
 
-            <h5>Model Driven Forms</h5>
-            <p>Editor can be used in a model driven form as well.</p>
+            <h5>模型驱动表单</h5>
+            <p>编辑器也可以用于模型驱动表单。</p>
 <app-code lang="markup" ngNonBindable ngPreserveWhitespaces>
 &lt;p-editor formControlName="description" [style]="&#123;'height':'320px'&#125;"&gt;&lt;/p-editor&gt;
 </app-code>
 
-            <h5>Toolbar</h5>
-            <p>Editor provides a default toolbar with common options, to customize it define your elements inside the header element. Refer to <a href="http://quilljs.com/docs/modules/toolbar/">Quill documentation</a> for available controls.</p>
+            <h5>工具栏</h5>
+            <p>编辑器提供了一个默认工具栏和常用选项，要自定义它，可以在头元素中定义元素。有关可用的控件，请参阅<a href="http://quilljs.com/docs/modules/toolbar/">Quill文档</a></p>
 <app-code lang="markup" ngNonBindable ngPreserveWhitespaces>
 &lt;p-editor [(ngModel)]="text2" [style]="&#123;'height':'320px'&#125;"&gt;
     &lt;ng-template pTemplate="header"&gt;
@@ -71,15 +71,15 @@ export class EditorDemo &#123;
 &lt;/p-editor&gt;
 </app-code>
 
-            <h5>Properties</h5>
+            <h5>属性</h5>
             <div class="doc-tablewrapper">
                 <table class="doc-table">
                     <thead>
                         <tr>
-                            <th>Name</th>
-                            <th>Type</th>
-                            <th>Default</th>
-                            <th>Description</th>
+                            <th>名称</th>
+                            <th>类型</th>
+                            <th>默认值</th>
+                            <th>说明</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -87,128 +87,127 @@ export class EditorDemo &#123;
                             <td>style</td>
                             <td>string</td>
                             <td>null</td>
-                            <td>Inline style of the container.</td>
+                            <td>容器的内联样式。</td>
                         </tr>
                         <tr>
                             <td>styleClass</td>
                             <td>string</td>
                             <td>null</td>
-                            <td>Style class of the container.</td>
+                            <td>容器的样式类</td>
                         </tr>
                         <tr>
                             <td>placeholder</td>
                             <td>string</td>
                             <td>null</td>
-                            <td>Placeholder text to show when editor is empty.</td>
+                            <td>当编辑器为空时显示的占位符文本。</td>
                         </tr>
                         <tr>
                             <td>readonly</td>
                             <td>boolean</td>
                             <td>false</td>
-                            <td>Whether to instantiate the editor to read-only mode.</td>
+                            <td>是否将编辑器实例设置为只读模式。</td>
                         </tr>
                         <tr>
                             <td>formats</td>
                             <td>string[]</td>
                             <td>null</td>
-                            <td>Whitelist of formats to display, see <a href="http://quilljs.com/docs/formats/">here</a> for available options.</td>
+                            <td>要显示格式的白名单，请参阅<a href="http://quilljs.com/docs/formats/">此处</a>了解可用选项</td>
                         </tr>
                         <tr>
                             <td>modules</td>
                             <td>any</td>
                             <td>null</td>
-                            <td>Modules configuration of Editor, see <a href="https://quilljs.com/docs/modules/">here</a> for available options.</td>
+                            <td>编辑器的模块配置，请参阅<a href="https://quilljs.com/docs/modules/">此处</a>了解可用选项</td>
                         </tr>
                         <tr>
                             <td>debug</td>
                             <td>string</td>
                             <td>null</td>
-                            <td>Shortcut for debug. Note debug is a static method and will affect other instances of Quill 
-                                editors on the page. Only warning and error messages are enabled by default.</td>
+                            <td>调试的快捷方式。注意 debug 是一种静态方法，会影响页面上其他 Quill 编辑器实例。默认情况下仅启用警告和错误信息。</td>
                         </tr>
                         <tr>
                             <td>bounds</td>
                             <td>Element</td>
                             <td>document.body</td>
-                            <td>DOM Element or a CSS selector for a DOM Element, within which the editor’s p elements (i.e. tooltips, etc.) should be confined. Currently, it only considers left and right boundaries..</td>
+                            <td>DOM 元素或 DOM 元素的 CSS 选择器，应将编辑器的 p 元素（即工具提示等）限制在其中。目前，它只考虑左右边界</td>
                         </tr>
                         <tr>
                             <td>scrollingContainer</td>
                             <td>Element</td>
                             <td>null</td>
-                            <td>DOM Element or a CSS selector for a DOM Element, specifying which container has the scrollbars (i.e. overflow-y: auto), if is has been changed from the default ql-editor with custom CSS. 
-                                Necessary to fix scroll jumping bugs when Quill is set to auto grow its height, and another ancestor container is responsible from the scrolling..</td>
+                            <td>DOM 元素或 DOM 元素的 CSS 选择器，如果使用自定义 CSS 的默认 ql-editor 更改要指定哪个容器具有滚动条（即 overflow-y: auto）。
+                                当 Quill 设置为自动增加其高度时，需要修复滚动跳跃错误，并且另一个祖先容器负责滚动..</td>
                         </tr>
                     </tbody>
                 </table>
             </div>
-            
-            <h5>Events</h5>
+
+            <h5>事件</h5>
             <div class="doc-tablewrapper">
                 <table class="doc-table">
                     <thead>
                         <tr>
-                            <th>Name</th>
-                            <th>Parameters</th>
-                            <th>Description</th>
+                            <th>名称</th>
+                            <th>参数</th>
+                            <th>说明</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
                             <td>onTextChange</td>
-                            <td>event.delta: Representation of the change.<br>
-                                event.source: Source of change. Will be either "user" or "api".<br>
-                                event.htmlValue: Current value as html.<br>
-                                event.textValue: Current value as text.<br></td>
-                            <td>Callback to invoke when the text of the editor is changed by the user.</td>
+                            <td>event.delta: 变更的表示<br>
+                                event.source: 变更的来源. 可能是 "user" 或者"api".<br>
+                                event.htmlValue: 当前值为 html<br>
+                                event.textValue: 当前值为 text<br></td>
+                            <td>当用户更改编辑器的文本时调用的回调。</td>
                         </tr>
                         <tr>
                             <td>onSelectionChange</td>
-                            <td>event.range: Object with index and length keys indicating where the selection exists.<br>
-                                event.oldRange: Object with index and length keys indicating where the previous selection was..<br>
-                                event.source: Source of change. Will be either "user" or "api".</td>
-                            <td>Callback to invoke when selected text of editor changes.</td>
+                            <td>event.range:具有索引和长度键的对象，指示选择存在的位置。<br>
+                                event.oldRange: 具有索引和长度键的对象，指示先前选择的位置。<br>
+                                event.source: 变更的来源. 可能是 "user" 或者"api".</td>
+                            <td>当编辑器的选定文本更改时调用的回调。</td>
                         </tr>
                         <tr>
                             <td>onInit</td>
-                            <td>event.editor: Quill editor instance.<br>
-                                event.oldRange: Object with index and length keys indicating where the previous selection was..<br>
-                                event.source: Source of change. Will be either "user" or "api".</td>
-                            <td>Callback to invoke after editor is initialized.</td>
+                            <td>event.editor: Quill 编辑器实例。<br>
+                                event.oldRange: 具有索引和长度键的对象，指示先前选择的位置。<br>
+                                event.source: 变更的来源. 可能是 "user" 或者"api".</td>
+                            <td>初始化编辑器后调用的回调。</td>
                         </tr>
                     </tbody>
                 </table>
             </div>
-            
-            <p>Refer to <a href="http://beta.quilljs.com/docs/api/#events">Quill documentation</a> for more information.</p>
 
-            <h5>Methods</h5>
+            <p>有关详细信息，请参阅<a href="http://beta.quilljs.com/docs/api/#events">Quill 文档</a></p>
+
+            <h5>方法</h5>
             <div class="doc-tablewrapper">
                 <table class="doc-table">
                     <thead>
                         <tr>
-                            <th>Name</th>
-                            <th>Parameters</th>
-                            <th>Description</th>
+                            <th>名称</th>
+                            <th>参数</th>
+                            <th>说明</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
                             <td>getQuill</td>
                             <td>-</td>
-                            <td>Returns the underlying quill instance.</td>
+                            <td>返回底层quill实例</td>
                         </tr>
                     </tbody>
                 </table>
             </div>
 
-            <h5>Templates</h5>
+            <h5>模板</h5>
             <div class="doc-tablewrapper">
                 <table class="doc-table">
                     <thead>
                         <tr>
-                            <th>Name</th>
-                            <th>Parameters</th>
+                            <th>名称</th>
+                            <th>参数</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -220,50 +219,50 @@ export class EditorDemo &#123;
                 </table>
             </div>
 
-            <h5>Styling</h5>
-            <p>Following is the list of structural style classes, for theming classes visit <a href="#" [routerLink]="['/theming']">theming page</a>.</p>
+            <h5>样式</h5>
+            <p>以下是结构样式类列表，对于主题类，请访问<a href="#" [routerLink]="['/theming']">主题界面</a>.</p>
             <div class="doc-tablewrapper">
                 <table class="doc-table">
                     <thead>
                         <tr>
-                            <th>Name</th>
-                            <th>Element</th>
+                            <th>名称</th>
+                            <th>说明</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
                             <td>p-editor-container</td>
-                            <td>Container element</td>
+                            <td>容器元素</td>
                         </tr>
                         <tr>
                             <td>p-editor-toolbar</td>
-                            <td>Toolbar of the editor</td>
+                            <td>编辑器工具栏</td>
                         </tr>
                         <tr>
                             <td>p-editor-content</td>
-                            <td>Editable area</td>
+                            <td>可编辑区域</td>
                         </tr>
                     </tbody>
                 </table>
             </div>
 
-            <h5>Dependencies</h5>
+            <h5>依赖项</h5>
             <p><a href="http://quilljs.com">Quill</a> Editor 1.0.</p>
-            <p>Resources of quill needs to be added to your application. Example setup with CLI is as follows;</p>
+            <p>需要将 quill 资源包添加到您的应用程序中。使用 CLI 的示例设置如下：</p>
 <app-code lang="markup" ngNonBindable ngPreserveWhitespaces>
 npm install quill --save
 </app-code>
-            <p>Add Quill to scripts in angular.json</p>  
+            <p>将 quill.js 添加到 angular.json 中</p>
 <app-code lang="markup" ngNonBindable ngPreserveWhitespaces>
 "scripts": [... "../node_modules/quill/dist/quill.js"],
 </app-code>
-            <p>Add Quill css to styles in angular.json</p>  
+            <p>将 Quill的 css 添加到 angular.json 中</p>
 <app-code lang="markup" ngNonBindable ngPreserveWhitespaces>
 "styles": [ ... "../node_modules/quill/dist/quill.core.css", "../node_modules/quill/dist/quill.snow.css"],
 </app-code>
 
         </p-tabPanel>
-        <p-tabPanel header="Source">
+        <p-tabPanel header="源码">
             <a href="https://github.com/primefaces/primeng/tree/master/src/app/showcase/components/editor" class="btn-viewsource" target="_blank">
                 <span>View on GitHub</span>
             </a>
@@ -294,7 +293,7 @@ import &#123;Component&#125; from '@angular/core';
 export class EditorDemo &#123;
 
     text1: string = '&lt;div&gt;Hello World!&lt;/div&gt;&lt;div&gt;PrimeNG &lt;b&gt;Editor&lt;/b&gt; Rocks&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;';
-    
+
     text2: string;
 &#125;
 </app-code>

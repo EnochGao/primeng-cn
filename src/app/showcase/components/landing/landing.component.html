@@ -26,7 +26,7 @@
                         <li class="mr-0 lg:mr-2">
                             <a href="https://www.primefaces.org/designer-ng" target="_blank">
                                 <img src="assets/showcase/images/landing/designer-icon.svg" alt="Primeng designer">
-                                <span>设计师</span>
+                                <span>设计器</span>
                             </a>
                         </li>
                         <li class="mr-0 lg:mr-2">
@@ -72,7 +72,7 @@
                                 <div class="flex flex-column align-items-center">
                                     <img src="assets/showcase/images/landing/designer-icon.svg" alt="primeng templates" />
                                     <div class="name">
-                                        <b>主题设计师</b>
+                                        <b>主题设计器</b>
                                         <span>创建你自己的主题</span>
                                     </div>
                                 </div>
@@ -450,10 +450,10 @@
 
     <section id="blocks-section" class="landing-blocks pt-8 overflow-hidden">
         <div class="section-header">PrimeBlocks</div>
-        <p class="section-detail">280+ ready to copy-paste UI blocks to build spectacular applications in no time.</p>
+        <p class="section-detail">280+个准备复制粘贴 UI 块以立即构建令人惊叹的应用程序。</p>
         <div class="flex justify-content-center mt-4">
             <a href="https://www.primefaces.org/primeblocks-ng" target="_blank" class="font-semibold p-3 border-round flex align-items-center linkbox active" style="z-index:99;">
-                <span>Learn More</span>
+                <span>了解更多</span>
                 <i class="pi pi-arrow-right ml-2"></i>
             </a>
         </div>
@@ -823,8 +823,8 @@
     </section>
 
     <section class="landing-designer py-8">
-        <div class="section-header">Theme Designer</div>
-        <p class="section-detail">Designer is the ultimate tool to create your own primeng experience powered by a SASS based theme engine with 500+ variables and a Visual Designer.</p>
+        <div class="section-header">主题设计器</div>
+        <p class="section-detail">Designer 是创建您自己的primeng 体验的终极工具，由基于SASS 的主题引擎提供支持，具有500 多个变量和一个可视化设计器。</p>
         <div class="designer-main mt-7 justify-content-center pad-section"
             [style]="{'background-size':'cover'}" [ngStyle]="{'background-image': config.dark ? 'url(assets/showcase/images/landing/wave-dark-alt.svg)' : 'url(assets/showcase/images/landing/wave-light-alt.svg)'}">
             <div class="box p-4 flex flex-column md:flex-row z-1 designer-editor">
@@ -833,7 +833,7 @@
                         <img src="assets/showcase/images/landing/designer-{{config.dark ? 'light' : 'dark'}}.svg" />
                     </div>
                     <div class="p-fluid">
-                        <span class="font-semibold block mb-3">Primary</span>
+                        <span class="font-semibold block mb-3">原色</span>
                         <div>
                             <button type="button" class="border-circle w-2rem h-2rem p-link mr-3" [style]="{'background-color':'#03C4E8'}" (click)="changeDesignerTheme('#03C4E8', '#029dba')"></button>
                             <button type="button" class="border-circle w-2rem h-2rem p-link mr-3" [style]="{'background-color':'#03E8BF'}" (click)="changeDesignerTheme('#03E8BF', '#02ba99')"></button>
@@ -841,39 +841,39 @@
                             <button type="button" class="border-circle w-2rem h-2rem p-link" [style]="{'background-color':'#FFBD80'}" (click)="changeDesignerTheme('#FFBD80','#cc9766')"></button>
                         </div>
 
-                        <span class="font-semibold block mt-4 mb-3">Font</span>
+                        <span class="font-semibold block mt-4 mb-3">字体</span>
                         <p-dropdown [options]="fonts" [(ngModel)]="selectedFont" (onChange)="changeFont()"></p-dropdown>
 
-                        <span class="font-semibold block mt-4 mb-3">Size</span>
+                        <span class="font-semibold block mt-4 mb-3">尺寸</span>
                         <div class="flex align-items-center">
                             <div class="flex align-items-center">
                                 <p-radioButton inputId="size-small" value="small" name="sizevalue" [(ngModel)]="size"></p-radioButton>
-                                <label for="size-small" class="ml-2 font-medium">Small</label>
+                                <label for="size-small" class="ml-2 font-medium">小</label>
                             </div>
                             <div class="flex align-items-center ml-4">
                                 <p-radioButton inputId="size-normal" value="normal" name="sizevalue" [(ngModel)]="size"></p-radioButton>
-                                <label for="size-normal" class="ml-2 font-medium">Normal</label>
+                                <label for="size-normal" class="ml-2 font-medium">中</label>
                             </div>
                             <div class="flex align-items-center ml-4">
                                 <p-radioButton inputId="size-large" value="large" name="sizevalue" [(ngModel)]="size"></p-radioButton>
-                                <label for="size-large" class="ml-2 font-medium">Large</label>
+                                <label for="size-large" class="ml-2 font-medium">大</label>
                             </div>
                         </div>
 
-                        <span class="font-semibold block mt-4 mb-3">Input Style</span>
+                        <span class="font-semibold block mt-4 mb-3">Input 样式</span>
                         <div class="flex align-items-center mb-6">
                             <div class="flex align-items-center">
                                 <p-radioButton inputId="inputStyle1" value="outlined" name="inputstylevalue" [(ngModel)]="inputStyle"></p-radioButton>
-                                <label for="inputStyle1" class="ml-2 font-medium">Outlined</label>
+                                <label for="inputStyle1" class="ml-2 font-medium">轮廓</label>
                             </div>
                             <div class="flex align-items-center ml-4">
                                 <p-radioButton inputId="inputStyle2" value="filled" name="inputstylevalue" [(ngModel)]="inputStyle"></p-radioButton>
-                                <label for="inputStyle2" class="ml-2 font-medium">Filled</label>
+                                <label for="inputStyle2" class="ml-2 font-medium">填充</label>
                             </div>
                         </div>
 
                         <a href="https://www.primefaces.org/designer-ng" target="_blank" class="font-semibold p-3 border-round flex align-items-center linkbox active">
-                            <span>View Full Version</span>
+                            <span>查看完整版本</span>
                             <i class="pi pi-arrow-right ml-auto"></i>
                         </a>
                     </div>
@@ -933,12 +933,12 @@
     </section>
 
     <section class="landing-templates theme-dark py-8">
-        <div class="section-header">Templates</div>
-        <p class="section-detail">Professionally designed highly customizable application templates to get started in style.</p>
+        <div class="section-header">模板</div>
+        <p class="section-detail">专业设计高度可定制的应用程序模板，让您轻松上手。</p>
         <div class="flex justify-content-center mt-4">
             <a href="https://www.primefaces.org/store" class="font-semibold p-3 border-round flex align-items-center linkbox active"
              style="z-index:99;">
-                <span>Learn More</span>
+                <span>了解更多</span>
                 <i class="pi pi-arrow-right ml-2"></i>
             </a>
         </div>
@@ -1030,8 +1030,8 @@
     </section>
 
     <section class="landing-users py-8 pad-section">
-        <div class="section-header">Who Uses</div>
-        <p class="section-detail">Open source products of PrimeTek are used all around the world by millions of developers.</p>
+        <div class="section-header">谁在使用</div>
+        <p class="section-detail">PrimeTek 的开源产品被全球数百万开发人员使用</p>
         <div class="grid mt-7">
             <div class="col-6 md:col-4 lg:col-3 xl:col-2 flex justify-content-center p-3">
                 <div class="box w-10rem h-10rem flex justify-content-center align-items-center bg-transparent">
@@ -1097,63 +1097,63 @@
     </section>
 
     <section class="landing-features py-8">
-        <div class="section-header">Features</div>
-        <p class="section-detail">primeng is the most complete solution for your UI requirements.</p>
+        <div class="section-header">产品特性</div>
+        <p class="section-detail">primeng 是满足您 UI 要求的最完整的解决方案</p>
         <div class="grid mt-7 pad-section" [style]="{'background-size':'cover'}" [ngStyle]="{'background-image': config.dark ? 'url(assets/showcase/images/landing/wave-dark-alt.svg)' : 'url(assets/showcase/images/landing/wave-light-alt.svg)'}">
             <div class="col-12 md:col-6 xl:col-3 flex justify-content-center p-3">
                 <div class="box p-4 w-full">
                     <img src="assets/showcase/images/landing/features/icon-components.svg" alt="components icon" class="block mb-3"/>
-                    <div class="font-semibold mb-3 text-lg">90+ UI Components</div>
-                    <p class="m-0 text-secondary font-medium">The ultimate set of UI Components to assist you with 90+ impressive Angular Components.</p>
+                    <div class="font-semibold mb-3 text-lg">90+ UI 组件</div>
+                    <p class="m-0 text-secondary font-medium">终极 UI 组件集，可帮助您使用 90 多个令人印象深刻的 Angular 组件</p>
                 </div>
             </div>
             <div class="col-12 md:col-6 xl:col-3 flex justify-content-center p-3">
                 <div class="box p-4 w-full">
                     <img src="assets/showcase/images/landing/features/icon-community.svg" alt="components icon" class="block mb-3"/>
-                    <div class="font-semibold mb-3 text-lg">Community</div>
-                    <p class="m-0 text-secondary font-medium">Connect with the other open source community members, collaborate and have a voice in the project roadmap.</p>
+                    <div class="font-semibold mb-3 text-lg">社区</div>
+                    <p class="m-0 text-secondary font-medium">与其他开源社区成员联系、协作并在项目路线图中发表意见。</p>
                 </div>
             </div>
             <div class="col-12 md:col-6 xl:col-3 flex justify-content-center p-3">
                 <div class="box p-4 w-full">
                     <img src="assets/showcase/images/landing/features/icon-productivity.svg" alt="components icon" class="block mb-3"/>
-                    <div class="font-semibold mb-3 text-lg">Productivity</div>
-                    <p class="m-0 text-secondary font-medium">Boost your productivity by achieving more in less time and accomplish amazing results.</p>
+                    <div class="font-semibold mb-3 text-lg">生产效率</div>
+                    <p class="m-0 text-secondary font-medium">通过用更少的时间完成更多的事情和取得令人惊叹的效果来提高你的效率</p>
                 </div>
             </div>
             <div class="col-12 md:col-6 xl:col-3 flex justify-content-center p-3">
                 <div class="box p-4 w-full">
                     <img src="assets/showcase/images/landing/features/icon-accessibility.svg" alt="components icon" class="block mb-3"/>
-                    <div class="font-semibold mb-3 text-lg">Accessibility</div>
-                    <p class="m-0 text-secondary font-medium">The ultimate set of UI Components to assist you with 90+ impressive Angular Components.</p>
+                    <div class="font-semibold mb-3 text-lg">无障碍</div>
+                    <p class="m-0 text-secondary font-medium">终极UI组件集，帮助你使用90多个令人印象深刻的Angular组件。</p>
                 </div>
             </div>
             <div class="col-12 md:col-6 xl:col-3 flex justify-content-center p-3">
                 <div class="box p-4 w-full">
                     <img src="assets/showcase/images/landing/features/icon-support.svg" alt="components icon" class="block mb-3"/>
-                    <div class="font-semibold mb-3 text-lg">Enterprise Support</div>
-                    <p class="m-0 text-secondary font-medium">Exceptional support service featuring response within 1 business day and option to request enhancements and new features for the library.</p>
+                    <div class="font-semibold mb-3 text-lg">企业支持</div>
+                    <p class="m-0 text-secondary font-medium">卓越的支持服务，可在 1 个工作日内做出响应，并可选择请求为库增强功能和添加新功能。</p>
                 </div>
             </div>
             <div class="col-12 md:col-6 xl:col-3 flex justify-content-center p-3">
                 <div class="box p-4 w-full">
                     <img src="assets/showcase/images/landing/features/icon-mobile.svg" alt="components icon" class="block mb-3"/>
-                    <div class="font-semibold mb-3 text-lg">Mobile</div>
-                    <p class="m-0 text-secondary font-medium">First class support for responsive design led by touch optimized elements.</p>
+                    <div class="font-semibold mb-3 text-lg">移动端</div>
+                    <p class="m-0 text-secondary font-medium">一流的响应式设计支持，由触摸优化元素主导</p>
                 </div>
             </div>
             <div class="col-12 md:col-6 xl:col-3 flex justify-content-center p-3">
                 <div class="box p-4 w-full">
                     <img src="assets/showcase/images/landing/features/icon-theme.svg" alt="components icon" class="block mb-3"/>
-                    <div class="font-semibold mb-3 text-lg">Themes</div>
-                    <p class="m-0 text-secondary font-medium">Built on a design-agnostic api, choose from a vast amount of themes such as material, bootstrap, custom or develop your own.</p>
+                    <div class="font-semibold mb-3 text-lg">主题</div>
+                    <p class="m-0 text-secondary font-medium">建立在与设计无关的 api 上，从大量主题中进行选择，例如 material, bootstrap、自定义或开发自己的主题。</p>
                 </div>
             </div>
             <div class="col-12 md:col-6 xl:col-3 flex justify-content-center p-3">
                 <div class="box p-4 w-full">
                     <img src="assets/showcase/images/landing/features/icon-ts.svg" alt="components icon" class="block mb-3"/>
                     <div class="font-semibold mb-3 text-lg">Typescript</div>
-                    <p class="m-0 text-secondary font-medium">Top-notch support for Typescript with types and tooling assistance.</p>
+                    <p class="m-0 text-secondary font-medium">通过类型和工具辅助对 Typescript 提供一流的支持。</p>
                 </div>
             </div>
         </div>
@@ -1163,73 +1163,73 @@
         <div class="flex flex-wrap z-1">
             <div class="w-6 lg:w-3 flex">
                 <ul class="list-none p-0 m-0">
-                    <li class="font-bold mb-5">General</li>
+                    <li class="font-bold mb-5">通用</li>
                     <li class="mb-4">
                         <a [routerLink]="['setup']">
-                            <a class="text-secondary font-medium hover:text-primary transition-colors transition-duration-150">Get Started</a>
+                            <a class="text-secondary font-medium hover:text-primary transition-colors transition-duration-150">开始使用</a>
                         </a>
                     </li>
                     <li class="mb-4">
-                        <a href="https://github.com/primefaces/primeng-examples" class="text-secondary font-medium hover:text-primary transition-colors transition-duration-150">Examples</a>
+                        <a href="https://github.com/primefaces/primeng-examples" class="text-secondary font-medium hover:text-primary transition-colors transition-duration-150">案例</a>
                     </li>
                 </ul>
             </div>
             <div class="w-6 lg:w-3 flex">
                 <ul class="list-none p-0 m-0">
-                    <li class="font-bold mb-5">Support</li>
+                    <li class="font-bold mb-5">支持</li>
                     <li class="mb-4">
-                        <a href="https://forum.primefaces.org/viewforum.php?f=57" class="text-secondary font-medium hover:text-primary transition-colors transition-duration-150">Forum</a>
+                        <a href="https://forum.primefaces.org/viewforum.php?f=57" class="text-secondary font-medium hover:text-primary transition-colors transition-duration-150">论坛</a>
                     </li>
                     <li class="mb-4">
                         <a href="https://discord.gg/gzKFYnpmCY" class="text-secondary font-medium hover:text-primary transition-colors transition-duration-150">Discord</a>
                     </li>
                     <li class="mb-4">
                         <a [routerLink]="['support']">
-                            <a class="text-secondary font-medium hover:text-primary transition-colors transition-duration-150">PRO Support</a>
+                            <a class="text-secondary font-medium hover:text-primary transition-colors transition-duration-150">PRO 支持</a>
                         </a>
                     </li>
                 </ul>
             </div>
             <div class="w-6 lg:w-3 flex">
                 <ul class="list-none p-0 m-0">
-                    <li class="font-bold mt-5 lg:mt-0 mb-5">Resources</li>
+                    <li class="font-bold mt-5 lg:mt-0 mb-5">资源</li>
                     <li class="mb-4">
                         <a href="https://www.youtube.com/channel/UCTgmp69aBOlLnPEqlUyetWw" class="text-secondary font-medium hover:text-primary transition-colors transition-duration-150">PrimeTV</a>
                     </li>
                     <li class="mb-4">
-                        <a href="https://www.primefaces.org/store/" class="text-secondary font-medium hover:text-primary transition-colors transition-duration-150">Store</a>
+                        <a href="https://www.primefaces.org/store/" class="text-secondary font-medium hover:text-primary transition-colors transition-duration-150">商店</a>
                     </li>
                     <li class="mb-4">
-                        <a href="https://github.com/primefaces/primeng" class="text-secondary font-medium hover:text-primary transition-colors transition-duration-150">Source Code</a>
+                        <a href="https://github.com/primefaces/primeng" class="text-secondary font-medium hover:text-primary transition-colors transition-duration-150">源代码</a>
                     </li>
                     <li class="mb-4">
                         <a href="https://twitter.com/prime_ng" class="text-secondary font-medium hover:text-primary transition-colors transition-duration-150">Twitter</a>
                     </li>
                     <li class="mb-4">
-                        <a href="https://www.primefaces.org/newsletter" class="text-secondary font-medium hover:text-primary transition-colors transition-duration-150">Newsletter</a>
+                        <a href="https://www.primefaces.org/newsletter" class="text-secondary font-medium hover:text-primary transition-colors transition-duration-150">简讯</a>
                     </li>
                     <li class="mb-4">
                         <a href="https://gear.primefaces.org/" class="text-secondary font-medium hover:text-primary transition-colors transition-duration-150">PrimeGear</a>
                     </li>
                     <li class="mb-4">
-                        <a href="mailto:contact@primetek.com.tr" class="text-secondary font-medium hover:text-primary transition-colors transition-duration-150">Contact Us</a>
+                        <a href="mailto:contact@primetek.com.tr" class="text-secondary font-medium hover:text-primary transition-colors transition-duration-150">联系我们</a>
                     </li>
                 </ul>
             </div>
             <div class="w-6 lg:w-3 flex">
                 <ul class="list-none p-0 m-0">
-                    <li class="font-bold mt-5 lg:mt-0 mb-5">Theming</li>
+                    <li class="font-bold mt-5 lg:mt-0 mb-5">主题</li>
                     <li class="mb-4">
                         <a [routerLink]="['theming']">
-                            <a class="text-secondary font-medium hover:text-primary transition-colors transition-duration-150" class="text-secondary font-medium hover:text-primary transition-colors transition-duration-150">Guide</a>
+                            <a class="text-secondary font-medium hover:text-primary transition-colors transition-duration-150" class="text-secondary font-medium hover:text-primary transition-colors transition-duration-150">引导</a>
                         </a>
                     </li>
                     <li class="mb-4">
-                        <a href="https://www.primefaces.org/designer/primeng" class="text-secondary font-medium hover:text-primary transition-colors transition-duration-150">Designer</a>
+                        <a href="https://www.primefaces.org/designer/primeng" class="text-secondary font-medium hover:text-primary transition-colors transition-duration-150">设计器</a>
                     </li>
                     <li class="mb-4">
                         <a [routerLink]="['colors']">
-                            <a class="text-secondary font-medium hover:text-primary transition-colors transition-duration-150" class="text-secondary font-medium hover:text-primary transition-colors transition-duration-150">Colors</a>
+                            <a class="text-secondary font-medium hover:text-primary transition-colors transition-duration-150" class="text-secondary font-medium hover:text-primary transition-colors transition-duration-150">颜色</a>
                         </a>
                     </li>
                 </ul>
