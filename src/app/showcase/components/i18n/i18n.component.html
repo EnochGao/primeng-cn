@@ -1,10 +1,9 @@
 <div class="content-section documentation">
     <h1>I18N</h1>
-    <p>The i18n API allows setting translations globally for the components and integration with translation libraries.</p>
+    <p>i18n API允许为组件与集成翻译的库全局设置翻译。</p>
 
     <h5>PrimeNGConfig</h5>
-    <p>A translation is applied using the PrimeNGConfig instance so begin with injecting it. A common location is the application root to initalize the default language used by the components.
-        English is the default language and <i>setTranslation</i> function is used to change the values by passing a <i>Translation</i> object.</p>
+    <p>使用 PrimeNGConfig 实例应用翻译，因此一开始就要注入它。一个常见的位置是应用程序根目录，使用的默认语言初始化组件英语是默认语言 <i>setTranslation</i> 函数用于通过传递 <i>Translation</i> 对象来更改值。</p>
 
 <app-code lang="typescript" ngNonBindable ngPreserveWhitespaces>
 import &#123; Component, OnInit, OnDestroy &#125; from '@angular/core';
@@ -29,8 +28,7 @@ export class AppComponent implements OnInit, OnDestroy &#123;
 </app-code>
 
         <h5>ngx-translate</h5>
-        <p>i18n API can easily be integrated with 3rd party libraries such as ngx-translate that even allows
-            dynamically changing the language in the application.</p>
+        <p>i18n API 可以轻松与 ngx-translate 等第三方库集成，甚至允许动态更改应用程序中的语言。</p>
 
         <h5>en.json</h5>
 <app-code lang="typescript" ngNonBindable ngPreserveWhitespaces>
@@ -109,8 +107,8 @@ export class AppComponent implements OnInit, OnDestroy &#123;
 &#125;
 </app-code>
 
-        <h5>Translation</h5>
-        <p>Translation API consists of various values used throughout the component library.</p>
+        <h5>翻译</h5>
+        <p>Translation API 由整个组件库中使用的各种值组成。</p>
 
         <div class="doc-tablewrapper">
             <table class="doc-table">
