@@ -1,21 +1,21 @@
 <div class="content-section introduction">
     <div class="feature-intro">
         <h1>Icons</h1>
-        <p>PrimeNG components internally use <a href="https://github.com/primefaces/primeicons">PrimeIcons</a> library, the official icons suite from <a href="https://www.primetek.com.tr">PrimeTek</a>.</p>
+        <p>PrimeNG 组件内部使用<a href="https://github.com/primefaces/primeicons">PrimeIcons</a> 库，这是 <a href="https://www.primetek.com.tr">PrimeTek</a>的官方图标套件。</p>
     </div>
 </div>
 
 <div class="content-section documentation">
-    <h5>Download</h5>
-    <p>PrimeIcons is available at npm, run the following command to download it to your project.</p>
+    <h5>下载</h5>
+    <p>PrimeIcons 在 npm 上可用，运行以​​下命令将其下载到您的项目中。</p>
 
 <app-code lang="markup" ngNonBindable ngPreserveWhitespaces>
 npm install primeicons --save
 </app-code>
 
-    <h5>Getting Started</h5>
-    <p>PrimeIcons use the <strong>pi pi-&#123;icon&#125;</strong> syntax such as <strong>pi pi-check</strong>.
-        A standalone icon can be displayed using an element such as <i>i</i> or <i>span</i></p>
+    <h5>入门</h5>
+    <p>PrimeIcons 使用 <strong>pi pi-&#123;icon&#125;</strong> 语法， 例如 <strong>pi pi-check</strong>.
+        可以使用<i>i</i> 或者<i>span</i>等元素显示独立图标 </p>
 
 <app-code lang="markup" ngNonBindable ngPreserveWhitespaces>
 &lt;i class="pi pi-check"&gt;&lt;/i&gt;
@@ -25,8 +25,8 @@ npm install primeicons --save
 <i class="pi pi-check mr-2"></i>
 <i class="pi pi-times"></i>
 
-    <h5>Size</h5>
-    <p>Size of the icons can easily be changed using font-size property.</p>
+    <h5>尺寸</h5>
+    <p>使用 font-size 属性可以轻松更改图标的大小。</p>
 
 <app-code lang="markup" ngNonBindable ngPreserveWhitespaces>
 &lt;i class="pi pi-check"&gt;&lt;/i&gt;
@@ -40,8 +40,8 @@ npm install primeicons --save
 
     <i class="pi pi-check" style="font-size: 2rem"></i>
 
-    <h5>Spinning Animation</h5>
-    <p>Special pi-spin class applies infinite rotate to an icon.</p>
+    <h5>旋转动画</h5>
+    <p>特殊的 pi-spin 类对图标应用无限旋转。</p>
 
 <app-code lang="markup" ngNonBindable ngPreserveWhitespaces>
 &lt;i class="pi pi-spin pi-spinner" style="font-size: 2rem"&gt;&lt;/i&gt;
@@ -49,8 +49,8 @@ npm install primeicons --save
 
     <i class="pi pi-spin pi-spinner" style="font-size: 2rem"></i>
 
-    <h5>Constants</h5>
-    <p>PrimeIcons constants API is provided to easily choose an icon with typescript e.g. when defining a menu model.</p>
+    <h5>常量</h5>
+    <p> PrimeIcons提供常量 API 以轻松使用typescript选择图标，例如在定义菜单模型时。</p>
 <app-code lang="markup" ngNonBindable ngPreserveWhitespaces>
 &lt;p-menu [model]="items"&gt;&lt;/p-menu&gt;
 </app-code>
@@ -81,10 +81,10 @@ export class MenuDemo &#123;
 &#125;
 </app-code>
 
-    <h5>List of Icons</h5>
-    <p>Here is the current list of PrimeIcons, more icons will be added periodically. You may also <a href="https://github.com/primefaces/primeicons/issues">request new icons</a> at the issue tracker.</p>
+    <h5>图标列表</h5>
+    <p>这是当前的 PrimeIcons 列表，更多图标将定期添加。 您还可以在问题跟踪器中 <a href="https://github.com/primefaces/primeicons/issues">请求新图标</a></p>
     <div>
-        <input class="icon-filter" (input)="onFilter($event)" pInputText placeholder="Search an icon">
+        <input class="icon-filter" (input)="onFilter($event)" pInputText placeholder="搜索图标">
     </div>
 
     <div class="grid icons-list">
