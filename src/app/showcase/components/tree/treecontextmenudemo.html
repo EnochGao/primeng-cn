@@ -8,7 +8,7 @@
 <div class="content-section implementation">
     <div class="card">
         <p-tree [value]="files" selectionMode="single" [(selection)]="selectedFile" [contextMenu]="cm"></p-tree>
-        
+
         <p-contextMenu #cm [model]="items"></p-contextMenu>
     <p-toast></p-toast>
     </div>
@@ -16,12 +16,12 @@
 
 <div class="content-section documentation">
     <p-tabView>
-        <p-tabPanel header="Source">
+        <p-tabPanel header="案例代码">
             <a href="https://github.com/primefaces/primeng/tree/master/src/app/showcase/components/tree" class="btn-viewsource" target="_blank">
-                <span>View on GitHub</span>
+                <span>GitHub中访问</span>
             </a>
             <a href="https://stackblitz.com/edit/primeng-treecontextmenu-demo" class="btn-viewsource" style="margin-left: .5em;" target="_blank">
-                <span>Edit in StackBlitz</span>
+                <span>StackBlitz中编辑</span>
             </a>
 <app-code lang="markup" ngNonBindable ngPreserveWhitespaces>
 &lt;p-tree [value]="files" selectionMode="single" [(selection)]="selectedFile" [contextMenu]="cm"&gt;&lt;/p-tree&gt;
@@ -46,7 +46,7 @@ export class TreeContextMenuDemo implements OnInit &#123;
     selectedFile: TreeNode;
 
     items: MenuItem[];
-    
+
     constructor(private nodeService: NodeService, private messageService: MessageService) &#123; &#125;
 
     ngOnInit() &#123;
@@ -61,12 +61,12 @@ export class TreeContextMenuDemo implements OnInit &#123;
     viewFile(file: TreeNode) &#123;
         this.messageService.add(&#123;severity: 'info', summary: 'Node Details', detail: file.label&#125;);
     &#125;
-    
+
     unselectFile() &#123;
         this.selectedFile = null;
     &#125;
 &#125;
-</app-code>   
+</app-code>
         </p-tabPanel>
         <p-tabPanel header="StackBlitz">
             <ng-template pTemplate="content">

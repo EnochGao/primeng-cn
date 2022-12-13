@@ -9,7 +9,7 @@
 <div class="content-section implementation">
     <div class="card">
         <p-galleria [(value)]="images" [responsiveOptions]="responsiveOptions" [containerStyle]="{'max-width': '640px'}" [numVisible]="5" [circular]="true"
-            [autoPlay]="true" [transitionInterval]="2000"> 
+            [autoPlay]="true" [transitionInterval]="2000">
             <ng-template pTemplate="item" let-item>
                 <img [src]="item.previewImageSrc" style="width: 100%; display: block;" />
             </ng-template>
@@ -26,7 +26,7 @@
     <p-tabView>
         <p-tabPanel header="galleriaautoplaydemo.ts">
             <a href="https://github.com/primefaces/primeng/tree/master/src/app/showcase/components/galleria/galleriaautoplaydemo.ts" class="btn-viewsource" target="_blank">
-                <span>View on GitHub</span>
+                <span>GitHub中访问</span>
             </a>
 <app-code lang="typescript" ngNonBindable ngPreserveWhitespaces>
 export class GalleriaAutoplayDemo implements OnInit &#123;
@@ -57,11 +57,11 @@ export class GalleriaAutoplayDemo implements OnInit &#123;
         </p-tabPanel>
         <p-tabPanel header="galleriaautoplaydemo.html">
             <a href="https://github.com/primefaces/primeng/tree/master/src/app/showcase/components/galleria/galleriaautoplaydemo.html" class="btn-viewsource" target="_blank">
-                <span>View on GitHub</span>
+                <span>GitHub中访问</span>
             </a>
 <app-code lang="markup" ngNonBindable ngPreserveWhitespaces>
 &lt;p-galleria [(value)]="images" [responsiveOptions]="responsiveOptions" [containerStyle]="&#123;'max-width': '640px'&#125;" [numVisible]="5" [circular]="true"
-        [autoPlay]="true" [transitionInterval]="2000"&gt; 
+        [autoPlay]="true" [transitionInterval]="2000"&gt;
         &lt;ng-template pTemplate="item" let-item&gt;
             &lt;img [src]="item.previewImageSrc" style="width: 100%; display: block;" /&gt;
         &lt;/ng-template&gt;
@@ -76,4 +76,3 @@ export class GalleriaAutoplayDemo implements OnInit &#123;
         </p-tabPanel>
     </p-tabView>
 </div>
-

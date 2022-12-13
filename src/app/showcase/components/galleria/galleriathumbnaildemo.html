@@ -9,7 +9,7 @@
 <div class="content-section implementation">
     <div class="card">
         <h5>Positioned at Bottom</h5>
-        <p-galleria [(value)]="images" [responsiveOptions]="responsiveOptions" [containerStyle]="{'max-width': '660px'}" [numVisible]="5"> 
+        <p-galleria [(value)]="images" [responsiveOptions]="responsiveOptions" [containerStyle]="{'max-width': '660px'}" [numVisible]="5">
             <ng-template pTemplate="item" let-item>
                 <img [src]="item.previewImageSrc" style="width: 100%; display: block;" />
             </ng-template>
@@ -20,7 +20,7 @@
             </ng-template>
         </p-galleria>
     </div>
-    
+
     <div class="card">
         <h5>Positioned at Left</h5>
         <p-galleria [(value)]="images" [responsiveOptions]="responsiveOptions" [containerStyle]="{'max-width': '660px'}" [numVisible]="4"
@@ -39,7 +39,7 @@
     <div class="card">
         <h5>Positioned at Right</h5>
         <p-galleria [(value)]="images" [responsiveOptions]="responsiveOptions" [containerStyle]="{'max-width': '660px', 'margin-top':'2em'}" [numVisible]="4"
-            thumbnailsPosition="right"> 
+            thumbnailsPosition="right">
             <ng-template pTemplate="item" let-item>
                 <img [src]="item.previewImageSrc" style="width: 100%; display: block;" />
             </ng-template>
@@ -65,7 +65,7 @@
             </ng-template>
         </p-galleria>
     </div>
-    
+
     <div class="card">
         <h5>Positioned at Bottom</h5>
         <p-galleria [(value)]="images" [responsiveOptions]="responsiveOptions" [containerStyle]="{'max-width': '660px', 'margin-top':'2em'}" [numVisible]="5"
@@ -86,7 +86,7 @@
     <p-tabView>
         <p-tabPanel header="galleriathumbnaildemo.ts">
             <a href="https://github.com/primefaces/primeng/tree/master/src/app/showcase/components/galleria/galleriathumbnaildemo.ts" class="btn-viewsource" target="_blank">
-                <span>View on GitHub</span>
+                <span>GitHub中访问</span>
             </a>
 <app-code lang="typescript" ngNonBindable ngPreserveWhitespaces>
 export class GalleriaDemo implements OnInit &#123;
@@ -110,7 +110,7 @@ export class GalleriaDemo implements OnInit &#123;
     constructor(private photoService: PhotoService) &#125; &#125;
 
     ngOnInit() &#125;
-        this.photoService.getImages().then(images =>&#125; 
+        this.photoService.getImages().then(images =>&#125;
             this.images = images
         &#125;)
     &#125;
@@ -119,11 +119,11 @@ export class GalleriaDemo implements OnInit &#123;
         </p-tabPanel>
         <p-tabPanel header="galleriathumbnaildemo.html">
             <a href="https://github.com/primefaces/primeng/tree/master/src/app/showcase/components/galleria/galleriathumbnaildemo.html" class="btn-viewsource" target="_blank">
-                <span>View on GitHub</span>
+                <span>GitHub中访问</span>
             </a>
 <app-code lang="markup" ngNonBindable ngPreserveWhitespaces>
 &lt;h5&gt;Positioned at Bottom&lt;/h5&gt;
-&lt;p-galleria [(value)]="images" [responsiveOptions]="responsiveOptions" [containerStyle]="&#123;'max-width': '660px'&#125;" [numVisible]="5"&gt; 
+&lt;p-galleria [(value)]="images" [responsiveOptions]="responsiveOptions" [containerStyle]="&#123;'max-width': '660px'&#125;" [numVisible]="5"&gt;
     &lt;ng-template pTemplate="item" let-item&gt;
         &lt;img [src]="item.previewImageSrc" style="width: 100%; display: block;" /&gt;
     &lt;/ng-template&gt;
@@ -147,7 +147,7 @@ export class GalleriaDemo implements OnInit &#123;
 &lt;/p-galleria&gt;
 &lt;h5&gt;Positioned at Right&lt;/h5&gt;
 &lt;p-galleria [(value)]="images" [responsiveOptions]="responsiveOptions" [containerStyle]="&#123;'max-width': '660px', 'margin-top':'2em'&#125;" [numVisible]="4"
-    thumbnailsPosition="right"&gt; 
+    thumbnailsPosition="right"&gt;
     &lt;ng-template pTemplate="item" let-item&gt;
         &lt;img [src]="item.previewImageSrc" style="width: 100%; display: block;" /&gt;
     &lt;/ng-template&gt;
@@ -186,4 +186,3 @@ export class GalleriaDemo implements OnInit &#123;
         </p-tabPanel>
     </p-tabView>
 </div>
-

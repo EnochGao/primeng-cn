@@ -25,19 +25,19 @@
 
 <div class="content-section documentation">
     <p-tabView>
-        <p-tabPanel header="Documentation">
-            <h5>Import</h5>
+        <p-tabPanel header ="文档">
+            <h5>引入</h5>
 <app-code lang="typescript" ngNonBindable ngPreserveWhitespaces>
 import &#123;SelectButtonModule&#125; from 'primeng/selectbutton';
 </app-code>
 
-            <h5>Getting Started</h5>
+            <h5>准备开始</h5>
             <p>SelectButton requires a value to bind and a collection of options.</p>
 
 <app-code lang="markup" ngNonBindable ngPreserveWhitespaces>
 &lt;p-selectButton [options]="cities" [(ngModel)]="selectedCity" optionLabel="name"&gt;&lt;/p-selectButton&gt;
 </app-code>
-    
+
 <app-code lang="typescript" ngNonBindable ngPreserveWhitespaces>
 interface City &#123;
     name: string,
@@ -63,12 +63,12 @@ export class SelectButtonDemo &#123;
 &#125;
 </app-code>
 
-            <h5>Value Binding</h5>
+            <h5>值绑定</h5>
             <p>The option itself is bound to the model by default, use <i>optionValue</i> to customize the property to pass as the value.</p>
 <app-code lang="markup" ngNonBindable ngPreserveWhitespaces>
 &lt;p-selectButton [options]="cities" [(ngModel)]="selectedCityCode" optionLabel="name" optionValue="code"&gt;&lt;/p-selectButton&gt;
 </app-code>
-    
+
 <app-code lang="typescript" ngNonBindable ngPreserveWhitespaces>
 export class SelectButtonDemo &#123;
 
@@ -95,7 +95,7 @@ export class SelectButtonDemo &#123;
 <app-code lang="markup" ngNonBindable ngPreserveWhitespaces>
 &lt;p-selectButton [options]="cities" [(ngModel)]="selectedCities" optionLabel="name" [multiple]="true"&gt;&lt;/p-selectButton&gt;
 </app-code>
-    
+
 <app-code lang="typescript" ngNonBindable ngPreserveWhitespaces>
 export class SelectButtonDemo &#123;
 
@@ -116,7 +116,7 @@ export class SelectButtonDemo &#123;
 &#125;
 </app-code>
 
-            <h5>Disabled Options</h5>
+            <h5>禁用选项</h5>
             <p>Particular options can be prevented from selection using the <i>optionDisabled</i> property.</p>
 <app-code lang="markup" ngNonBindable ngPreserveWhitespaces>
 &lt;p-selectButton [options]="cities" [(ngModel)]="selectedCity" optionLabel="name" optionDisabled="inactive"&gt;&lt;/p-selectButton&gt;
@@ -142,13 +142,13 @@ export class SelectButtonDemo &#123;
 &#125;
 </app-code>
 
-            <h5>Model Driven Forms</h5>
+            <h5>响应式表单</h5>
             <p>SelectButton can be used in a model driven form as well.</p>
 <app-code lang="markup" ngNonBindable ngPreserveWhitespaces>
 &lt;p-selectButton [options]="cities" formControlName="selectedCity"&gt;&lt;/p-selectButton&gt;
 </app-code>
 
-            <h5>Custom Content</h5>
+            <h5>自定义内容</h5>
             <p>For custom content support define a ng-template where the local ng-template variable refers to an option in the options collection.</p>
 
 <app-code lang="markup" ngNonBindable ngPreserveWhitespaces>
@@ -166,7 +166,7 @@ export class SelectButtonDemo &#123;
 
     value: any;
 
-    constructor() &#123;    
+    constructor() &#123;
         this.justifyOptions = [
             &#123;icon: 'pi pi-align-left', justify: 'Left'&#125;,
             &#123;icon: 'pi pi-align-right', justify: 'Right'&#125;,
@@ -177,15 +177,15 @@ export class SelectButtonDemo &#123;
 &#125;
 </app-code>
 
-            <h5>Properties</h5>
+            <h5>属性</h5>
             <div class="doc-tablewrapper">
                 <table class="doc-table">
                     <thead>
                     <tr>
-                        <th>Name</th>
-                        <th>Type</th>
-                        <th>Default</th>
-                        <th>Description</th>
+                        <th>名称</th>
+                        <th>类型</th>
+                        <th>默认值</th>
+                        <th>描述</th>
                     </tr>
                     </thead>
                     <tbody>
@@ -259,14 +259,14 @@ export class SelectButtonDemo &#123;
                 </table>
             </div>
 
-            <h5>Events</h5>
+            <h5>事件</h5>
             <div class="doc-tablewrapper">
                 <table class="doc-table">
                     <thead>
                     <tr>
-                        <th>Name</th>
-                        <th>Parameters</th>
-                        <th>Description</th>
+                        <th>名称</th>
+                        <th>参数</th>
+                        <th>描述</th>
                     </tr>
                     </thead>
                     <tbody>
@@ -289,16 +289,16 @@ export class SelectButtonDemo &#123;
                 </table>
             </div>
 
-            <h5>Dependencies</h5>
+            <h5>依赖</h5>
             <p>None.</p>
         </p-tabPanel>
 
-        <p-tabPanel header="Source">
+        <p-tabPanel header="案例代码">
             <a href="https://github.com/primefaces/primeng/tree/master/src/app/showcase/components/selectbutton" class="btn-viewsource" target="_blank">
-                <span>View on GitHub</span>
+                <span>GitHub中访问</span>
             </a>
             <a href="https://stackblitz.com/edit/primeng-selectbutton-demo" class="btn-viewsource" style="margin-left: .5em;" target="_blank">
-                <span>Edit in StackBlitz</span>
+                <span>StackBlitz中编辑</span>
             </a>
 <app-code lang="markup" ngNonBindable ngPreserveWhitespaces>
 &lt;h5&gt;Single Selection&lt;/h5&gt;

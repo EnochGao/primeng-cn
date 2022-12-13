@@ -34,7 +34,7 @@
                     <tr>
                         <th>ID</th>
                         <th>Category</th>
-                        <th>Name</th>
+                        <th>名称</th>
                         <th>Price</th>
                     </tr>
                 </ng-template>
@@ -54,13 +54,13 @@
 
 <div class="content-section documentation">
     <p-tabView>
-        <p-tabPanel header="Documentation">
-            <h5>Import</h5>
+        <p-tabPanel header ="文档">
+            <h5>引入</h5>
 <app-code lang="typescript" ngNonBindable ngPreserveWhitespaces>
 import &#123;DragDropModule&#125; from 'primeng/dragdrop';
 </app-code>
 
-            <h5>Getting Started</h5>
+            <h5>准备开始</h5>
             <p>pDraggable and pDroppable are attached to a target element to add drag-drop behavior. The value of a Directive attribute is required
             and it defines the scope to match draggables with droppables. Droppable scope can also be an array to accept multiple droppables.</p>
 
@@ -90,10 +90,10 @@ import &#123;DragDropModule&#125; from 'primeng/dragdrop';
                 <table class="doc-table">
                     <thead>
                         <tr>
-                            <th>Name</th>
-                            <th>Type</th>
-                            <th>Default</th>
-                            <th>Description</th>
+                            <th>名称</th>
+                            <th>类型</th>
+                            <th>默认值</th>
+                            <th>描述</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -124,9 +124,9 @@ import &#123;DragDropModule&#125; from 'primeng/dragdrop';
                 <table class="doc-table">
                     <thead>
                         <tr>
-                            <th>Name</th>
-                            <th>Parameters</th>
-                            <th>Description</th>
+                            <th>名称</th>
+                            <th>参数</th>
+                            <th>描述</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -161,10 +161,10 @@ import &#123;DragDropModule&#125; from 'primeng/dragdrop';
                 <table class="doc-table">
                     <thead>
                         <tr>
-                            <th>Name</th>
-                            <th>Type</th>
-                            <th>Default</th>
-                            <th>Description</th>
+                            <th>名称</th>
+                            <th>类型</th>
+                            <th>默认值</th>
+                            <th>描述</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -189,9 +189,9 @@ import &#123;DragDropModule&#125; from 'primeng/dragdrop';
                 <table class="doc-table">
                     <thead>
                         <tr>
-                            <th>Name</th>
-                            <th>Parameters</th>
-                            <th>Description</th>
+                            <th>名称</th>
+                            <th>参数</th>
+                            <th>描述</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -221,12 +221,12 @@ import &#123;DragDropModule&#125; from 'primeng/dragdrop';
             </div>
 
 
-            <h5>Dependencies</h5>
+            <h5>依赖</h5>
             <p>Native HTML5 DragDrop.</p>
         </p-tabPanel>
-        <p-tabPanel header="Source">
+        <p-tabPanel header="案例代码">
             <a href="https://github.com/primefaces/primeng/tree/master/src/app/showcase/components/dragdrop" class="btn-viewsource" target="_blank">
-                <span>View on GitHub</span>
+                <span>GitHub中访问</span>
             </a>
 <app-code lang="markup" ngNonBindable ngPreserveWhitespaces>
 <h5>Drag and Drop to Table</h5>
@@ -276,22 +276,22 @@ import &#123;DragDropModule&#125; from 'primeng/dragdrop';
 export class DragDropDemo &#123;
 
     availableProducts: Product[];
-    
+
     selectedProducts: Product[];
-    
+
     draggedProduct: Product;
-    
+
     constructor(private productService: ProductService) &#123; &#125;
-    
+
     ngOnInit() &#123;
         this.selectedProducts = [];
         this.productService.getProductsSmall().then(products => this.availableProducts = products);
     &#125;
-    
+
     dragStart(event,product: Product) &#123;
         this.draggedProduct = product;
     &#125;
-    
+
     drop(event) &#123;
         if (this.draggedProduct) &#123;
             let draggedProductIndex = this.findIndex(this.draggedProduct);
@@ -300,11 +300,11 @@ export class DragDropDemo &#123;
             this.draggedProduct = null;
         &#125;
     &#125;
-    
+
     dragEnd(event) &#123;
         this.draggedProduct = null;
     &#125;
-    
+
     findIndex(product: Product) &#123;
         let index = -1;
         for(let i = 0; i < this.availableProducts.length; i++) &#123;
@@ -328,7 +328,7 @@ export class DragDropDemo &#123;
     transition: border-color .2s;
 
     &.p-draggable-enter &#123;
-        border-color: var(--primary-color); 
+        border-color: var(--primary-color);
     &#125;
 &#125;
 

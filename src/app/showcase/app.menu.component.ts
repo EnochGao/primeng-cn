@@ -24,7 +24,7 @@ declare let gtag: Function;
                     [suggestions]="filteredRoutes"
                     scrollHeight="300px"
                     (onSelect)="onSelect($event)"
-                    placeholder="Search"
+                    placeholder="搜索"
                     (completeMethod)="filterGroupedRoute($event)"
                     field="label"
                 >
@@ -98,7 +98,7 @@ declare let gtag: Function;
 
                 <div class="menu-category">表单</div>
                 <div class="menu-items">
-                    <a [routerLink]="['autocomplete']" routerLinkActive="router-link-exact-active">AutoComplete自动完成</a>
+                    <a [routerLink]="['autocomplete']" routerLinkActive="router-link-exact-active">AutoComplete 自动完成</a>
                     <a [routerLink]="['calendar']" routerLinkActive="router-link-exact-active">Calendar</a>
                     <a [routerLink]="['cascadeselect']" routerLinkActive="router-link-exact-active">CascadeSelect</a>
                     <a [routerLink]="['checkbox']" routerLinkActive="router-link-exact-active">Checkbox</a>
@@ -342,8 +342,8 @@ declare let gtag: Function;
                     <a [routerLink]="['focustrap']" routerLinkActive="router-link-exact-active">FocusTrap</a>
                     <a [routerLink]="['styleclass']" routerLinkActive="router-link-exact-active">StyleClass</a>
                     <a [routerLink]="['ripple']" routerLinkActive="router-link-exact-active">Ripple</a>
-                    <a [routerLink]="['autofocus']" routerLinkActive="router-link-exact-active">AutoFocus<span class="p-tag">New</span></a>
-                    <a [routerLink]="['animate']" routerLinkActive="router-link-exact-active">Animate<span class="p-tag">New</span></a>
+                    <a [routerLink]="['autofocus']" routerLinkActive="router-link-exact-active">AutoFocus 自动聚焦<span class="p-tag">新</span></a>
+                    <a [routerLink]="['animate']" routerLinkActive="router-link-exact-active">Animate<span class="p-tag">新</span></a>
                 </div>
 
                 <div class="menu-category">实用工具</div>

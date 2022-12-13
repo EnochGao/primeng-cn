@@ -20,21 +20,21 @@ import { Subscription } from 'rxjs';
                 <li class="topbar-submenu">
                     <a tabindex="0" (click)="toggleMenu($event, 0)">主题</a>
                     <ul [@overlayMenuAnimation]="'visible'" *ngIf="activeMenuIndex === 0" (@overlayMenuAnimation.start)="onOverlayMenuEnter($event)">
-                        <li class="topbar-submenu-header">THEMING</li>
+                        <li class="topbar-submenu-header">主题</li>
                         <li>
-                            <a [routerLink]="['/theming']"><i class="pi pi-fw pi-file"></i><span>Guide</span></a>
+                            <a [routerLink]="['/theming']"><i class="pi pi-fw pi-file"></i><span>指南</span></a>
                         </li>
                         <li>
-                            <a href="https://www.primefaces.org/designer/primeng"><i class="pi pi-fw pi-palette"></i><span>Designer</span></a>
+                            <a href="https://www.primefaces.org/designer/primeng"><i class="pi pi-fw pi-palette"></i><span>设计器</span></a>
                         </li>
                         <li>
-                            <a href="https://www.primefaces.org/designer-ng"><i class="pi pi-fw pi-desktop"></i><span>Visual Editor</span></a>
+                            <a href="https://www.primefaces.org/designer-ng"><i class="pi pi-fw pi-desktop"></i><span>虚拟编辑器</span></a>
                         </li>
                         <li>
-                            <a [routerLink]="['/uikit']"><i class="pi pi-fw pi-pencil"></i><span>UI Kit</span></a>
+                            <a [routerLink]="['/uikit']"><i class="pi pi-fw pi-pencil"></i><span>UI 工具包</span></a>
                         </li>
                         <li>
-                            <a [routerLink]="['/icons']"><i class="pi pi-fw pi-info-circle"></i><span>Icons</span></a>
+                            <a [routerLink]="['/icons']"><i class="pi pi-fw pi-info-circle"></i><span>图标</span></a>
                         </li>
 
                         <li class="topbar-submenu-header">BOOTSTRAP</li>
@@ -165,7 +165,7 @@ import { Subscription } from 'rxjs';
                             <a (click)="changeTheme($event, 'arya-purple', true)"><img src="assets/showcase/images/themes/arya-purple.png" alt="Arya Purple" /><span>Arya Purple</span></a>
                         </li>
 
-                        <li class="topbar-submenu-header">PREMIUM</li>
+                        <li class="topbar-submenu-header">高级</li>
                         <li>
                             <a (click)="changeTheme($event, 'soho-light', false)"><img src="assets/showcase/images/themes/soho-light.png" alt="Soho Light" /><span>Soho Light</span></a>
                         </li>
@@ -185,7 +185,7 @@ import { Subscription } from 'rxjs';
                             <a (click)="changeTheme($event, 'nano', false)"><img src="assets/showcase/images/themes/nano.jpg" alt="Nano" /><span>Nano</span></a>
                         </li>
 
-                        <li class="topbar-submenu-header">LEGACY</li>
+                        <li class="topbar-submenu-header">传统</li>
                         <li>
                             <a (click)="changeTheme($event, 'nova', false)"><img src="assets/showcase/images/themes/nova.png" alt="Nova" /><span>Nova</span></a>
                         </li>
@@ -215,14 +215,14 @@ import { Subscription } from 'rxjs';
                 <li class="topbar-submenu">
                     <a tabindex="0" (click)="toggleMenu($event, 1)">模板</a>
                     <ul [@overlayMenuAnimation]="'visible'" *ngIf="activeMenuIndex === 1" (@overlayMenuAnimation.start)="onOverlayMenuEnter($event)">
-                        <li class="topbar-submenu-header">FREE ADMIN TEMPLATE</li>
+                        <li class="topbar-submenu-header">免费管理模板</li>
                         <li>
                             <a href="https://www.primefaces.org/sakai-ng">
                                 <img alt="Sakai" src="assets/showcase/images/layouts/sakai-logo.svg" />
                                 <span>Sakai</span>
                             </a>
                         </li>
-                        <li class="topbar-submenu-header">PREMIUM ADMIN TEMPLATES</li>
+                        <li class="topbar-submenu-header">高级管理模板</li>
 
                         <li>
                             <a href="https://www.primefaces.org/layouts/apollo-ng">

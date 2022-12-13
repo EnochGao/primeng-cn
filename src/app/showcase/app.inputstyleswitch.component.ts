@@ -10,7 +10,7 @@ import { DomHandler } from 'primeng/dom';
     selector: 'app-inputStyleSwitch',
     template: `
         <div class="app-inputstyleswitch">
-            <h4>Input Style</h4>
+            <h4>输入框样式</h4>
             <div class="formgroup-inline">
                 <div class="field-radiobutton">
                     <p-radioButton name="inputstyle" value="outlined" [(ngModel)]="config.inputStyle" (onClick)="onChange()" inputId="input_outlined"></p-radioButton>

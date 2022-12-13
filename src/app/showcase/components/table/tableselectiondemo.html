@@ -16,7 +16,7 @@
             <ng-template pTemplate="header">
                 <tr>
                     <th>Code</th>
-                    <th>Name</th>
+                    <th>名称</th>
                     <th>Category</th>
                     <th>Quantity</th>
                 </tr>
@@ -43,7 +43,7 @@
             <ng-template pTemplate="header">
                 <tr>
                     <th>Code</th>
-                    <th>Name</th>
+                    <th>名称</th>
                     <th>Category</th>
                     <th>Quantity</th>
                 </tr>
@@ -65,7 +65,7 @@
             <ng-template pTemplate="header">
                 <tr [pSelectableRow]="product">
                     <th>Code</th>
-                    <th>Name</th>
+                    <th>名称</th>
                     <th>Category</th>
                     <th>Quantity</th>
                 </tr>
@@ -89,7 +89,7 @@
             <ng-template pTemplate="header">
                 <tr>
                     <th>Code</th>
-                    <th>Name</th>
+                    <th>名称</th>
                     <th>Category</th>
                     <th>Quantity</th>
                     <th style="width: 5rem"></th>
@@ -110,14 +110,14 @@
     </div>
 
     <div class="card">
-        <h5>Events</h5>
+        <h5>事件</h5>
         <p>onRowSelect and onRowUnselect are available as selection events.</p>
         <p-table [value]="products" selectionMode="single" [(selection)]="selectedProduct2" dataKey="code"
             (onRowSelect)="onRowSelect($event)" (onRowUnselect)="onRowUnselect($event)" [tableStyle]="{'min-width': '50rem'}">
             <ng-template pTemplate="header">
                 <tr>
                     <th>Code</th>
-                    <th>Name</th>
+                    <th>名称</th>
                     <th>Category</th>
                     <th>Quantity</th>
                 </tr>
@@ -141,7 +141,7 @@
                 <tr>
                     <th style="width: 4rem"></th>
                     <th>Code</th>
-                    <th>Name</th>
+                    <th>名称</th>
                     <th>Category</th>
                     <th>Quantity</th>
                 </tr>
@@ -172,7 +172,7 @@
                         <p-tableHeaderCheckbox></p-tableHeaderCheckbox>
                     </th>
                     <th>Code</th>
-                    <th>Name</th>
+                    <th>名称</th>
                     <th>Category</th>
                     <th>Quantity</th>
                 </tr>
@@ -246,12 +246,12 @@
 
 <div class="content-section documentation">
     <p-tabView>
-        <p-tabPanel header="Source">
+        <p-tabPanel header="案例代码">
             <a href="https://github.com/primefaces/primeng/tree/master/src/app/showcase/components/table/" class="btn-viewsource" target="_blank">
-                <span>View on GitHub</span>
+                <span>GitHub中访问</span>
             </a>
             <a href="https://stackblitz.com/edit/primeng-tableselection-demo" class="btn-viewsource" style="margin-left: .5em;" target="_blank">
-                <span>Edit in StackBlitz</span>
+                <span>StackBlitz中编辑</span>
             </a>
 
 <app-code lang="markup" ngNonBindable ngPreserveWhitespaces>

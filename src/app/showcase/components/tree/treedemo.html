@@ -22,24 +22,24 @@
 
 <div class="content-section documentation">
     <p-tabView>
-        <p-tabPanel header="Documentation">
-            <h5>Import</h5>
+        <p-tabPanel header ="文档">
+            <h5>引入</h5>
 <app-code lang="typescript" ngNonBindable ngPreserveWhitespaces>
 import &#123;TreeModule&#125; from 'primeng/tree';
 import &#123;TreeNode&#125; from 'primeng/api';
 </app-code>
 
-            <h5>Getting Started</h5>
+            <h5>准备开始</h5>
             <p>Tree component requires an array of TreeNode objects as its value. Let's begin with the TreeNode api. Note that all of the properties are optional.</p>
 
             <div class="doc-tablewrapper">
                 <table class="doc-table">
                     <thead>
                         <tr>
-                            <th>Name</th>
-                            <th>Type</th>
-                            <th>Default</th>
-                            <th>Description</th>
+                            <th>名称</th>
+                            <th>类型</th>
+                            <th>默认值</th>
+                            <th>描述</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -466,13 +466,13 @@ export class TreeDemoComponent implements OnInit &#123;
 &lt;/p-dialog&gt;
 </app-code>
 
-                <h5>Virtual Scrolling</h5>
+                <h5>虚拟滚动</h5>
                 <p>VirtualScroller is a performance-approach to handle huge data efficiently. Setting <i>virtualScroll</i> property as true and providing a <i>virtualScrollItemSize</i> in pixels would be enough to enable this functionality.</p>
 <app-code lang="markup" ngNonBindable ngPreserveWhitespaces>
 &lt;p-tree [value]="files" [virtualScroll]="true" [virtualScrollItemSize]="33" scrollHeight="200px"&gt;&lt;/p-tree&gt;
 </app-code>
 
-            <h5>Drag and Drop</h5>
+            <h5>拖拽</h5>
             <p>Nodes can be reordered within a tree and also can be transferred between multiple trees. To enable dragging from a tree set <i>draggableNodes</i> to true and to allow
             dropping enable <i>droppableNodes</i> property. In addition, import TreeDragDropService and configure it as a provider at your component or module.</p>
 <app-code lang="typescript" ngNonBindable ngPreserveWhitespaces>
@@ -520,15 +520,15 @@ onDrop(event) &#123;
 &lt;p-tree [value]="files" layout="horizontal"&gt;&lt;/p-tree&gt;
 </app-code>
 
-            <h5>Properties</h5>
+            <h5>属性</h5>
             <div class="doc-tablewrapper">
                 <table class="doc-table">
                     <thead>
                         <tr>
-                            <th>Name</th>
-                            <th>Type</th>
-                            <th>Default</th>
-                            <th>Description</th>
+                            <th>名称</th>
+                            <th>类型</th>
+                            <th>默认值</th>
+                            <th>描述</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -735,14 +735,14 @@ onDrop(event) &#123;
                 </table>
             </div>
 
-            <h5>Events</h5>
+            <h5>事件</h5>
             <div class="doc-tablewrapper">
                 <table class="doc-table">
                     <thead>
                         <tr>
-                            <th>Name</th>
-                            <th>Parameters</th>
-                            <th>Description</th>
+                            <th>名称</th>
+                            <th>参数</th>
+                            <th>描述</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -813,14 +813,14 @@ onDrop(event) &#123;
                 </table>
             </div>
 
-            <h5>Methods</h5>
+            <h5>方法</h5>
             <div class="doc-tablewrapper">
                 <table class="doc-table">
                     <thead>
                         <tr>
-                            <th>Name</th>
-                            <th>Parameters</th>
-                            <th>Description</th>
+                            <th>名称</th>
+                            <th>参数</th>
+                            <th>描述</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -850,13 +850,13 @@ onDrop(event) &#123;
                 </table>
             </div>
 
-            <h5>Templates</h5>
+            <h5>模板</h5>
             <div class="doc-tablewrapper">
                 <table class="doc-table">
                     <thead>
                         <tr>
-                            <th>Name</th>
-                            <th>Parameters</th>
+                            <th>名称</th>
+                            <th>参数</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -880,14 +880,14 @@ onDrop(event) &#123;
                 </table>
             </div>
 
-            <h5>Styling</h5>
+            <h5>样式</h5>
             <p>Following is the list of structural style classes, for theming classes visit <a href="#" [routerLink]="['/theming']">theming page</a>.</p>
             <div class="doc-tablewrapper">
                 <table class="doc-table">
                     <thead>
                         <tr>
-                            <th>Name</th>
-                            <th>Element</th>
+                            <th>名称</th>
+                            <th>元素</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -931,16 +931,16 @@ onDrop(event) &#123;
                 </table>
             </div>
 
-            <h5>Dependencies</h5>
+            <h5>依赖</h5>
             <p>None.</p>
         </p-tabPanel>
 
-        <p-tabPanel header="Source">
+        <p-tabPanel header="案例代码">
             <a href="https://github.com/primefaces/primeng/tree/master/src/app/showcase/components/tree" class="btn-viewsource" target="_blank">
-                <span>View on GitHub</span>
+                <span>GitHub中访问</span>
             </a>
             <a href="https://stackblitz.com/edit/primeng-tree-demo" class="btn-viewsource" style="margin-left: .5em;" target="_blank">
-                <span>Edit in StackBlitz</span>
+                <span>StackBlitz中编辑</span>
             </a>
 <app-code lang="markup" ngNonBindable ngPreserveWhitespaces>
 &lt;h5&gt;Basic&lt;/h5&gt;

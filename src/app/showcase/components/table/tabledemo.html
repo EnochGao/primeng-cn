@@ -161,13 +161,13 @@
 
 <div class="content-section documentation">
     <p-tabView>
-        <p-tabPanel header="Documentation">
-            <h5>Import</h5>
+        <p-tabPanel header ="文档">
+            <h5>引入</h5>
 <app-code lang="typescript" ngNonBindable ngPreserveWhitespaces>
 import &#123;TableModule&#125; from 'primeng/table';
 </app-code>
 
-            <h5>Getting Started</h5>
+            <h5>准备开始</h5>
             <p>Table requires a value as an array of objects and templates for the presentation. Throughout the samples, a car interface having a
             vin, brand, year and color properties is used to define an object to be displayed by the table. Cars are loaded by a CarService that
             connects to a server to fetch the data.</p>
@@ -312,7 +312,7 @@ export class DynamicColumnsDemo implements OnInit &#123;
 
             <p>Tip: Use ngSwitch to customize the column content per dynamic column.</p>
 
-            <h5>Templates</h5>
+            <h5>模板</h5>
             <p>Table is a template driven component with named templates such as header and body that we've used so far. Templates grant a great level of customization and flexibility
                 where you have total control over the presentation while table handles the features such as paging, sorting, filtering and more. This speeds up development without sacrificing
                 flexibility. Here is the full list of available templates.</p>
@@ -321,9 +321,9 @@ export class DynamicColumnsDemo implements OnInit &#123;
                 <table class="doc-table">
                     <thead>
                         <tr>
-                            <th>Name</th>
-                            <th>Parameters</th>
-                            <th>Description</th>
+                            <th>名称</th>
+                            <th>参数</th>
+                            <th>描述</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -1147,10 +1147,10 @@ export class TableFilterDemo implements OnInit &#123;
                 <table class="doc-table">
                     <thead>
                         <tr>
-                            <th>Name</th>
-                            <th>Type</th>
-                            <th>Default</th>
-                            <th>Description</th>
+                            <th>名称</th>
+                            <th>类型</th>
+                            <th>默认值</th>
+                            <th>描述</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -1322,8 +1322,8 @@ export class TableFilterDemo implements OnInit &#123;
                 <table class="doc-table">
 					<thead>
                         <tr>
-                            <th>Name</th>
-                            <th>Parameters</th>
+                            <th>名称</th>
+                            <th>参数</th>
                         </tr>
 					</thead>
 					<tbody>
@@ -1520,10 +1520,10 @@ export class TableDemo implements OnInit &#123;
                 <table class="doc-table">
                     <thead>
                         <tr>
-                            <th>Name</th>
-                            <th>Type</th>
-                            <th>Default</th>
-                            <th>Description</th>
+                            <th>名称</th>
+                            <th>类型</th>
+                            <th>默认值</th>
+                            <th>描述</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -1578,10 +1578,10 @@ export class TableDemo implements OnInit &#123;
                 <table class="doc-table">
                     <thead>
                         <tr>
-                            <th>Name</th>
-                            <th>Type</th>
-                            <th>Default</th>
-                            <th>Description</th>
+                            <th>名称</th>
+                            <th>类型</th>
+                            <th>默认值</th>
+                            <th>描述</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -1618,10 +1618,10 @@ export class TableDemo implements OnInit &#123;
                 <table class="doc-table">
                     <thead>
                         <tr>
-                            <th>Name</th>
-                            <th>Type</th>
-                            <th>Default</th>
-                            <th>Description</th>
+                            <th>名称</th>
+                            <th>类型</th>
+                            <th>默认值</th>
+                            <th>描述</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -2445,10 +2445,10 @@ export class TableExportDemo implements OnInit &#123;
                 <table class="doc-table">
                     <thead>
                         <tr>
-                            <th>Name</th>
-                            <th>Type</th>
-                            <th>Default</th>
-                            <th>Description</th>
+                            <th>名称</th>
+                            <th>类型</th>
+                            <th>默认值</th>
+                            <th>描述</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -2468,7 +2468,7 @@ export class TableExportDemo implements OnInit &#123;
                 </table>
             </div>
 
-            <h5>Virtual Scrolling</h5>
+            <h5>虚拟滚动</h5>
             <p>VirtualScroller is a performance-approach to handle huge data efficiently. Setting <i>virtualScroll</i> property as true and providing a <i>virtualScrollItemSize</i> in pixels
             would be enough to enable this functionality. It is also suggested to use the same <i>virtualScrollItemSize</i> value on the tr element inside the body template.</p>
 
@@ -2823,15 +2823,15 @@ export class TableDemo implements OnInit &#123;
                 <li>Prefer lazy loading for large datasets.</li>
             </ul>
 
-            <h5>Properties</h5>
+            <h5>属性</h5>
             <div class="doc-tablewrapper">
                 <table class="doc-table">
                     <thead>
                         <tr>
-                            <th>Name</th>
-                            <th>Type</th>
-                            <th>Default</th>
-                            <th>Description</th>
+                            <th>名称</th>
+                            <th>类型</th>
+                            <th>默认值</th>
+                            <th>描述</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -3334,14 +3334,14 @@ export class TableDemo implements OnInit &#123;
                 </table>
             </div>
 
-            <h5>Events</h5>
+            <h5>事件</h5>
             <div class="doc-tablewrapper">
                 <table class="doc-table">
                     <thead>
                     <tr>
-                        <th>Name</th>
-                        <th>Parameters</th>
-                        <th>Description</th>
+                        <th>名称</th>
+                        <th>参数</th>
+                        <th>描述</th>
                     </tr>
                     </thead>
                     <tbody>
@@ -3476,14 +3476,14 @@ export class TableDemo implements OnInit &#123;
                 </table>
             </div>
 
-            <h5>Methods</h5>
+            <h5>方法</h5>
             <div class="doc-tablewrapper">
                 <table class="doc-table">
                     <thead>
                         <tr>
-                            <th>Name</th>
-                            <th>Parameters</th>
-                            <th>Description</th>
+                            <th>名称</th>
+                            <th>参数</th>
+                            <th>描述</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -3523,14 +3523,14 @@ export class TableDemo implements OnInit &#123;
                 </table>
             </div>
 
-            <h5>Styling</h5>
+            <h5>样式</h5>
             <p>Following is the list of structural style classes, for theming classes visit <a href="#" [routerLink]="['/theming']">theming page</a>.</p>
             <div class="doc-tablewrapper">
                 <table class="doc-table">
                     <thead>
                     <tr>
-                        <th>Name</th>
-                        <th>Element</th>
+                        <th>名称</th>
+                        <th>元素</th>
                     </tr>
                     </thead>
                     <tbody>
@@ -3606,16 +3606,16 @@ export class TableDemo implements OnInit &#123;
                 </table>
             </div>
 
-            <h5>Dependencies</h5>
+            <h5>依赖</h5>
             <p>None.</p>
         </p-tabPanel>
 
-        <p-tabPanel header="Source">
+        <p-tabPanel header="案例代码">
             <a href="https://github.com/primefaces/primeng/tree/master/src/app/showcase/components/table" class="btn-viewsource" target="_blank">
-                <span>View on GitHub</span>
+                <span>GitHub中访问</span>
             </a>
             <a href="https://stackblitz.com/edit/primeng-tabledoc-demo" class="btn-viewsource" style="margin-left: .5em;" target="_blank">
-                <span>Edit in StackBlitz</span>
+                <span>StackBlitz中编辑</span>
             </a>
 <app-code lang="markup" ngNonBindable ngPreserveWhitespaces>
 &lt;p-table #dt [value]="customers" [(selection)]="selectedCustomers" dataKey="id" [rowHover]="true"

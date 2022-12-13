@@ -60,13 +60,13 @@
 
 <div class="content-section documentation">
     <p-tabView>
-        <p-tabPanel header="Documentation">
-            <h5>Import</h5>
+        <p-tabPanel header ="文档">
+            <h5>引入</h5>
 <app-code lang="typescript" ngNonBindable ngPreserveWhitespaces>
 import &#123;MultiSelectModule&#125; from 'primeng/multiselect';
 </app-code>
 
-            <h5>Getting Started</h5>
+            <h5>准备开始</h5>
             <p>MultiSelect requires a value to bind and a collection of options.</p>
 
 <app-code lang="markup" ngNonBindable ngPreserveWhitespaces>
@@ -98,7 +98,7 @@ export class MultiSelectDemo &#123;
 &#125;
 </app-code>
 
-            <h5>Value Binding</h5>
+            <h5>值绑定</h5>
             <p>The option itself is bound to the model by default, use <i>optionValue</i> to customize the property to pass as the value.</p>
 <app-code lang="markup" ngNonBindable ngPreserveWhitespaces>
 &lt;p-multiSelect [options]="cities" [(ngModel)]="selectedCityCodes" optionLabel="name" optionValue="code"&gt;&lt;/p-multiSelect&gt;
@@ -135,7 +135,7 @@ export class MultiSelectDemo &#123;
 &lt;p-multiSelect [options]="cities" [(ngModel)]="selectedCities" display="chip"&gt;&lt;/p-multiSelect&gt;
 </app-code>
 
-            <h5>Disabled Options</h5>
+            <h5>禁用选项</h5>
             <p>Particular options can be prevented from selection using the <i>optionDisabled</i> property.</p>
 <app-code lang="markup" ngNonBindable ngPreserveWhitespaces>
 &lt;p-multiSelect [options]="cities" [(ngModel)]="selectedCities" optionLabel="name" optionDisabled="inactive"&gt;&lt;/p-multiSelect&gt;
@@ -161,13 +161,13 @@ export class MultiSelectDemo &#123;
 &#125;
 </app-code>
 
-            <h5>Model Driven Forms</h5>
+            <h5>响应式表单</h5>
             <p>MultiSelect can be used in a model driven form as well.</p>
 <app-code lang="markup" ngNonBindable ngPreserveWhitespaces>
 &lt;p-multiSelect [options]="cities" formControlName="selectedCities"&gt;&lt;/p-multiSelect&gt;
 </app-code>
 
-            <h5>Custom Content</h5>
+            <h5>自定义内容</h5>
             <p>For custom content support when displaying options, define a ng-template named <i>item</i> where the local ng-template variable refers to an option in the options collection.
                 Similarly <i>selectedItems</i> template can be used to customize when displaying the selected options. Additionally a custom header, filter, footer and empty filter message can be provided using <i>header</i>, <i>filter</i>, <i>footer</i> and <i>emptyfilter</i> templates.
                 In addition when grouping is enabled, <i>group</i> template is available to customize the option groups. All templates get the option instance as the default local template variable.</p>
@@ -244,14 +244,14 @@ export class MultiSelectDemo &#123;
 &#125;
 </app-code>
 
-            <h5>Virtual Scrolling</h5>
+            <h5>虚拟滚动</h5>
             <p>VirtualScrolling is an efficient way of rendering the options by displaying a small subset of data in the viewport at any time. When dealing with huge number of options, it is suggested to enable VirtualScrolling
                 to avoid performance issues. Usage is simple as setting <i>virtualScroll</i> property to true and defining virtualScrollItemSize to specify the height of an item.</p>
 <app-code lang="markup" ngNonBindable ngPreserveWhitespaces>
 &lt;p-multiSelect [options]="cities" formControlName="selectedCities" optionLabel="name" [virtualScroll]="true" [virtualScrollItemSize]="30"&gt;&lt;/p-multiSelect&gt;
 </app-code>
 
-            <h5>Animation Configuration</h5>
+            <h5>动画配置</h5>
             <p>Transition of the open and hide animations can be customized using the showTransitionOptions and hideTransitionOptions properties,
                 example below disables the animations altogether.</p>
 <app-code lang="markup" ngNonBindable ngPreserveWhitespaces>
@@ -272,15 +272,15 @@ export class MultiSelectDemo &#123;
 &lt;p-multiSelect [options]="cities" [(ngModel)]="selectedCities" optionLabel="name" [maxSelectedLabels]="5" [selectedItemsLabel]="'&#123;0&#125; items selected'"&gt;&lt;/p-multiSelect&gt;
 </app-code>
 
-            <h5>Properties</h5>
+            <h5>属性</h5>
             <div class="doc-tablewrapper">
                 <table class="doc-table">
                     <thead>
                     <tr>
-                        <th>Name</th>
-                        <th>Type</th>
-                        <th>Default</th>
-                        <th>Description</th>
+                        <th>名称</th>
+                        <th>类型</th>
+                        <th>默认值</th>
+                        <th>描述</th>
                     </tr>
                     </thead>
                     <tbody>
@@ -636,14 +636,14 @@ export class MultiSelectDemo &#123;
                 </table>
             </div>
 
-            <h5>Events</h5>
+            <h5>事件</h5>
             <div class="doc-tablewrapper">
                 <table class="doc-table">
                     <thead>
                     <tr>
-                        <th>Name</th>
-                        <th>Parameters</th>
-                        <th>Description</th>
+                        <th>名称</th>
+                        <th>参数</th>
+                        <th>描述</th>
                     </tr>
                     </thead>
                     <tbody>
@@ -704,13 +704,13 @@ export class MultiSelectDemo &#123;
                 </table>
             </div>
 
-            <h5>Templates</h5>
+            <h5>模板</h5>
             <div class="doc-tablewrapper">
                 <table class="doc-table">
                     <thead>
                         <tr>
-                            <th>Name</th>
-                            <th>Parameters</th>
+                            <th>名称</th>
+                            <th>参数</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -756,14 +756,14 @@ export class MultiSelectDemo &#123;
                 </table>
             </div>
 
-            <h5>Styling</h5>
+            <h5>样式</h5>
             <p>Following is the list of structural style classes, for theming classes visit <a href="#" [routerLink]="['/theming']">theming page</a>.</p>
             <div class="doc-tablewrapper">
                 <table class="doc-table">
                     <thead>
                         <tr>
-                            <th>Name</th>
-                            <th>Element</th>
+                            <th>名称</th>
+                            <th>元素</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -807,16 +807,16 @@ export class MultiSelectDemo &#123;
                 </table>
             </div>
 
-            <h5>Dependencies</h5>
+            <h5>依赖</h5>
             <p>None.</p>
         </p-tabPanel>
 
-        <p-tabPanel header="Source">
+        <p-tabPanel header="案例代码">
             <a href="https://github.com/primefaces/primeng/tree/master/src/app/showcase/components/multiselect" class="btn-viewsource" target="_blank">
-                <span>View on GitHub</span>
+                <span>GitHub中访问</span>
             </a>
             <a href="https://stackblitz.com/edit/primeng-multiselect-demo" class="btn-viewsource" style="margin-left: .5em;" target="_blank">
-                <span>Edit in StackBlitz</span>
+                <span>StackBlitz中编辑</span>
             </a>
 <app-code lang="markup" ngNonBindable ngPreserveWhitespaces>
 &lt;div class="card"&gt;

@@ -89,20 +89,20 @@
 
 <div class="content-section documentation">
     <p-tabView>
-        <p-tabPanel header="Documentation">
-                    <h5>Import</h5>
+        <p-tabPanel header ="文档">
+                    <h5>引入</h5>
 <app-code lang="typescript" ngNonBindable ngPreserveWhitespaces>
 import &#123;SplitButtonModule&#125; from 'primeng/splitbutton';
 </app-code>
 
-            <h5>Getting Started</h5>
+            <h5>准备开始</h5>
             <p>SplitButton has a default command button and a collection of menuitems to be displayed in an overlay.</p>
 
 <app-code lang="markup" ngNonBindable ngPreserveWhitespaces>
 &lt;p-splitButton label="Save" icon="pi pi-check" (onClick)="save()" [model]="items"&gt;&lt;/p-splitButton&gt;
 </app-code>
 
-            <h5>Animation Configuration</h5>
+            <h5>动画配置</h5>
             <p>Transition of the open and hide animations can be customized using the <i>showTransitionOptions</i> and <i>hideTransitionOptions</i> properties,
                 example below disables the animations altogether.</p>
 <app-code lang="markup" ngNonBindable ngPreserveWhitespaces>
@@ -111,15 +111,15 @@ import &#123;SplitButtonModule&#125; from 'primeng/splitbutton';
             <h5>MenuModel API</h5>
             <p>SplitButton uses the common menumodel api to define its items, visit <a [routerLink]="['/menumodel']">MenuModel API</a> for details.</p>
 
-            <h5>Properties</h5>
+            <h5>属性</h5>
             <div class="doc-tablewrapper">
                 <table class="doc-table">
                     <thead>
                         <tr>
-                            <th>Name</th>
-                            <th>Type</th>
-                            <th>Default</th>
-                            <th>Description</th>
+                            <th>名称</th>
+                            <th>类型</th>
+                            <th>默认值</th>
+                            <th>描述</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -211,14 +211,14 @@ import &#123;SplitButtonModule&#125; from 'primeng/splitbutton';
                 </table>
             </div>
 
-            <h5>Events</h5>
+            <h5>事件</h5>
             <div class="doc-tablewrapper">
                 <table class="doc-table">
                     <thead>
                         <tr>
-                            <th>Name</th>
-                            <th>Parameters</th>
-                            <th>Description</th>
+                            <th>名称</th>
+                            <th>参数</th>
+                            <th>描述</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -256,15 +256,15 @@ import &#123;SplitButtonModule&#125; from 'primeng/splitbutton';
 <app-code lang="markup" ngNonBindable ngPreserveWhitespaces>
 &lt;p-splitButton label="Save" icon="pi pi-check" [model]="items" styleClass="p-button-raised p-button-rounded"&gt;&lt;/p-splitButton&gt;
 </app-code>
-            <h5>Styling</h5>
+            <h5>样式</h5>
             <p>Following is the list of structural style classes, for theming classes visit <a href="#" [routerLink]="['/theming']">theming page</a>. SplitButton uses
             button and menu components internally, refer to their documentation for the detailed style list.</p>
             <div class="doc-tablewrapper">
                 <table class="doc-table">
                     <thead>
                         <tr>
-                            <th>Name</th>
-                            <th>Element</th>
+                            <th>名称</th>
+                            <th>元素</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -284,13 +284,13 @@ import &#123;SplitButtonModule&#125; from 'primeng/splitbutton';
                 </table>
             </div>
 
-            <h5>Templates</h5>
+            <h5>模板</h5>
             <div class="doc-tablewrapper">
                 <table class="doc-table">
                     <thead>
                         <tr>
-                            <th>Name</th>
-                            <th>Parameters</th>
+                            <th>名称</th>
+                            <th>参数</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -302,15 +302,15 @@ import &#123;SplitButtonModule&#125; from 'primeng/splitbutton';
                 </table>
             </div>
 
-            <h5>Dependencies</h5>
+            <h5>依赖</h5>
             <p>None.</p>
         </p-tabPanel>
-        <p-tabPanel header="Source">
+        <p-tabPanel header="案例代码">
             <a href="https://github.com/primefaces/primeng/tree/master/src/app/showcase/components/splitbutton" class="btn-viewsource" target="_blank">
-                <span>View on GitHub</span>
+                <span>GitHub中访问</span>
             </a>
             <a href="https://stackblitz.com/edit/primeng-splitbutton-demo" class="btn-viewsource" style="margin-left: .5em;" target="_blank">
-                <span>Edit in StackBlitz</span>
+                <span>StackBlitz中编辑</span>
             </a>
 <app-code lang="markup" ngNonBindable ngPreserveWhitespaces>
 &lt;p-toast [style]="&#123;marginTop: '80px'&#125;"&gt;&lt;/p-toast&gt;

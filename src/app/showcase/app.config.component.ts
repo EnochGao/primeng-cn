@@ -19,7 +19,7 @@ import { DomHandler } from 'primeng/dom';
 
                 <div class="layout-config-content">
                     <div>
-                        <h4>Component Scale</h4>
+                        <h4>组件缩放</h4>
                         <div class="config-scale">
                             <button icon="pi pi-minus" type="button" pButton (click)="decrementScale()" class="p-button-text" [disabled]="scale === scales[0]"></button>
                             <i class="pi pi-circle-fill" *ngFor="let s of scales" [ngClass]="{ 'scale-active': s === scale }"></i>
@@ -28,11 +28,11 @@ import { DomHandler } from 'primeng/dom';
 
                         <app-inputStyleSwitch></app-inputStyleSwitch>
 
-                        <h4>Ripple Effect</h4>
+                        <h4>涟漪效果</h4>
                         <p-inputSwitch [(ngModel)]="config.ripple" (onChange)="onRippleChange()"></p-inputSwitch>
 
-                        <h4>Free Themes</h4>
-                        <p>Built-in component themes created by the <a href="https://www.primefaces.org/designer/primeng">PrimeNG Theme Designer</a>.</p>
+                        <h4>免费主题</h4>
+                        <p>由<a href="https://www.primefaces.org/designer/primeng">PrimeNG主题设计器</a> 创建的内置组件主题。.</p>
 
                         <h5>Bootstrap</h5>
                         <div class="grid free-themes">
@@ -266,8 +266,8 @@ import { DomHandler } from 'primeng/dom';
                             </div>
                         </div>
 
-                        <h4>Premium Themes</h4>
-                        <p>Premium themes are only available exclusively for <a href="https://www.primefaces.org/designer/primeng">PrimeNG Theme Designer</a> subscribers and therefore not included in PrimeNG core.</p>
+                        <h4>高级主题</h4>
+                        <p>高级主题仅供<a href="https://www.primefaces.org/designer/primeng">PrimeNG主题设计器</a>订阅者使用，因此不包括在PrimeNG核心中</p>
 
                         <div class="grid free-themes">
                             <div class="col-3">
@@ -308,7 +308,7 @@ import { DomHandler } from 'primeng/dom';
                             </div>
                         </div>
 
-                        <h4>Legacy Free Themes</h4>
+                        <h4>传统免费主题</h4>
                         <div class="grid free-themes">
                             <div class="col-3">
                                 <button class="p-link" (click)="changeTheme($event, 'nova', false)">
@@ -361,8 +361,8 @@ import { DomHandler } from 'primeng/dom';
                             </div>
                         </div>
 
-                        <h4>Premium Angular-CLI Templates</h4>
-                        <p>Beautifully crafted premium <a href="https://cli.angular.io/">Angular CLI</a> application templates by the PrimeTek design team.</p>
+                        <h4>高级Angular-CLI模板</h4>
+                        <p>由PrimeTek设计团队精心制作的优质<a href="https://cli.angular.io/">Angular CLI</a>应用模板。</p>
                         <div class="grid premium-themes">
                             <div class="col-12 md:col-4">
                                 <a href="https://www.primefaces.org/sakai-ng">

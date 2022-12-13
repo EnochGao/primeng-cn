@@ -6,7 +6,7 @@
     <app-demoActions github="contextmenu" stackblitz="contextmenu-demo"></app-demoActions>
 </div>
 
-<div class="content-section implementation">    
+<div class="content-section implementation">
     <div class="card">
         <img #img src="assets/showcase/images/demo/nature/nature3.jpg" alt="Logo" aria-haspopup="true">
         <p-contextMenu [target]="img" [model]="items"></p-contextMenu>
@@ -15,8 +15,8 @@
 
 <div class="content-section documentation">
     <p-tabView>
-        <p-tabPanel header="Documentation">
-            <h5>Import</h5>
+        <p-tabPanel header ="文档">
+            <h5>引入</h5>
 <app-code lang="typescript" ngNonBindable ngPreserveWhitespaces>
 import &#123;ContextMenuModule&#125; from 'primeng/contextmenu';
 import &#123;MenuItem&#125; from 'primeng/api';
@@ -25,7 +25,7 @@ import &#123;MenuItem&#125; from 'primeng/api';
             <h5>MenuModel API</h5>
             <p>ContextMenu uses the common menumodel api to define its items, visit <a [routerLink]="['/menumodel']">MenuModel API</a> for details.</p>
 
-            <h5>Getting Started</h5>
+            <h5>准备开始</h5>
             <p>ContextMenu requires nested menuitems as its model and in its simplest form ContextMenu is attached to the document with global setting. .</p>
 <app-code lang="markup" ngNonBindable ngPreserveWhitespaces>
 &lt;p-contextMenu [global]="true" [model]="items"&gt;&lt;/p-contextMenu&gt;
@@ -40,7 +40,7 @@ import &#123;MenuItem&#125; from 'primeng/api';
 </app-code>
 
             <h5>Exclusive Integrations</h5>
-            <p>Some components like Table require special attention so they provide a different method to attach a context menu. Refer to 
+            <p>Some components like Table require special attention so they provide a different method to attach a context menu. Refer to
             individual documentation of components with special integration like Table.</p>
 
 <app-code lang="typescript" ngNonBindable ngPreserveWhitespaces>
@@ -53,7 +53,7 @@ export class ContextMenuDemo &#123;
             &#123;
                 label: 'File',
                 items: [&#123;
-                        label: 'New', 
+                        label: 'New',
                         icon: 'pi pi-fw pi-plus',
                         items: [
                             &#123;label: 'Project'&#125;,
@@ -77,15 +77,15 @@ export class ContextMenuDemo &#123;
 &#125;
 </app-code>
 
-            <h5>Properties</h5>
+            <h5>属性</h5>
             <div class="doc-tablewrapper">
                 <table class="doc-table">
                     <thead>
                         <tr>
-                            <th>Name</th>
-                            <th>Type</th>
-                            <th>Default</th>
-                            <th>Description</th>
+                            <th>名称</th>
+                            <th>类型</th>
+                            <th>默认值</th>
+                            <th>描述</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -147,14 +147,14 @@ export class ContextMenuDemo &#123;
                 </table>
             </div>
 
-            <h5>Events</h5>
+            <h5>事件</h5>
             <div class="doc-tablewrapper">
                 <table class="doc-table">
                     <thead>
                         <tr>
-                            <th>Name</th>
-                            <th>Parameters</th>
-                            <th>Description</th>
+                            <th>名称</th>
+                            <th>参数</th>
+                            <th>描述</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -171,15 +171,15 @@ export class ContextMenuDemo &#123;
                     </tbody>
                 </table>
             </div>
-            
-            <h5>Methods</h5>
+
+            <h5>方法</h5>
             <div class="doc-tablewrapper">
                 <table class="doc-table">
                     <thead>
                         <tr>
-                            <th>Name</th>
-                            <th>Parameters</th>
-                            <th>Description</th>
+                            <th>名称</th>
+                            <th>参数</th>
+                            <th>描述</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -202,14 +202,14 @@ export class ContextMenuDemo &#123;
                 </table>
             </div>
 
-            <h5>Styling</h5>
+            <h5>样式</h5>
             <p>Following is the list of structural style classes, for theming classes visit <a href="#" [routerLink]="['/theming']">theming page</a>.</p>
             <div class="doc-tablewrapper">
                 <table class="doc-table">
                     <thead>
                     <tr>
-                        <th>Name</th>
-                        <th>Element</th>
+                        <th>名称</th>
+                        <th>元素</th>
                     </tr>
                     </thead>
                     <tbody>
@@ -241,16 +241,16 @@ export class ContextMenuDemo &#123;
                 </table>
             </div>
 
-            <h5>Dependencies</h5>
+            <h5>依赖</h5>
             <p>None.</p>
         </p-tabPanel>
 
-        <p-tabPanel header="Source">
+        <p-tabPanel header="案例代码">
             <a href="https://github.com/primefaces/primeng/tree/master/src/app/showcase/components/contextmenu" class="btn-viewsource" target="_blank">
-                <span>View on GitHub</span>
+                <span>GitHub中访问</span>
             </a>
             <a href="https://stackblitz.com/edit/primeng-contextmenu-demo" class="btn-viewsource" style="margin-left: .5em;" target="_blank">
-                <span>Edit in StackBlitz</span>
+                <span>StackBlitz中编辑</span>
             </a>
 <app-code lang="markup" ngNonBindable ngPreserveWhitespaces>
 &lt;img #img src="assets/showcase/images/demo/nature/nature3.jpg" alt="Logo" aria-haspopup="true"&gt;

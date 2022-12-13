@@ -11,21 +11,21 @@
         <div class="p-fluid grid">
             <div class="field col-12 md:col-4">
                 <span class="p-float-label">
-                    <input type="text" id="inputtext" pInputText [(ngModel)]="value1"> 
+                    <input type="text" id="inputtext" pInputText [(ngModel)]="value1">
                     <label for="inputtext">InputText</label>
                 </span>
             </div>
             <div class="field col-12 md:col-4">
                 <span class="p-float-label p-input-icon-left">
                     <i class="pi pi-search"></i>
-                    <input type="text" id="inputtext-left" pInputText [(ngModel)]="valueIconLeft"> 
+                    <input type="text" id="inputtext-left" pInputText [(ngModel)]="valueIconLeft">
                     <label for="inputtext-left">Left Icon</label>
                 </span>
             </div>
             <div class="field col-12 md:col-4">
                 <span class="p-float-label p-input-icon-right">
                     <i class="pi pi-spin pi-spinner"></i>
-                    <input type="text" id="inputtext-right" pInputText [(ngModel)]="valueIconRight"> 
+                    <input type="text" id="inputtext-right" pInputText [(ngModel)]="valueIconRight">
                     <label for="inputtext-right">Right Icon</label>
                 </span>
             </div>
@@ -65,14 +65,14 @@
                         <i class="pi pi-user"></i>
                     </span>
                     <span class="p-float-label">
-                        <input type="text" id="inputgroup" pInputText [(ngModel)]="value7"> 
+                        <input type="text" id="inputgroup" pInputText [(ngModel)]="value7">
                         <label for="inputgroup">InputGroup</label>
                     </span>
                 </div>
             </div>
             <div class="field col-12 md:col-4">
                 <span class="p-float-label">
-                    <p-cascadeSelect inputId="cascadeSelect" [options]="cascadeSelectCountries" optionLabel="cname" optionGroupLabel="name" 
+                    <p-cascadeSelect inputId="cascadeSelect" [options]="cascadeSelectCountries" optionLabel="cname" optionGroupLabel="name"
                         [optionGroupChildren]="['states', 'cities']"></p-cascadeSelect>
                     <label for="cascadeSelect">CascadeSelect</label>
                 </span>
@@ -108,33 +108,33 @@
 <div class="content-section documentation">
     <p-tabView>
 
-        <p-tabPanel header="Source">
+        <p-tabPanel header="案例代码">
             <a href="https://github.com/primefaces/primeng/tree/master/src/app/showcase/components/floatlabel" class="btn-viewsource" target="_blank">
-                <span>View on GitHub</span>
+                <span>GitHub中访问</span>
             </a>
             <a href="https://stackblitz.com/edit/primeng-floatlabel-demo" class="btn-viewsource" style="margin-left: .5em;" target="_blank">
-                <span>Edit in StackBlitz</span>
+                <span>StackBlitz中编辑</span>
             </a>
-            
+
 <app-code lang="markup" ngNonBindable ngPreserveWhitespaces>
 &lt;div class="p-fluid grid"&gt;
     &lt;div class="field col-12 md:col-4"&gt;
         &lt;span class="p-float-label"&gt;
-            &lt;input type="text" id="inputtext" pInputText [(ngModel)]="value1"&gt; 
+            &lt;input type="text" id="inputtext" pInputText [(ngModel)]="value1"&gt;
             &lt;label for="inputtext"&gt;InputText&lt;/label&gt;
         &lt;/span&gt;
     &lt;/div&gt;
     &lt;div class="field col-12 md:col-4"&gt;
         &lt;span class="p-float-label p-input-icon-left"&gt;
             &lt;i class="pi pi-search"&gt;&lt;/i&gt;
-            &lt;input type="text" id="inputtext-left" pInputText [(ngModel)]="valueIconLeft"&gt; 
+            &lt;input type="text" id="inputtext-left" pInputText [(ngModel)]="valueIconLeft"&gt;
             &lt;label for="inputtext-left"&gt;Left Icon&lt;/label&gt;
         &lt;/span&gt;
     &lt;/div&gt;
     &lt;div class="field col-12 md:col-4"&gt;
         &lt;span class="p-float-label p-input-icon-right"&gt;
             &lt;i class="pi pi-spin pi-spinner"&gt;&lt;/i&gt;
-            &lt;input type="text" id="inputtext-right" pInputText [(ngModel)]="valueIconRight"&gt; 
+            &lt;input type="text" id="inputtext-right" pInputText [(ngModel)]="valueIconRight"&gt;
             &lt;label for="inputtext-right"&gt;Right Icon&lt;/label&gt;
         &lt;/span&gt;
     &lt;/div&gt;
@@ -174,14 +174,14 @@
                 &lt;i class="pi pi-user"&gt;&lt;/i&gt;
             &lt;/span&gt;
             &lt;span class="p-float-label"&gt;
-                &lt;input type="text" id="inputgroup" pInputText [(ngModel)]="value7"&gt; 
+                &lt;input type="text" id="inputgroup" pInputText [(ngModel)]="value7"&gt;
                 &lt;label for="inputgroup"&gt;InputGroup&lt;/label&gt;
             &lt;/span&gt;
         &lt;/div&gt;
     &lt;/div&gt;
     &lt;div class="field col-12 md:col-4"&gt;
         &lt;span class="p-float-label"&gt;
-            &lt;p-cascadeSelect inputId="cascadeSelect" [options]="cascadeSelectCountries" optionLabel="cname" optionGroupLabel="name" 
+            &lt;p-cascadeSelect inputId="cascadeSelect" [options]="cascadeSelectCountries" optionLabel="cname" optionGroupLabel="name"
                 [optionGroupChildren]="['states', 'cities']"&gt;&lt;/p-cascadeSelect&gt;
             &lt;label for="cascadeSelect"&gt;CascadeSelect&lt;/label&gt;
         &lt;/span&gt;
@@ -238,7 +238,7 @@ export class FloatLabelDemo &#123;
     value7: any;
 
     value8: any;
-    
+
     value9: any;
 
     value10: any;
@@ -284,11 +284,11 @@ export class FloatLabelDemo &#123;
                             &#123;cname: 'Townsville', code: 'A-TO'&#125;
                         ]
                     &#125;,
-                    
+
                 ]
             &#125;,
             &#123;
-                name: 'Canada', 
+                name: 'Canada',
                 code: 'CA',
                 states: [
                     &#123;
@@ -305,7 +305,7 @@ export class FloatLabelDemo &#123;
                             &#123;cname: 'Toronto', code: 'C-TO'&#125;
                         ]
                     &#125;,
-                    
+
                 ]
             &#125;,
             &#123;
@@ -352,7 +352,7 @@ export class FloatLabelDemo &#123;
                 filtered.push(country);
             &#125;
         &#125;
-        
+
         this.filteredCountries = filtered;
     &#125;
 &#125;

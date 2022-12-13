@@ -1,25 +1,25 @@
 <div class="content-section introduction">
     <div class="feature-intro">
         <h1>AutoFocus</h1>
-        <p>AutoFocus manages focus on focusable element on load.</p>
+        <p>AutoFocus管理可聚焦元素在加载时的焦点.</p>
     </div>
     <app-demoActions github="autofocus" stackblitz="autofocus-demo"></app-demoActions>
 </div>
 
 <div class="content-section implementation">
-    <input type="text" pInputText pAutoFocus [autofocus]="true" placeholder="Automatically focused" /> 
+    <input type="text" pInputText pAutoFocus [autofocus]="true" placeholder="自动聚焦" />
 </div>
 
 <div class="content-section documentation">
     <p-tabView>
-        <p-tabPanel header="Documentation">
-            <h5>Import</h5>
+        <p-tabPanel header="文档">
+            <h5>导入</h5>
 <app-code lang="typescript" ngNonBindable ngPreserveWhitespaces>
 import &#123;AutoFocusModule&#125; from 'primeng/autofocus';
 </app-code>
 
-            <h5>Getting Started</h5>
-            <p>AutoFocus is applied to any focusable input element on initial load. It's disabled by default and needs to be enabled manually.</p>
+            <h5>开始使用</h5>
+            <p>在初始加载时，自动对焦应用于任何可对焦的输入元素。它默认是禁用的，需要手动启用.</p>
 
 <app-code lang="markup" ngNonBindable ngPreserveWhitespaces>
 &lt;input pAutoFocus [autofocus]="true" &gt;
@@ -29,15 +29,15 @@ import &#123;AutoFocusModule&#125; from 'primeng/autofocus';
 export class AutoFocusDemo &#123; &#125;
 </app-code>
 
-            <h5>Properties</h5>
+            <h5>属性</h5>
             <div class="doc-tablewrapper">
                 <table class="doc-table">
                     <thead>
                         <tr>
-                            <th>Name</th>
-                            <th>Type</th>
-                            <th>Default</th>
-                            <th>Description</th>
+                            <th>名称</th>
+                            <th>类型</th>
+                            <th>默认值</th>
+                            <th>描述</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -45,35 +45,34 @@ export class AutoFocusDemo &#123; &#125;
                             <td>autofocus</td>
                             <td>boolean</td>
                             <td>null</td>
-                            <td>When present, it specifies that the component should automatically get focus on load.</td>
+                            <td>当出现时，它指定组件应该自动获得焦点.</td>
                         </tr>
                     </tbody>
                 </table>
             </div>
 
-            <h5>Events</h5>
-            <p>Directive has no events.</p>
+            <h5>事件</h5>
+            <p>指令没有事件.</p>
 
-            <h5>Styling</h5>
-            <p>Directive does not apply any styling to host.</p>
+            <h5>样式</h5>
+            <p>指令不会对host应用任何样式.</p>
 
-            <h5>Dependencies</h5>
-            <p>None.</p>
+            <h5>依赖</h5>
+            <p>无.</p>
         </p-tabPanel>
 
-        <p-tabPanel header="Source">
+        <p-tabPanel header="案例代码">
             <a href="https://github.com/primefaces/primeng/tree/master/src/app/showcase/components/autofocus" class="btn-viewsource" target="_blank">
-                <span>View on GitHub</span>
+                <span>GitHub中访问</span>
             </a>
             <a href="https://stackblitz.com/edit/primeng-autofocus-demo" class="btn-viewsource" style="margin-left: .5em;" target="_blank">
-                <span>Edit in StackBlitz</span>
+                <span>StackBlitz中编辑</span>
             </a>
 
 <app-code lang="markup" ngNonBindable ngPreserveWhitespaces>
-&lt;input type="text" pInputText pAutoFocus [autofocus]="true" placeholder="Automatically focused" &gt;
+&lt;input type="text" pInputText pAutoFocus [autofocus]="true" placeholder="自动聚焦" &gt;
 </app-code>
 
         </p-tabPanel>
      </p-tabView>
 </div>
-

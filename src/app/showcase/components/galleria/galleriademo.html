@@ -23,13 +23,13 @@
 
 <div class="content-section documentation">
     <p-tabView>
-        <p-tabPanel header="Documentation">
-            <h5>Import</h5>
+        <p-tabPanel header ="文档">
+            <h5>引入</h5>
 <app-code lang="typescript" ngNonBindable ngPreserveWhitespaces>
 import &#123;GalleriaModule&#125; from 'primeng/galleria';
 </app-code>
 
-            <h5>Getting Started</h5>
+            <h5>准备开始</h5>
             <p>Galleria requires item template and a value as an array of objects</p>
 <app-code lang="markup" ngNonBindable ngPreserveWhitespaces>
 &lt;p-galleria [value]="images"&gt;
@@ -258,15 +258,15 @@ responsiveOptions:any[] = [
     &lt;/template&gt;
 &lt;/p-galleria&gt;
 </app-code>
-            <h5>Properties</h5>
+            <h5>属性</h5>
             <div class="doc-tablewrapper">
                 <table class="doc-table">
                     <thead>
                         <tr>
-                            <th>Name</th>
-                            <th>Type</th>
-                            <th>Default</th>
-                            <th>Description</th>
+                            <th>名称</th>
+                            <th>类型</th>
+                            <th>默认值</th>
+                            <th>描述</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -430,13 +430,13 @@ responsiveOptions:any[] = [
                 </table>
             </div>
 
-            <h5>Templates</h5>
+            <h5>模板</h5>
             <div class="doc-tablewrapper">
                 <table class="doc-table">
                     <thead>
                         <tr>
-                            <th>Name</th>
-                            <th>Parameters</th>
+                            <th>名称</th>
+                            <th>参数</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -460,14 +460,14 @@ responsiveOptions:any[] = [
                 </table>
             </div>
 
-            <h5>Styling</h5>
+            <h5>样式</h5>
             <p>Following is the list of structural style classes, for theming classes visit <a href="#" [routerLink]="['/theming']">theming page</a>.</p>
             <div class="doc-tablewrapper">
                 <table class="doc-table">
                     <thead>
                         <tr>
-                            <th>Name</th>
-                            <th>Element</th>
+                            <th>名称</th>
+                            <th>元素</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -511,13 +511,13 @@ responsiveOptions:any[] = [
                 </table>
             </div>
 
-            <h5>Dependencies</h5>
+            <h5>依赖</h5>
             <p>None.</p>
         </p-tabPanel>
 
-        <p-tabPanel header="Source">
+        <p-tabPanel header="案例代码">
             <a href="https://github.com/primefaces/primeng/tree/master/src/app/showcase/components/galleria" class="btn-viewsource" target="_blank">
-                <span>View on GitHub</span>
+                <span>GitHub中访问</span>
             </a>
 <app-code lang="markup" ngNonBindable ngPreserveWhitespaces>
 &lt;p-galleria [(value)]="images" [responsiveOptions]="responsiveOptions" [containerStyle]="&#123;'max-width': '640px'&#125;" [numVisible]="5"&gt;
@@ -561,4 +561,3 @@ export class GalleriaDemo &#123;
         </p-tabPanel>
     </p-tabView>
 </div>
-

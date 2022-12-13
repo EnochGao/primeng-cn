@@ -9,11 +9,11 @@
 <div class="content-section implementation">
     <div pFocusTrap class="card">
         <h5>Input</h5>
-        <input id="input" type="text" size="30" pInputText> 
-        
+        <input id="input" type="text" size="30" pInputText>
+
         <h5>Float Label</h5>
         <span class="p-float-label">
-            <input id="float-input" type="text" size="30" pInputText> 
+            <input id="float-input" type="text" size="30" pInputText>
             <label for="float-input">Username</label>
         </span>
 
@@ -31,11 +31,11 @@
 
         <h5>Button with tabindex -1</h5>
         <button pButton type="button" icon="pi pi-check" tabindex="-1"  label="Check"></button>
-        
+
         <h5>Dropdown</h5>
         <p-dropdown [options]="cities" [(ngModel)]="selectedCity" placeholder="Select a City" optionLabel="name" [showClear]="true"></p-dropdown>
 
-        <h5>Editor</h5>   
+        <h5>Editor</h5>
         <p-editor [style]="{'height':'320px'}">
             <ng-template pTemplate="header">
                 <span class="ql-formats">
@@ -50,13 +50,13 @@
 
 <div class="content-section documentation">
     <p-tabView>
-        <p-tabPanel header="Documentation">
-            <h5>Import</h5>
+        <p-tabPanel header ="文档">
+            <h5>引入</h5>
 <app-code lang="typescript" ngNonBindable ngPreserveWhitespaces>
 import &#123;FocusTrapModule&#125; from 'primeng/focustrap';
 </app-code>
 
-            <h5>Getting Started</h5>
+            <h5>准备开始</h5>
             <p>FocusTrap is applied to a container element with the <b>pFocusTrap</b> directive.</p>
 <app-code lang="markup" ngNonBindable ngPreserveWhitespaces>
 &lt;div pFocusTrap&gt;
@@ -64,15 +64,15 @@ import &#123;FocusTrapModule&#125; from 'primeng/focustrap';
 &lt;/div&gt;
 </app-code>
 
-            <h5>Properties</h5>
+            <h5>属性</h5>
             <div class="doc-tablewrapper">
                 <table class="doc-table">
                     <thead>
                         <tr>
-                            <th>Name</th>
-                            <th>Type</th>
-                            <th>Default</th>
-                            <th>Description</th>
+                            <th>名称</th>
+                            <th>类型</th>
+                            <th>默认值</th>
+                            <th>描述</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -86,36 +86,36 @@ import &#123;FocusTrapModule&#125; from 'primeng/focustrap';
                 </table>
             </div>
 
-            <h5>Properties</h5>
+            <h5>属性</h5>
             <p>Directive has no properties.</p>
 
-            <h5>Events</h5>
+            <h5>事件</h5>
             <p>Directive has no events.</p>
 
-            <h5>Styling</h5>
+            <h5>样式</h5>
             <p>Directive does not apply any styling to host.</p>
 
-            <h5>Dependencies</h5>
+            <h5>依赖</h5>
             <p>None.</p>
         </p-tabPanel>
 
-        <p-tabPanel header="Source">
+        <p-tabPanel header="案例代码">
             <a href="https://github.com/primefaces/primeng/tree/master/src/app/showcase/components/focustrap" class="btn-viewsource" target="_blank">
-                <span>View on GitHub</span>
+                <span>GitHub中访问</span>
             </a>
             <a href="https://stackblitz.com/edit/primeng-focustrap-demo" class="btn-viewsource" style="margin-left: .5em;" target="_blank">
-                <span>Edit in StackBlitz</span>
+                <span>StackBlitz中编辑</span>
             </a>
 
 <app-code lang="markup" ngNonBindable ngPreserveWhitespaces>
 &lt;div pFocusTrap&gt;
 &lt;div pFocusTrap class="card"&gt;
     &lt;h5&gt;Input&lt;/h5&gt;
-    &lt;input id="input" type="text" size="30" pInputText&gt; 
-    
+    &lt;input id="input" type="text" size="30" pInputText&gt;
+
     &lt;h5&gt;Float Label&lt;/h5&gt;
     &lt;span class="p-float-label"&gt;
-        &lt;input id="float-input" type="text" size="30" pInputText&gt; 
+        &lt;input id="float-input" type="text" size="30" pInputText&gt;
         &lt;label for="float-input"&gt;Username&lt;/label&gt;
     &lt;/span&gt;
 
@@ -133,11 +133,11 @@ import &#123;FocusTrapModule&#125; from 'primeng/focustrap';
 
     &lt;h5&gt;Button with tabindex -1&lt;/h5&gt;
     &lt;button pButton type="button" icon="pi pi-check" tabindex="-1"  label="Check"&gt;&lt;/button&gt;
-    
+
     &lt;h5&gt;Dropdown&lt;/h5&gt;
     &lt;p-dropdown [options]="cities" [(ngModel)]="selectedCity" placeholder="Select a City" optionLabel="name" [showClear]="true"&gt;&lt;/p-dropdown&gt;
 
-    &lt;h5&gt;Editor&lt;/h5&gt;   
+    &lt;h5&gt;Editor&lt;/h5&gt;
     &lt;p-editor [style]="&#123;'height':'320px'&#125;"&gt;
         &lt;ng-template pTemplate="header"&gt;
             &lt;span class="ql-formats"&gt;
@@ -154,7 +154,7 @@ import &#123;FocusTrapModule&#125; from 'primeng/focustrap';
 export class FocusTrapDemo &#123;
 
     selectedCity: string;
-   
+
     cities = [
         &#123;name: 'New York', code: 'NY'&#123;,
         &#123;name: 'Rome', code: 'RM'&#123;,
@@ -162,7 +162,7 @@ export class FocusTrapDemo &#123;
         &#123;name: 'Istanbul', code: 'IST'&#123;,
         &#123;name: 'Paris', code: 'PRS'&#123;
     ];
-    
+
 &#125;
 </app-code>
 

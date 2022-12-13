@@ -1,17 +1,17 @@
 <div class="content-section introduction">
     <div class="feature-intro">
         <h1>AutoComplete</h1>
-        <p>AutoComplete is an input component that provides real-time suggestions when being typed.</p>
+        <p>AutoComplete是一个输入组件，在输入时提供实时建议。</p>
     </div>
     <app-demoActions github="autocomplete" stackblitz="autocomplete-demo"></app-demoActions>
 </div>
 
 <div class="content-section implementation">
     <div class="card">
-        <h5>Basic</h5>
+        <h5>基本</h5>
         <p-autoComplete [(ngModel)]="selectedCountry" [showEmptyMessage]="true" [suggestions]="filteredCountries" (completeMethod)="filterCountry($event)" field="name" [minLength]="1"></p-autoComplete>
 
-        <h5>Dropdown and Templating</h5>
+        <h5>下拉和模板</h5>
         <p-autoComplete [(ngModel)]="selectedCountryAdvanced" [suggestions]="filteredCountries" (completeMethod)="filterCountry($event)" field="name" [dropdown]="true">
             <ng-template let-country pTemplate="item">
                 <div class="country-item">
@@ -21,7 +21,7 @@
             </ng-template>
         </p-autoComplete>
 
-        <h5>Grouped</h5>
+        <h5>分组</h5>
         <p-autoComplete [(ngModel)]="selectedCity" [group]="true" [suggestions]="filteredGroups" (completeMethod)="filterGroupedCity($event)" field="label" [dropdown]="true">
             <ng-template let-group pTemplate="group">
                 <div class="flex align-items-center">
@@ -31,11 +31,11 @@
             </ng-template>
         </p-autoComplete>
 
-        <h5>Virtual Scroll (10000 Items)</h5>
+        <h5>虚拟滚动 (10000 条)</h5>
         <p-autoComplete [(ngModel)]="selectedItem" [virtualScroll]="true" [suggestions]="filteredItems" [virtualScrollItemSize]="34" (completeMethod)="filterItems($event)" field="label" [dropdown]="true">
         </p-autoComplete>
 
-        <h5>Multiple</h5>
+        <h5>多个</h5>
         <span class="p-fluid">
             <p-autoComplete [(ngModel)]="selectedCountries" [suggestions]="filteredCountries" (completeMethod)="filterCountry($event)" field="name" [multiple]="true">
             </p-autoComplete>
@@ -45,15 +45,14 @@
 
 <div class="content-section documentation">
     <p-tabView>
-        <p-tabPanel header="Documentation">
-            <h5>Import</h5>
+        <p-tabPanel header="文档">
+            <h5>引入</h5>
 <app-code lang="typescript" ngNonBindable ngPreserveWhitespaces>
 import &#123;AutoCompleteModule&#125; from 'primeng/autocomplete';
 </app-code>
 
-            <h5>Getting Started</h5>
-            <p>AutoComplete uses ngModel for two-way binding, requires a list of suggestions and a completeMethod to query for the results. The completeMethod
-            gets the query text as event.query property and should update the suggestions with the search results.</p>
+            <h5>准备开始</h5>
+            <p>AutoComplete使用ngModel进行双向绑定，需要一个建议列表和一个completeMethod来查询结果。completeMethod可以通过event.query属性获取查询文本，并且应使用搜索结果更新建议列表。</p>
 <app-code lang="markup" ngNonBindable ngPreserveWhitespaces>
 &lt;p-autoComplete [(ngModel)]="text" [suggestions]="results" (completeMethod)="search($event)"&gt;&lt;/p-autoComplete&gt;
 </app-code>
@@ -74,23 +73,22 @@ export class AutoCompleteDemo &#123;
 &#125;
 </app-code>
 
-            <h5>Change Detection of Suggestions</h5>
-            <p>AutoComplete uses setter based checking to realize if the suggestions has changed to update the UI. In order this to work, your changes such as adding or removing a record
-                should always create a new array reference instead of manipulating an existing array as Angular does not trigger setters if the reference does not change.
+            <h5>变更检测的建议</h5>
+            <p>AutoComplete使用基于setter的检查来实现，如果suggestions已更改从而更新UI。 为了让它起作用, 你的更改(比如添加或删除记录)应该总是创建一个新的数组引用，而不是操作一个现有的数组，
+                因为如果引用没有改变，Angular不会触发setter
             </p>
 
-            <p>Note that if no suggestions are available after searching, provide an empty array instead of a null value.</p>
+            <p>注意的是：如果搜索后没有可用的suggestions，则提供一个空数组而不是null值。</p>
 
-            <h5>Model Driven Forms</h5>
-            <p>AutoComplete can be used in a model driven form as well.</p>
+            <h5>响应式表单</h5>
+            <p>AutoComplete也可以在响应式表单中使用.</p>
 <app-code lang="markup" ngNonBindable ngPreserveWhitespaces>
 &lt;p-autoComplete formControlName="city" [suggestions]="results" (completeMethod)="search($event)"&gt;&lt;/p-autoComplete&gt;
 </app-code>
 
-            <h5>Dropdown</h5>
-            <p>Enabling <i>dropdown</i> property displays a button next to the input field where click behavior of the button is defined using dropdownMode
-                property that takes "blank" or "current" as possible values. "blank" is the default mode to send a query with an empty string
-                whereas "current" setting sends a query with the current value of the input.</p>
+            <h5>下拉框</h5>
+            <p>启用 <i>dropdown</i> 属性性将在输入字段旁边显示一个按钮，其中按钮的点击行为是使用dropdownMode属性定义的，该属性将“blank”或“current”作为可能的值。
+                "blank"是默认模式，发送带有空字符串来查询，而"current" 设置则发送带有输入当前值的查询。</p>
 
 <app-code lang="markup" ngNonBindable ngPreserveWhitespaces>
 &lt;p-autoComplete [(ngModel)]="text" [suggestions]="results" (completeMethod)="search($event)"
@@ -111,14 +109,14 @@ export class AutoCompleteDemo &#123;
     &#125;
 
     handleDropdown(event) &#123;
-        //event.query = current value in input field
+        //event.query = 当前输入框中的值
     &#125;
 
 &#125;
 </app-code>
 
-            <h5>Multiple Selection</h5>
-            <p>Multiple mode is enabled using <i>multiple</i> property to select more than one value from the autocomplete. In this case, value reference should be an array.</p>
+            <h5>多选</h5>
+            <p>多模式通过启用<i>multiple</i> 属性来从autocomplete选择多个值。在这种情况下，value引用应该是一个数组。</p>
 
 <app-code lang="markup" ngNonBindable ngPreserveWhitespaces>
 &lt;p-autoComplete [(ngModel)]="texts" [suggestions]="results" (completeMethod)="search($event)" [multiple]="true"&gt;&lt;/p-autoComplete&gt;
@@ -140,9 +138,9 @@ export class AutoCompleteDemo &#123;
 &#125;
 </app-code>
 
-            <h5>Objects</h5>
-            <p>AutoComplete can also work with objects using the <i>field</i> property that defines the label to display as a suggestion. The value passed to the model would still be the
-            object instance of a suggestion. Here is an example with a Country object that has name and code fields such as &#123;name:"United States",code:"USA"&#125;.</p>
+            <h5>对象</h5>
+            <p>AutoComplete还可以使用<i>field</i>属性处理对象，该属性将定义标签为suggestion显示。传递给模型的值仍然是suggestion的对象实例。
+                下面是一个Country对象的示例，该对象具有name和code字段，例如：&#123;name:"United States",code:"USA"&#125;</p>
 
 <app-code lang="markup" ngNonBindable ngPreserveWhitespaces>
 &lt;p-autoComplete [(ngModel)]="val" [suggestions]="results" (completeMethod)="search($event)" field="name"&gt;&lt;/p-autoComplete&gt;
@@ -164,16 +162,15 @@ export class AutoCompleteDemo &#123;
 &#125;
 </app-code>
 
-            <h5>Force Selection</h5>
-            <p>ForceSelection mode validates the manual input to check whether it also exists in the suggestions list, if not the input value is cleared
-            to make sure the value passed to the model is always one of the suggestions.</p>
+            <h5>强制选择</h5>
+            <p>ForceSelection模式验证手动输入，以检查它是否也存在于建议列表中，如果不存在，则清除输入值，以确保传递给模型的值始终是建议列表中的。</p>
 
 <app-code lang="markup" ngNonBindable ngPreserveWhitespaces>
 &lt;p-autoComplete [(ngModel)]="val" [suggestions]="results" (completeMethod)="search($event)" [forceSelection]="true"&gt;&lt;/p-autoComplete&gt;
 </app-code>
 
-            <h5>Templating</h5>
-            <p>Item ng-template allows displaying custom content inside the suggestions panel. The local ng-template variable passed to the ng-template is an object in the suggestions array.</p>
+            <h5>模板</h5>
+            <p>带有pTemplate="item"的ng-template允许在建议面板中显示自定义内容。ng-template上的本地变量为suggestions集合中的一个对象</p>
 
 <app-code lang="markup" ngNonBindable ngPreserveWhitespaces>
 &lt;p-autoComplete [(ngModel)]="brand" [suggestions]="filteredBrands" (completeMethod)="filterBrands($event)"&gt;
@@ -184,9 +181,8 @@ export class AutoCompleteDemo &#123;
 &lt;/p-autoComplete&gt;
 </app-code>
 
-            <p>In multiple mode, selected item can be customized using selectedItem ng-template. Note that this
-                template is not supported in single mode. In addition when grouping is enabled, <i>group</i> template is available
-                to customize the option groups. All templates get the option instance as the default local template variable.</p>
+            <p>在多选模式中，所选项目可以使用带有pTemplate="selectedItem"的 ng-template自定义. 注意，该模板在单一选择模式下不受支持。
+                此外，在启用分组时，pTemplate="group"模板来自定义组选项。 所有的模板类型，都是通过本地变量的形式获取选项值.</p>
 
 <app-code lang="markup" ngNonBindable ngPreserveWhitespaces>
 &lt;p-autoComplete [(ngModel)]="texts" [suggestions]="results" (completeMethod)="search($event)" [multiple]="true"&gt;
@@ -196,23 +192,22 @@ export class AutoCompleteDemo &#123;
 &lt;/p-autoComplete&gt;
 </app-code>
 
-            <h5>Animation Configuration</h5>
-            <p>Transition of the open and hide animations can be customized using the showTransitionOptions and hideTransitionOptions properties,
-                example below disables the animations altogether.</p>
+            <h5>动画配置</h5>
+            <p>打开和隐藏动画的转换可以使用showTransitionOptions和hideTransitionOptions属性进行定制，下面的例子将完全禁用动画。</p>
 
 <app-code lang="markup" ngNonBindable ngPreserveWhitespaces>
 &lt;p-autoComplete [showTransitionOptions]="'0ms'" [hideTransitionOptions]="'0ms'" [(ngModel)]="texts" [suggestions]="results" (completeMethod)="search($event)"&gt;&lt;/p-autoComplete&gt;
 </app-code>
 
-            <h5>Properties</h5>
+            <h5>属性</h5>
             <div class="doc-tablewrapper">
                 <table class="doc-table">
                     <thead>
                         <tr>
-                            <th>Name</th>
-                            <th>Type</th>
-                            <th>Default</th>
-                            <th>Description</th>
+                            <th>名称</th>
+                            <th>类型</th>
+                            <th>默认值</th>
+                            <th>描述</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -220,419 +215,417 @@ export class AutoCompleteDemo &#123;
                             <td>suggestions</td>
                             <td>array</td>
                             <td>null</td>
-                            <td>An array of suggestions to display.</td>
+                            <td>要显示的建议数组。</td>
                         </tr>
                         <tr>
                             <td>field</td>
                             <td>any</td>
                             <td>null</td>
-                            <td>Field of a suggested object to resolve and display.</td>
+                            <td>要解析和显示的建议对象的字段。</td>
                         </tr>
                         <tr>
                             <td>scrollHeight</td>
                             <td>string</td>
                             <td>200px</td>
-                            <td>Maximum height of the suggestions panel.</td>
+                            <td>建议面板的最大高度.</td>
                         </tr>
                         <tr>
                             <td>dropdown</td>
                             <td>boolean</td>
                             <td>false</td>
-                            <td>Displays a button next to the input field when enabled.</td>
+                            <td>启用时，在输入字段旁边显示一个按钮.</td>
                         </tr>
                         <tr>
                             <td>multiple</td>
                             <td>boolean</td>
                             <td>false</td>
-                            <td>Specifies if multiple values can be selected.</td>
+                            <td>指定是否可以选择多个值.</td>
                         </tr>
                         <tr>
                             <td>dropdownIcon</td>
                             <td>string</td>
                             <td>pi pi-chevron-down</td>
-                            <td>Icon class of the dropdown icon.</td>
+                            <td>下拉图标的图标类.</td>
                         </tr>
                         <tr>
                             <td>minLength</td>
                             <td>number</td>
                             <td>1</td>
-                            <td>Minimum number of characters to initiate a search.</td>
+                            <td>启动搜索的最小字符数.</td>
                         </tr>
                         <tr>
                             <td>delay</td>
                             <td>number</td>
                             <td>300</td>
-                            <td>Delay between keystrokes to wait before sending a query.</td>
+                            <td>在发送查询之前等待的击键之间的延迟.</td>
                         </tr>
                         <tr>
                             <td>completeOnFocus</td>
                             <td>boolean</td>
                             <td>false</td>
-                            <td>Whether to run a query when input receives focus.</td>
+                            <td>当输入收到焦点时是否运行查询.</td>
                         </tr>
                         <tr>
                             <td>style</td>
                             <td>string</td>
                             <td>null</td>
-                            <td>Inline style of the component.</td>
+                            <td>组件的内联样式.</td>
                         </tr>
                         <tr>
                             <td>inputStyle</td>
                             <td>string</td>
                             <td>null</td>
-                            <td>Inline style of the input field.</td>
+                            <td>输入字段的内联样式.</td>
                         </tr>
                         <tr>
                             <td>panelStyle</td>
                             <td>string</td>
                             <td>null</td>
-                            <td>Inline style of the overlay panel element.</td>
+                            <td>叠加面板元素的内联样式.</td>
                         </tr>
                         <tr>
                             <td>styleClass</td>
                             <td>string</td>
                             <td>null</td>
-                            <td>Style class of the component.</td>
+                            <td>组件的样式类.</td>
                         </tr>
                         <tr>
                             <td>inputStyleClass</td>
                             <td>string</td>
                             <td>null</td>
-                            <td>Inline style of the input field.</td>
+                            <td>输入字段的内联样式.</td>
                         </tr>
                         <tr>
                             <td>panelStyleClass</td>
                             <td>string</td>
                             <td>null</td>
-                            <td>Style class of the overlay panel element.</td>
+                            <td>叠加面板元素的样式类.</td>
                         </tr>
                         <tr>
                             <td>inputId</td>
                             <td>string</td>
                             <td>null</td>
-                            <td>Identifier of the focus input to match a label defined for the component.</td>
+                            <td>焦点输入的标识符，以匹配为组件定义的标签.</td>
                         </tr>
                         <tr>
                             <td>name</td>
                             <td>string</td>
                             <td>null</td>
-                            <td>Name of the input element.</td>
+                            <td>输入元素的名称.</td>
                         </tr>
                         <tr>
                             <td>optionGroupLabel</td>
                             <td>string</td>
                             <td>label</td>
-                            <td>Name of the label field of an option group.</td>
+                            <td>选项组标签字段的名称.</td>
                         </tr>
                         <tr>
                             <td>group</td>
                             <td>boolean</td>
                             <td>false</td>
-                            <td>Whether to display options as grouped when nested options are provided.</td>
+                            <td>当提供嵌套选项时，是否分组显示选项.</td>
                         </tr>
                         <tr>
                             <td>optionGroupChildren</td>
                             <td>string</td>
                             <td>items</td>
-                            <td>Name of the options field of an option group.</td>
+                            <td>选项组的选项字段名称.</td>
                         </tr>
                         <tr>
                             <td>placeholder</td>
                             <td>string</td>
                             <td>null</td>
-                            <td>Hint text for the input field.</td>
+                            <td>输入字段的提示文本.</td>
                         </tr>
                         <tr>
                             <td>readonly</td>
                             <td>boolean</td>
                             <td>false</td>
-                            <td>When present, it specifies that the input cannot be typed.</td>
+                            <td>当出现时，它指定输入不能被键入.</td>
                         </tr>
                         <tr>
                             <td>disabled</td>
                             <td>boolean</td>
                             <td>false</td>
-                            <td>When present, it specifies that the component should be disabled.</td>
+                            <td>当出现时，它指定应该禁用该组件.</td>
                         </tr>
                         <tr>
                             <td>maxlength</td>
                             <td>number</td>
                             <td>null</td>
-                            <td>Maximum number of character allows in the input field.</td>
+                            <td>输入字段允许的最大字符数.</td>
                         </tr>
                         <tr>
                             <td>size</td>
                             <td>number</td>
                             <td>null</td>
-                            <td>Size of the input field.</td>
+                            <td>输入字段的大小.</td>
                         </tr>
                         <tr>
                             <td>appendTo</td>
                             <td>any</td>
                             <td>null</td>
-                            <td>Target element to attach the overlay, valid values are "body" or a local ng-template variable of another element (note: use binding with brackets for template variables, e.g. [appendTo]="mydiv" for a div element having #mydiv as variable name).</td>
+                            <td>附加覆盖的目标元素，有效值为“body”或另一个元素的ng-template本地变量 (注意:对模板变量使用带括号的绑定，例如，对于变量名为#mydiv的div元素，[appendTo]="mydiv").</td>
                         </tr>
                         <tr>
                             <td>tabindex</td>
                             <td>number</td>
                             <td>null</td>
-                            <td>Index of the element in tabbing order.</td>
+                            <td>元素按制表顺序的索引.</td>
                         </tr>
                         <tr>
                             <td>dataKey</td>
                             <td>string</td>
                             <td>null</td>
-                            <td>A property to uniquely identify a value in options.</td>
+                            <td>用于唯一标识选项中的值的属性.</td>
                         </tr>
                         <tr>
                             <td>autoHighlight</td>
                             <td>boolean</td>
                             <td>false</td>
-                            <td>When enabled, highlights the first item in the list by default.</td>
+                            <td>启用时，默认情况下突出显示列表中的第一项.</td>
                         </tr>
                         <tr>
                             <td>type</td>
                             <td>string</td>
                             <td>text</td>
-                            <td>Type of the input, defaults to "text".</td>
+                            <td>输入类型，默认为"text".</td>
                         </tr>
 
                         <tr>
                             <td>showEmptyMessage</td>
                             <td>boolean</td>
                             <td>false</td>
-                            <td>Whether to show the empty message or not.</td>
+                            <td>是否显示空消息.</td>
                         </tr>
                         <tr>
                             <td>emptyMessage</td>
                             <td>string</td>
                             <td>No results found</td>
-                            <td>Text to display when there is no data. Defaults to global value in i18n translation configuration.</td>
+                            <td>当没有数据时显示的文本。默认为i18n转换配置中的全局值。.</td>
                         </tr>
                         <tr>
                             <td>immutable</td>
                             <td>boolean</td>
                             <td>true</td>
-                            <td>Defines how the suggestions should be manipulated. More information is available at "Change Detection" section above.</td>
+                            <td>定义如何操作建议。更多信息可以在上面的“变更检测”部分中找到.</td>
                         </tr>
                         <tr>
                             <td>required</td>
                             <td>boolean</td>
                             <td>false</td>
-                            <td>When present, it specifies that an input field must be filled out before submitting the form.</td>
+                            <td>当存在时，它指定在提交表单之前必须填写输入字段.</td>
                         </tr>
                         <tr>
                             <td>autofocus</td>
                             <td>boolean</td>
                             <td>false</td>
-                            <td>When present, it specifies that the component should automatically get focus on load.</td>
+                            <td>当它出现时，它指定组件加载时应该自动获取焦点.</td>
                         </tr>
                         <tr>
                             <td>forceSelection</td>
                             <td>boolean</td>
                             <td>false</td>
-                            <td>When present, autocomplete clears the manual input if it does not match of the suggestions to force only
-                                accepting values from the suggestions.</td>
+                            <td>出现时，如果手动输入与建议不匹配，自动完成将清除手动输入，强制只接受建议中的值.</td>
                         </tr>
                         <tr>
                             <td>dropdownMode</td>
                             <td>string</td>
                             <td>blank</td>
-                            <td>Specifies the behavior dropdown button. Default "blank" mode
-                                    sends an empty string and "current" mode sends the input value.</td>
+                            <td>指定行为下拉按钮。默认的"blank"模式发送空字符串，"current"模式发送输入值.</td>
                         </tr>
                         <tr>
                             <td>baseZIndex</td>
                             <td>number</td>
                             <td>0</td>
-                            <td>Base zIndex value to use in layering.</td>
+                            <td>基础zIndex值用于分层.</td>
                         </tr>
                         <tr>
                             <td>autoZIndex</td>
                             <td>boolean</td>
                             <td>true</td>
-                            <td>Whether to automatically manage layering.</td>
+                            <td>是否自动管理分层.</td>
                         </tr>
                         <tr>
                             <td>showTransitionOptions</td>
                             <td>string</td>
                             <td>.12s cubic-bezier(0, 0, 0.2, 1)</td>
-                            <td>Transition options of the show animation.</td>
+                            <td>显示动画的过渡选项.</td>
                         </tr>
                         <tr>
                             <td>hideTransitionOptions</td>
                             <td>string</td>
                             <td>.1s linear</td>
-                            <td>Transition options of the hide animation.</td>
+                            <td>隐藏动画的过渡选项.</td>
                         </tr>
                         <tr>
                             <td>ariaLabel</td>
                             <td>string</td>
                             <td>null</td>
-                            <td>Defines a string that labels the input for accessibility.</td>
+                            <td>定义一个字符串，用于标记输入的可访问性.</td>
                         </tr>
                         <tr>
                             <td>ariaLabelledBy</td>
                             <td>string</td>
                             <td>null</td>
-                            <td>Specifies one or more IDs in the DOM that labels the input field.</td>
+                            <td>在标记输入字段的DOM中指定一个或多个id.</td>
                         </tr>
                         <tr>
                             <td>dropdownAriaLabel</td>
                             <td>string</td>
                             <td>null</td>
-                            <td>Defines a string that labels the dropdown button for accessibility.</td>
+                            <td>定义一个字符串，为可访问性标记下拉按钮.</td>
                         </tr>
                         <tr>
                             <td>unique</td>
                             <td>boolean</td>
                             <td>true</td>
-                            <td>Ensures uniqueness of selected items on multiple mode.</td>
+                            <td>确保所选项目在多种模式下的唯一性.</td>
                         </tr>
                         <tr>
                             <td>autocomplete</td>
                             <td>string</td>
                             <td>null</td>
-                            <td>Used to define a string that autocomplete attribute the current element.</td>
+                            <td>用于定义自动完成当前元素属性的字符串.</td>
                         </tr>
                         <tr>
                             <td>showClear</td>
                             <td>boolean</td>
                             <td>false</td>
-                            <td>When enabled, a clear icon is displayed to clear the value.</td>
+                            <td>启用后，将显示清除图标以清除该值.</td>
                         </tr>
                         <tr>
                             <td>virtualScroll</td>
                             <td>boolean</td>
                             <td>false</td>
-                            <td>Whether the data should be loaded on demand during scroll.</td>
+                            <td>在滚动期间是否应按需加载数据.</td>
                         </tr>
                         <tr>
                             <td>virtualScrollItemSize</td>
                             <td>number</td>
                             <td>null</td>
-                            <td>Height of an item in the list for VirtualScrolling.</td>
+                            <td>VirtualScrolling列表中项目的高度.</td>
                         </tr>
                         <tr>
                             <td>virtualScrollOptions</td>
                             <td>ScrollerOptions</td>
                             <td>null</td>
-                            <td>Whether to use the scroller feature. The properties of <a href="#" [routerLink]="['/scroller']">scroller</a> component can be used like an object in it.</td>
+                            <td>是否使用滚动屏特性. <a href="#" [routerLink]="['/scroller']">滚动</a>组件的属性可以像一个对象一样在其中使用</td>
                         </tr>
                         <tr>
                             <td>lazy</td>
                             <td>boolean</td>
                             <td>false</td>
-                            <td>Defines if data is loaded and interacted with in lazy manner.</td>
+                            <td>定义是否以惰性方式加载和交互数据.</td>
                         </tr>
                     </tbody>
                 </table>
             </div>
 
-            <h5>Events</h5>
+            <h5>事件</h5>
             <div class="doc-tablewrapper">
                 <table class="doc-table">
                     <thead>
                         <tr>
-                            <th>Name</th>
-                            <th>Parameters</th>
-                            <th>Description</th>
+                            <th>名称</th>
+                            <th>参数</th>
+                            <th>描述</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
                             <td>completeMethod</td>
                             <td>
-                                event.originalEvent: browser event <br>
-                                event.query: Value to search with
+                                event.originalEvent: 浏览器事件 <br>
+                                event.query: 查询的值
                             </td>
-                            <td>Callback to invoke to search for suggestions.</td>
+                            <td>为搜索建议而调用的回调.</td>
                         </tr>
                         <tr>
                             <td>onFocus</td>
-                            <td>event: Browser event</td>
-                            <td>Callback to invoke when autocomplete gets focus.</td>
+                            <td>event: 浏览器事件</td>
+                            <td>当自动补全获得焦点时调用的回调.</td>
                         </tr>
                         <tr>
                             <td>onBlur</td>
-                            <td>event: Browser event</td>
-                            <td>Callback to invoke when autocomplete loses focus.</td>
+                            <td>event: 浏览器事件</td>
+                            <td>当自动补全失去焦点时调用的回调.</td>
                         </tr>
                         <tr>
                             <td>onKeyUp</td>
-                            <td>event: Browser event</td>
-                            <td>Callback to invoke when a user releases a key.</td>
+                            <td>event: 浏览器事件</td>
+                            <td>当用户释放按键时调用的回调函数.</td>
                         </tr>
                         <tr>
                             <td>onSelect</td>
                             <td>
-                                value: Selected value
+                                value:选中的值
                             </td>
-                            <td>Callback to invoke when a suggestion is selected.</td>
+                            <td>在选择建议时调用的回调函数.</td>
                         </tr>
                         <tr>
                             <td>onUnselect</td>
                             <td>
-                                value: Unselected value in multiple mode
+                                value: 多选模式下未选择的值
                             </td>
-                            <td>Callback to invoke when a selected value is removed.</td>
+                            <td>当移除选定值时调用的回调函数.</td>
                         </tr>
                         <tr>
                             <td>onDropdownClick</td>
                             <td>
-                                event.originalEvent: browser event <br>
-                                event.query: Current value of the input field
+                                event.originalEvent: 浏览器事件 <br>
+                                event.query: 当前input中的值
                             </td>
-                            <td>Callback to invoke when dropdown button is clicked.</td>
+                            <td>当单击下拉按钮时调用的回调.</td>
                         </tr>
                         <tr>
                             <td>onClear</td>
                             <td>-</td>
-                            <td>Callback to invoke when input field is cleared.</td>
+                            <td>当输入字段被清除时调用的回调.</td>
                         </tr>
                         <tr>
                             <td>onShow</td>
-                            <td>event: Animation event</td>
-                            <td>Callback to invoke when autocomplete overlay gets visible.</td>
+                            <td>event: 动画事件</td>
+                            <td>当自动完成覆盖可见时调用的回调.</td>
                         </tr>
                         <tr>
                             <td>onHide</td>
                             <td>-</td>
-                            <td>Callback to invoke when autocomplete overlay gets hidden.</td>
+                            <td>当自动完成覆盖被隐藏时调用的回调.</td>
                         </tr>
                         <tr>
                             <td>onLazyLoad</td>
-                            <td>event.first: First index of the new data range to be loaded.<br/>
-                                event.last: Last index of the new data range to be loaded.
+                            <td>event.first: 要加载的新数据范围的第一个索引.<br/>
+                                event.last: 要加载的新数据范围的最后一个索引.
                             </td>
-                            <td>Callback to invoke in lazy mode to load new data.</td>
+                            <td>以延迟模式调用以加载新数据的回调</td>
                         </tr>
                     </tbody>
                 </table>
             </div>
 
-            <h5>Templates</h5>
+            <h5>模板</h5>
             <div class="doc-tablewrapper">
                 <table class="doc-table">
                     <thead>
                         <tr>
-                            <th>Name</th>
-                            <th>Parameters</th>
+                            <th>名称</th>
+                            <th>参数</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
                             <td>item</td>
-                            <td>$implicit: Data of the option <br />
-                                index: Index of the option</td>
+                            <td>$implicit:选项值 <br />
+                                index: 选项下标</td>
                         </tr>
                         <tr>
                             <td>group</td>
-                            <td>$implicit: Group option</td>
+                            <td>$implicit: 组选项</td>
                         </tr>
                         <tr>
                             <td>selectedItem</td>
-                            <td>$implicit: value</td>
+                            <td>$implicit: 选中值</td>
                         </tr>
                         <tr>
                             <td>header</td>
@@ -644,77 +637,77 @@ export class AutoCompleteDemo &#123;
                         </tr>
                         <tr>
                             <td>loader</td>
-                            <td>options: Options of the scroller on loading. *This template can be used with virtualScroll.</td>
+                            <td>options: 加载时滚动选项. *此模板可以与virtualScroll一起使用。</td>
                         </tr>
                     </tbody>
                 </table>
             </div>
 
-            <h5>Styling</h5>
-            <p>Following is the list of structural style classes, for theming classes visit <a href="#" [routerLink]="['/theming']">theming page</a>.</p>
+            <h5>样式</h5>
+            <p>下面是结构样式类列表，主题化类请访问<a href="#" [routerLink]="['/theming']">主题化页面</a>。</p>
             <div class="doc-tablewrapper">
                 <table class="doc-table">
                     <thead>
                         <tr>
-                            <th>Name</th>
-                            <th>Element</th>
+                            <th>名称</th>
+                            <th>元素</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
                             <td>p-autocomplete</td>
-                            <td>Container element</td>
+                            <td>容器元素</td>
                         </tr>
                         <tr>
                             <td>p-autocomplete-panel</td>
-                            <td>Overlay panel of suggestions.</td>
+                            <td>建议覆盖面板</td>
                         </tr>
                         <tr>
                             <td>p-autocomplete-items</td>
-                            <td>List container of suggestions.</td>
+                            <td>建议列表容器</td>
                         </tr>
                         <tr>
                             <td>p-autocomplete-item</td>
-                            <td>List item of a suggestion.</td>
+                            <td>建议列表项.</td>
                         </tr>
                         <tr>
                             <td>p-autocomplete-token</td>
-                            <td>Element of a selected item in multiple mode.</td>
+                            <td>多个模式下选定项的元素.</td>
                         </tr>
                         <tr>
                             <td>p-autocomplete-token-icon</td>
-                            <td>Close icon element of a selected item in multiple mode.</td>
+                            <td>在多个模式下关闭选定项目的图标元素.</td>
                         </tr>
                         <tr>
                             <td>p-autocomplete-token-label</td>
-                            <td>Label of a selected item in multiple mode.</td>
+                            <td>多个模式下选择项的标签.</td>
                         </tr>
                         <tr>
                             <td>p-autocomplete-loader</td>
-                            <td>Loader icon.</td>
+                            <td>加载图标.</td>
                         </tr>
                     </tbody>
                 </table>
             </div>
 
-            <h5>Dependencies</h5>
-            <p>None.</p>
+            <h5>依赖</h5>
+            <p>无.</p>
         </p-tabPanel>
 
-        <p-tabPanel header="Source">
+        <p-tabPanel header="案例代码">
             <a href="https://github.com/primefaces/primeng/tree/master/src/app/showcase/components/autocomplete" class="btn-viewsource" target="_blank">
-                <span>View on GitHub</span>
+                <span>GitHub中访问</span>
             </a>
             <a href="https://stackblitz.com/edit/primeng-autocomplete-demo" class="btn-viewsource" style="margin-left: .5em;" target="_blank">
-                <span>Edit in StackBlitz</span>
+                <span>StackBlitz中编辑</span>
             </a>
 
 <app-code lang="markup" ngNonBindable ngPreserveWhitespaces>
 &lt;div class="card"&gt;
-    &lt;h5&gt;Basic&lt;/h5&gt;
+    &lt;h5&gt;基本&lt;/h5&gt;
     &lt;p-autoComplete [(ngModel)]="selectedCountry" [showEmptyMessage]="true" [suggestions]="filteredCountries" (completeMethod)="filterCountry($event)" field="name" [minLength]="1"&gt;&lt;/p-autoComplete&gt;
 
-    &lt;h5&gt;Dropdown and Templating&lt;/h5&gt;
+    &lt;h5&gt;下拉和模板&lt;/h5&gt;
     &lt;p-autoComplete [(ngModel)]="selectedCountryAdvanced" [suggestions]="filteredCountries" (completeMethod)="filterCountry($event)" field="name" [dropdown]="true"&gt;
         &lt;ng-template let-country pTemplate="item"&gt;
             &lt;div class="country-item"&gt;
@@ -724,7 +717,7 @@ export class AutoCompleteDemo &#123;
         &lt;/ng-template&gt;
     &lt;/p-autoComplete&gt;
 
-    &lt;h5&gt;Grouped&lt;/h5&gt;
+    &lt;h5&gt;分组&lt;/h5&gt;
     &lt;p-autoComplete [(ngModel)]="selectedCity" [group]="true" [suggestions]="filteredGroups" (completeMethod)="filterGroupedCity($event)" field="label" [dropdown]="true"&gt;
         &lt;ng-template let-group pTemplate="group"&gt;
             &lt;div class="flex align-items-center"&gt;
@@ -734,11 +727,11 @@ export class AutoCompleteDemo &#123;
         &lt;/ng-template&gt;
     &lt;/p-autoComplete&gt;
 
-    &lt;h5&gt;Virtual Scroll (10000 Items)&lt;/h5&gt;
+    &lt;h5&gt;虚拟滚动 (10000 条)&lt;/h5&gt;
     &lt;p-autoComplete [(ngModel)]="selectedItem" [virtualScroll]="true" [suggestions]="filteredItems" [virtualScrollItemSize]="34" (completeMethod)="filterItems($event)" field="label" [dropdown]="true"&gt;
     &lt;/p-autoComplete&gt;
 
-    &lt;h5&gt;Multiple&lt;/h5&gt;
+    &lt;h5&gt;多个&lt;/h5&gt;
     &lt;span class="p-fluid"&gt;
         &lt;p-autoComplete [(ngModel)]="selectedCountries" [suggestions]="filteredCountries" (completeMethod)="filterCountry($event)" field="name" [multiple]="true"&gt;
         &lt;/p-autoComplete&gt;
@@ -817,7 +810,7 @@ export class AutoCompleteDemo &#123;
     &#125;
 
     filterCountry(event) &#123;
-        //in a real application, make a request to a remote url with the query and return filtered results, for demo we filter at client side
+        //在一个实际的应用程序中，使用查询向远程url发出请求并返回过滤后的结果，用于演示我们在客户端进行过滤
         let filtered : any[] = [];
         let query = event.query;
 
@@ -832,7 +825,7 @@ export class AutoCompleteDemo &#123;
     &#125;
 
     filterItems(event) &#123;
-        //in a real application, make a request to a remote url with the query and return filtered results, for demo we filter at client side
+        //在一个实际的应用程序中，使用查询向远程url发出请求并返回过滤后的结果，用于演示我们在客户端进行过滤
         let filtered : any[] = [];
         let query = event.query;
 

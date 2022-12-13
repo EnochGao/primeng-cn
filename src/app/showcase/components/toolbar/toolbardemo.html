@@ -11,12 +11,12 @@
         <div class="p-toolbar-group-left">
             <p-button label="New" icon="pi pi-plus" class="mr-2"></p-button>
             <p-button label="Upload" icon="pi pi-upload" styleClass="p-button-success"></p-button>
-                
+
             <i class="p-toolbar-separator pi pi-bars mr-2" style="vertical-align: middle"></i>
-            
+
             <p-splitButton label="Save" icon="pi pi-check" [model]="items" styleClass="p-button-warning"></p-splitButton>
         </div>
-        
+
         <div class="p-toolbar-group-right">
             <p-button icon="pi pi-search" class="mr-2"></p-button>
             <p-button icon="pi pi-calendar" styleClass="p-button-success mr-2"></p-button>
@@ -27,26 +27,26 @@
 
 <div class="content-section documentation">
     <p-tabView>
-        <p-tabPanel header="Documentation">
-            <h5>Import</h5>
+        <p-tabPanel header ="文档">
+            <h5>引入</h5>
 <app-code lang="typescript" ngNonBindable ngPreserveWhitespaces>
 import &#123;ToolbarModule&#125; from 'primeng/toolbar';
 </app-code>
 
-            <h5>Getting Started</h5>
-            <p>Toolbar is a container component defined using p-toolbar element. Left aligned content is placed inside a div 
+            <h5>准备开始</h5>
+            <p>Toolbar is a container component defined using p-toolbar element. Left aligned content is placed inside a div
             having <i>.p-toolbar-group-left</i> class and similarly <i>.p-toolbar-group-right</i> for right alignment.</p>
 <app-code lang="markup" ngNonBindable ngPreserveWhitespaces>
 &lt;p-toolbar&gt;
     &lt;div class="p-toolbar-group-left"&gt;
         &lt;p-button label="New" icon="pi pi-plus"&gt;&lt;/p-button&gt;
         &lt;p-button label="Upload" icon="pi pi-upload" styleClass="p-button-success"&gt;&lt;/p-button&gt;
-            
+
         &lt;i class="pi pi-bars"&gt;&lt;/i&gt;
-        
+
         &lt;p-splitButton label="Save" icon="pi pi-check" [model]="items" styleClass="p-button-warning"&gt;&lt;/p-splitButton&gt;
     &lt;/div&gt;
-    
+
     &lt;div class="p-toolbar-group-right"&gt;
         &lt;p-button icon="pi pi-search"&gt;&lt;/p-button&gt;
         &lt;p-button icon="pi pi-calendar" styleClass="p-button-success"&gt;&lt;/p-button&gt;
@@ -54,16 +54,16 @@ import &#123;ToolbarModule&#125; from 'primeng/toolbar';
     &lt;/div&gt;
 &lt;/p-toolbar&gt;
 </app-code>
-            
-            <h5>Properties</h5>
+
+            <h5>属性</h5>
             <div class="doc-tablewrapper">
                 <table class="doc-table">
                     <thead>
                         <tr>
-                            <th>Name</th>
-                            <th>Type</th>
-                            <th>Default</th>
-                            <th>Description</th>
+                            <th>名称</th>
+                            <th>类型</th>
+                            <th>默认值</th>
+                            <th>描述</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -83,14 +83,14 @@ import &#123;ToolbarModule&#125; from 'primeng/toolbar';
                 </table>
             </div>
 
-            <h5>Styling</h5>
+            <h5>样式</h5>
             <p>Following is the list of structural style classes, for theming classes visit <a href="#" [routerLink]="['/theming']">theming page</a>.</p>
             <div class="doc-tablewrapper">
                 <table class="doc-table">
                     <thead>
                         <tr>
-                            <th>Name</th>
-                            <th>Element</th>
+                            <th>名称</th>
+                            <th>元素</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -110,13 +110,13 @@ import &#123;ToolbarModule&#125; from 'primeng/toolbar';
                 </table>
             </div>
 
-            <h5>Templates</h5>
+            <h5>模板</h5>
             <div class="doc-tablewrapper">
                 <table class="doc-table">
                         <thead>
                             <tr>
-                                <th>Name</th>
-                                <th>Parameters</th>
+                                <th>名称</th>
+                                <th>参数</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -132,28 +132,28 @@ import &#123;ToolbarModule&#125; from 'primeng/toolbar';
                 </table>
             </div>
 
-            <h5>Dependencies</h5>
+            <h5>依赖</h5>
             <p>None.</p>
         </p-tabPanel>
 
-        <p-tabPanel header="Source">
+        <p-tabPanel header="案例代码">
             <a href="https://github.com/primefaces/primeng/tree/master/src/app/showcase/components/toolbar" class="btn-viewsource" target="_blank">
-                <span>View on GitHub</span>
+                <span>GitHub中访问</span>
             </a>
             <a href="https://stackblitz.com/edit/primeng-toolbar-demo" class="btn-viewsource" style="margin-left: .5em;" target="_blank">
-                <span>Edit in StackBlitz</span>
+                <span>StackBlitz中编辑</span>
             </a>
 <app-code lang="markup" ngNonBindable ngPreserveWhitespaces>
 &lt;p-toolbar&gt;
     &lt;div class="p-toolbar-group-left"&gt;
         &lt;p-button label="New" icon="pi pi-plus" class="mr-2"&gt;&lt;/p-button&gt;
         &lt;p-button label="Upload" icon="pi pi-upload" styleClass="p-button-success"&gt;&lt;/p-button&gt;
-            
+
         &lt;i class="p-toolbar-separator pi pi-bars mr-2" style="vertical-align: middle"&gt;&lt;/i&gt;
-        
+
         &lt;p-splitButton label="Save" icon="pi pi-check" [model]="items" styleClass="p-button-warning"&gt;&lt;/p-splitButton&gt;
     &lt;/div&gt;
-    
+
     &lt;div class="p-toolbar-group-right"&gt;
         &lt;p-button icon="pi pi-search" class="mr-2"&gt;&lt;/p-button&gt;
         &lt;p-button icon="pi pi-calendar" styleClass="p-button-success mr-2"&gt;&lt;/p-button&gt;

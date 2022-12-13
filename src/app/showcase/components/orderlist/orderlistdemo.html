@@ -31,19 +31,19 @@
 
 <div class="content-section documentation">
     <p-tabView>
-        <p-tabPanel header="Documentation">
+        <p-tabPanel header ="文档">
             <h5>CDK</h5>
             <p>OrderList depends on @angular/cdk's DragDropModule so begin with installing CDK if not already installed.</p>
 <app-code lang="markup" ngNonBindable ngPreserveWhitespaces>
 npm install @angular/cdk --save
 </app-code>
 
-            <h5>Import</h5>
+            <h5>引入</h5>
 <app-code lang="typescript" ngNonBindable ngPreserveWhitespaces>
 import &#123;OrderListModule&#125; from 'primeng/orderlist';
 </app-code>
 
-            <h5>Getting Started</h5>
+            <h5>准备开始</h5>
             <p>OrderList requires an array as its value and a ng-template for its content where each item in the array
                  can be accessed inside the ng-template using a local <i>ng-template</i> variable.</p>
 <app-code lang="markup" ngNonBindable ngPreserveWhitespaces>
@@ -128,9 +128,9 @@ export class MyComponent &#123;
     ...
     export class MyComponent &#123;
         ...
-    
+
         filterValue = '';
-    
+
         myResetFunction(options: OrderListFilterOptions) &#123;
             options.reset();
             this.filterValue = '';
@@ -152,15 +152,15 @@ export class MyComponent &#123;
 &lt;p-orderList [value]="cars" controlsPosition="right"&gt;
 </app-code>
 
-            <h5>Properties</h5>
+            <h5>属性</h5>
             <div class="doc-tablewrapper">
                 <table class="doc-table">
                     <thead>
                         <tr>
-                            <th>Name</th>
-                            <th>Type</th>
-                            <th>Default</th>
-                            <th>Description</th>
+                            <th>名称</th>
+                            <th>类型</th>
+                            <th>默认值</th>
+                            <th>描述</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -271,14 +271,14 @@ export class MyComponent &#123;
                 </table>
             </div>
 
-            <h5>Events</h5>
+            <h5>事件</h5>
             <div class="doc-tablewrapper">
                 <table class="doc-table">
                     <thead>
                     <tr>
-                        <th>Name</th>
-                        <th>Parameters</th>
-                        <th>Description</th>
+                        <th>名称</th>
+                        <th>参数</th>
+                        <th>描述</th>
                     </tr>
                     </thead>
                     <tbody>
@@ -303,14 +303,14 @@ export class MyComponent &#123;
                 </table>
             </div>
 
-            <h5>Methods</h5>
+            <h5>方法</h5>
             <div class="doc-tablewrapper">
                 <table class="doc-table">
                     <thead>
                     <tr>
-                        <th>Name</th>
-                        <th>Parameters</th>
-                        <th>Description</th>
+                        <th>名称</th>
+                        <th>参数</th>
+                        <th>描述</th>
                     </tr>
                     </thead>
                     <tbody>
@@ -323,13 +323,13 @@ export class MyComponent &#123;
                 </table>
             </div>
 
-            <h5>Templates</h5>
+            <h5>模板</h5>
             <div class="doc-tablewrapper">
                 <table class="doc-table">
                     <thead>
                         <tr>
-                            <th>Name</th>
-                            <th>Parameters</th>
+                            <th>名称</th>
+                            <th>参数</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -359,14 +359,14 @@ export class MyComponent &#123;
                 </table>
             </div>
 
-            <h5>Styling</h5>
+            <h5>样式</h5>
             <p>Following is the list of structural style classes, for theming classes visit <a href="#" [routerLink]="['/theming']">theming page</a>.</p>
             <div class="doc-tablewrapper">
                 <table class="doc-table">
                     <thead>
                         <tr>
-                            <th>Name</th>
-                            <th>Element</th>
+                            <th>名称</th>
+                            <th>元素</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -386,16 +386,16 @@ export class MyComponent &#123;
                 </table>
             </div>
 
-            <h5>Dependencies</h5>
+            <h5>依赖</h5>
             <p>Angular CDK.</p>
         </p-tabPanel>
 
-        <p-tabPanel header="Source">
+        <p-tabPanel header="案例代码">
             <a href="https://github.com/primefaces/primeng/tree/master/src/app/showcase/components/orderlist" class="btn-viewsource" target="_blank">
-                <span>View on GitHub</span>
+                <span>GitHub中访问</span>
             </a>
             <a href="https://stackblitz.com/edit/primeng-orderlist-demo" class="btn-viewsource" style="margin-left: .5em;" target="_blank">
-                <span>Edit in StackBlitz</span>
+                <span>StackBlitz中编辑</span>
             </a>
 <app-code lang="markup" ngNonBindable ngPreserveWhitespaces>
 &lt;p-orderList [value]="products" [listStyle]="&#123;'max-height':'30rem'&#125;" header="List of Products" filterBy="name" filterPlaceholder="Filter by name" [dragdrop]="true"&gt;
@@ -422,7 +422,7 @@ export class MyComponent &#123;
 export class OrderListDemo &#123;
 
     products: Product[];
-    
+
     constructor(private productService: ProductService) &#123; &#125;
 
     ngOnInit() &#123;
