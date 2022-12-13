@@ -41,7 +41,7 @@ declare let gtag: Function;
                 <div class="menu-category">配置</div>
                 <div class="menu-items">
                     <a [routerLink]="['i18n']" routerLinkActive="router-link-exact-active">国际化</a>
-                    <a [routerLink]="['overlay']" routerLinkActive="router-link-exact-active">覆盖层 <span class="p-tag">新</span></a>
+                    <a [routerLink]="['overlay']" routerLinkActive="router-link-exact-active">Overlay 覆盖层 <span class="p-tag">新</span></a>
                 </div>
 
                 <div class="menu-category">支持</div>

@@ -1,12 +1,12 @@
 <div class="content-section documentation">
     <h1>Overlay API</h1>
-    <p>This API allows overlay components to be controlled from the <i>PrimeNGConfig</i>. In this way, all overlay components in the application can have the same behavior.</p>
+    <p>这个API允许从<i>PrimeNGConfig</i>控制覆盖层组件。通过这种方式，应用程序中的所有覆盖组件可以具有相同的行为.</p>
 
-    <h5>Options</h5>
+    <h5>选项</h5>
 
     <h6>Mode</h6>
-    <p>It has two valid values; <i>overlay</i> and <i>modal</i>. In overlay mode, a container element is opened like overlaypanel or dropdown's panel.
-        In modal mode, the container element behaves like popup. This behaviour is similar to a dialog component.</p>
+    <p>它有两个有效值; <i>overlay</i> 和 <i>modal</i>. 在 overlay 模式下, 会像叠加面板或下拉面板一样打开一个容器元素.
+        在 modal 模式下, 容器元素的行为类似于popup. 这种行为类似于dialog对话框组件.</p>
 <app-code lang="typescript" ngNonBindable ngPreserveWhitespaces>
 import &#123; PrimeNGConfig, OverlayOptions &#125; from 'primeng/api';
 
@@ -28,18 +28,18 @@ export class AppComponent implements OnInit &#123;
 </app-code>
 
     <h6>Responsive</h6>
-    <p>It is the option used to determine in which mode it should appear according to the given <i>media</i> or <i>breakpoint</i>.</p>
+    <p>它是用来根据给定的<i>media</i>或<i>breakpoint</i>确定它应该以何种模式出现的选项.</p>
 <app-code lang="typescript" ngNonBindable ngPreserveWhitespaces>
 import &#123; PrimeNGConfig, OverlayOptions, ResponsiveOverlayDirectionType &#125; from 'primeng/api';
 
 const responsiveOptions: ResponsiveOverlayOptions = &#123;
-    // style?: any;                                     // Style of component in given breakpoint or media query
-    // styleClass?: string;                             // Style class of component in given breakpoint or media query
-    // contentStyle?: any;                              // Style of content in given breakpoint or media query
-    // contentStyleClass?: string;                      // Style class of content in given breakpoint or media query
-    // breakpoint?: string;                             // Breakpoint required to show component in modal mode. Exp: '640px', '10rem' etc.
-    // media?: string;                                  // Media query required to show component in modal mode. Exp: '@media screen and (max-width: 640px)', '@media screen and (min-width: 640px) and (max-width: 900px)' etc.
-    // direction?: ResponsiveOverlayDirectionType;      // Direction in which the component will be displayed in modal mode.
+    // style?: any;                                     // 给定断点或媒体查询中的组件样式
+    // styleClass?: string;                             // 给定断点或媒体查询中的组件样式类
+    // contentStyle?: any;                              // 给定断点或媒体查询中的内容样式
+    // contentStyleClass?: string;                      // 给定断点或媒体查询中的内容样式类
+    // breakpoint?: string;                             // 模态模式下显示组件所需的断点。Exp: ` 640px `， ` 10rem `等。.
+    // media?: string;                                  // 模态模式下显示组件所需的媒体查询. Exp: '@media screen and (max-width: 640px)', '@media screen and (min-width: 640px) and (max-width: 900px)' 等.
+    // direction?: ResponsiveOverlayDirectionType;      // 组件在模态模式下显示的方向.
 &#125;
 
 this.primengConfig.overlayOptions: OverlayOptions = &#123;
@@ -47,9 +47,9 @@ this.primengConfig.overlayOptions: OverlayOptions = &#123;
 &#125;;
 </app-code>
 
-    <p>Valid values of the <i>direction</i> property would be;</p>
+    <p> <i>direction</i>属性的有效值:</p>
     <ul>
-        <li>center (default)</li>
+        <li>center (默认值)</li>
         <li>top</li>
         <li>top-start</li>
         <li>top-end</li>
@@ -65,7 +65,7 @@ this.primengConfig.overlayOptions: OverlayOptions = &#123;
     </ul>
 
     <h6>AppendTo</h6>
-    <p>Overlay can be mounted into its location, body or DOM element instance using this option.</p>
+    <p>使用这个选项，覆盖层可以挂载到它的location, body 或DOM元素实例中.</p>
 <app-code lang="typescript" ngNonBindable ngPreserveWhitespaces>
 import &#123; PrimeNGConfig, OverlayOptions &#125; from 'primeng/api';
 
@@ -75,61 +75,61 @@ this.primengConfig.overlayOptions: OverlayOptions = &#123;
 </app-code>
 
     <h6>Target</h6>
-    <p>The <i>target</i> is used to detect the element that will be used to position the overlay. Valid values would be;</p>
+    <p><i>target</i>用于检测那些相对覆盖层被定位的元素。有效值是;</p>
     <ul>
-        <li>@prev (default)</li>
+        <li>@prev (默认值)</li>
         <li>@next</li>
         <li>@parent</li>
         <li>@grandparent</li>
-        <li>Use <em>CSS selector</em></li>
-        <li>Use <em>() => HTMLElement</em></li>
+        <li>使用 <em>CSS 选择器</em></li>
+        <li>使用 <em>() => HTMLElement</em></li>
     </ul>
 
     <h6>Style and StyleClass</h6>
-    <p>The <i>style</i> and <i>styleClass</i> are used to define styles that will be added to all overlay components. In addition, it can be used in <i>contentStyle</i> and <i>contentStyleClass</i> classes.</p>
+    <p><i>style</i>和<i>styleClass</i>用于定义将添加到所有覆盖层组件的样式。此外，它可以用于<i>contentStyle</i>和<i>contentStyleClass</i>类</p>
 
     <h6>AutoZIndex</h6>
-    <p>The <i>autoZIndex</i> determines whether to automatically manage layering. Its default value is 'false'.</p>
+    <p><i>autoZIndex</i>决定是否自动管理分层。其默认值为`false`.</p>
 
     <h6>BaseZIndex</h6>
-    <p>The <i>baseZIndex</i> is base zIndex value to use in layering. Its default value is 0.</p>
+    <p><i>baseZIndex</i> 是在分层中使用的基础zIndex值。默认值为0.</p>
 
     <h6>ShowTransitionOptions and HideTransitionOptions</h6>
-    <p>Transition options of the show or hide animation. The default value of <i>showTransitionOptions</i> is '.12s cubic-bezier(0, 0, 0.2, 1)' and the default value of <i>hideTransitionOptions</i> is '.1s linear'.</p>
+    <p>显示或隐藏动画的过渡选项。<i>showTransitionOptions</i>的默认值是`.12s cubic-bezier(0,0,0.2, 1)`并且<i>hideTransitionOptions</i>的默认值是`.1s linear`.</p>
 
-    <h6>Events</h6>
+    <h6>事件</h6>
 <app-code lang="typescript" ngNonBindable ngPreserveWhitespaces>
 import &#123; PrimeNGConfig, OverlayOptions, OverlayOnBeforeShowEvent, OverlayOnShowEvent, OverlayOnBeforeHideEvent, OverlayOnHideEvent &#125; from 'primeng/api';
 import &#123; AnimationEvent &#125; from '@angular/animations';
 
 this.primengConfig.overlayOptions: OverlayOptions = &#123;
-    onBeforeShow: (event?: OverlayOnBeforeShowEvent) => &#123;&#125;;    // Callback to invoke before the overlay is shown.
-    onShow: (event?: OverlayOnShowEvent) => &#123;&#125;;                // Callback to invoke when the overlay is shown.
-    onBeforeHide: (event?: OverlayOnBeforeHideEvent) => &#123;&#125;;    // Callback to invoke before the overlay is hidden.
-    onHide: (event?: OverlayOnHideEvent) => &#123;&#125;;                // Callback to invoke when the overlay is hidden.
-    onAnimationStart: (event?: AnimationEvent) => &#123;&#125;;          // Callback to invoke when the animation is started.
-    onAnimationDone: (event?: AnimationEvent) => &#123;&#125;;           // Callback to invoke when the animation is done.
+    onBeforeShow: (event?: OverlayOnBeforeShowEvent) => &#123;&#125;;    // 在覆盖层显示之前调用的回调函数.
+    onShow: (event?: OverlayOnShowEvent) => &#123;&#125;;                // 当覆盖层显示时调用的回调函数.
+    onBeforeHide: (event?: OverlayOnBeforeHideEvent) => &#123;&#125;;    // 在覆盖层被隐藏之前调用的回调函数.
+    onHide: (event?: OverlayOnHideEvent) => &#123;&#125;;                // 当覆盖层被隐藏时调用的回调函数.
+    onAnimationStart: (event?: AnimationEvent) => &#123;&#125;;          // 在动画开始时调用的回调函数.
+    onAnimationDone: (event?: AnimationEvent) => &#123;&#125;;           // 当动画完成时调用的回调函数.
 &#125;;
 </app-code>
 
-    <h5>Component</h5>
-    <p>Overlay is a container to display content in an overlay window. All the options mentioned above can be used as props for this component.</p>
+    <h5>组件</h5>
+    <p><i>p-overlay</i> 是一个在Overlay窗口中显示内容的容器。上面提到的所有选项都可以用作此组件的props.</p>
 
     <div class="flex justify-content-center border-blue-500 border-dashed border-round p-5 card-demo">
-        <button (click)="toggle()">Show Overlay</button>
+        <button (click)="toggle()">显示 Overlay</button>
         <p-overlay [(visible)]="overlayVisible" [responsive]="{ breakpoint: '640px', direction: 'bottom', contentStyleClass: 'h-20rem' }" contentStyleClass="p-4 surface-overlay shadow-2 border-round">
             Content
         </p-overlay>
     </div>
 
-    <h6 class="mt-3">Import</h6>
+    <h6 class="mt-3">导入</h6>
 <app-code lang="typescript" ngNonBindable ngPreserveWhitespaces>
 import &#123; OverlayModule &#125; from 'primeng/overlay';
 </app-code>
 
-    <h6>Getting Started</h6>
+    <h6>准备开始</h6>
 <app-code lang="markup" ngNonBindable ngPreserveWhitespaces>
-&lt;button (click)="toggle()"&gt;Show Overlay&lt;/button&gt;
+&lt;button (click)="toggle()"&gt;显示 Overlay&lt;/button&gt;
 &lt;p-overlay [(visible)]="overlayVisible" [responsive]="&#123; breakpoint: '640px', direction: 'bottom', contentStyleClass: 'h-20rem' &#125;" contentStyleClass="p-4 surface-overlay shadow-2 border-round"&gt;
     Content
 &lt;/p-overlay&gt;
@@ -149,8 +149,8 @@ export class OverlayDemo &#123;
 &#125;
 </app-code>
 
-    <h6>Templating</h6>
-    <p>Content can be customized with the <i>content</i> template.</p>
+    <h6>模板</h6>
+    <p>可以使用<i>content</i>模板自定义内容.</p>
 
 <app-code lang="markup" ngNonBindable ngPreserveWhitespaces>
 &lt;button (click)="toggle()"&gt;Show Overlay&lt;/button&gt;
