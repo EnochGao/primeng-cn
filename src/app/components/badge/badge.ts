@@ -1,8 +1,10 @@
-import { NgModule, Component, ChangeDetectionStrategy, ViewEncapsulation, Input, QueryList, ContentChildren, TemplateRef, Directive, OnDestroy, AfterViewInit, ElementRef } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { AfterViewInit, ChangeDetectionStrategy, Component, Directive, ElementRef, Input, NgModule, OnDestroy, ViewEncapsulation } from '@angular/core';
 import { SharedModule } from 'primeng/api';
 import { DomHandler } from 'primeng/dom';
 import { UniqueComponentId } from 'primeng/utils';
+
+type BadgeDirectiveIconPosition = 'left' | 'right' | 'top' | 'bottom';
 
 @Directive({
     selector: '[pBadge]',
@@ -11,7 +13,14 @@ import { UniqueComponentId } from 'primeng/utils';
     }
 })
 export class BadgeDirective implements AfterViewInit, OnDestroy {
-    @Input() iconPos: 'left' | 'right' | 'top' | 'bottom' = 'left';
+    @Input() iconPos: BadgeDirectiveIconPosition = 'left';
+
+    @Input('badgeDisabled') get disabled(): boolean {
+        return this._disabled;
+    }
+    set disabled(val: boolean) {
+        this._disabled = val;
+    }
 
     public _value: string;
 
@@ -19,11 +28,17 @@ export class BadgeDirective implements AfterViewInit, OnDestroy {
 
     private id: string;
 
+    _disabled: boolean = false;
+
     constructor(public el: ElementRef) {}
 
     ngAfterViewInit() {
         this.id = UniqueComponentId() + '_badge';
         let el = this.el.nativeElement.nodeName.indexOf('-') != -1 ? this.el.nativeElement.firstChild : this.el.nativeElement;
+
+        if (this._disabled) {
+            return null;
+        }
 
         let badge = document.createElement('span');
         badge.id = this.id;
@@ -87,7 +102,7 @@ export class BadgeDirective implements AfterViewInit, OnDestroy {
 
 @Component({
     selector: 'p-badge',
-    template: ` <span [ngClass]="containerClass()" [class]="styleClass" [ngStyle]="style">{{ value }}</span> `,
+    template: ` <span *ngIf="!badgeDisabled" [ngClass]="containerClass()" [class]="styleClass" [ngStyle]="style">{{ value }}</span> `,
     changeDetection: ChangeDetectionStrategy.OnPush,
     encapsulation: ViewEncapsulation.None,
     styleUrls: ['./badge.css'],
@@ -105,6 +120,8 @@ export class Badge {
     @Input() severity: string;
 
     @Input() value: string;
+
+    @Input() badgeDisabled: boolean = false;
 
     containerClass() {
         return {

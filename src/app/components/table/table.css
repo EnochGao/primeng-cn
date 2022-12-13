@@ -7,7 +7,7 @@
 }
 
 .p-datatable-table {
-    border-collapse: collapse;
+    border-spacing: 0px;
     width: 100%;
 }
 
@@ -81,10 +81,6 @@
     z-index: 1;
 }
 
-.p-scroller > .p-datatable-scrollable-table {
-    display: inline-block; /* For Safari */
-}
-
 /* Resizable */
 .p-datatable-resizable-table > .p-datatable-thead > tr > th,
 .p-datatable-resizable-table > .p-datatable-tfoot > tr > td,
@@ -145,7 +141,6 @@
 .p-datatable-reorder-indicator-up,
 .p-datatable-reorder-indicator-down {
     position: absolute;
-    display: none;
 }
 
 .p-datatable-reorderablerow-handle {
@@ -234,6 +229,10 @@
 }
 
 /* Virtual Scroll */
+.p-datatable-scroller-spacer {
+    display: flex;
+}
+
 .p-datatable .p-scroller .p-scroller-loading {
     transform: none !important;
     min-height: 0;
