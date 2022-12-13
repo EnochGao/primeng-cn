@@ -56,17 +56,17 @@ declare let gtag: Function;
                 <div class="menu-items">
                     <a href="https://www.youtube.com/channel/UCTgmp69aBOlLnPEqlUyetWw" target="_blank">PrimeTV</a>
                     <a href="https://github.com/primefaces/primeng" target="_blank">源码</a>
-                    <a href="https://www.primefaces.org/store">商店</a>
-                    <a href="https://twitter.com/prime_ng?lang=en">Twitter</a>
+                    <a href="https://www.primefaces.org/store" target="_blank">商店</a>
+                    <a href="https://twitter.com/prime_ng?lang=en" target="_blank">Twitter</a>
                 </div>
 
                 <div class="menu-category">主题</div>
                 <div class="menu-items">
                     <a [routerLink]="['/theming']" routerLinkActive="router-link-exact-active">指南</a>
-                    <a href="https://www.primefaces.org/designer/primeng">主题设计器</a>
-                    <a href="https://www.primefaces.org/designer-ng">可视化编辑器</a>
+                    <a href="https://www.primefaces.org/designer/primeng" target="_blank">主题设计器</a>
+                    <a href="https://www.primefaces.org/designer-ng" target="_blank">可视化编辑器</a>
                     <a [routerLink]="['/colors']" routerLinkActive="router-link-exact-active">颜色</a>
-                    <a href="https://www.primefaces.org/designer/api/primeng/14.0.0">SASS API</a>
+                    <a href="https://www.primefaces.org/designer/api/primeng/14.0.0" target="_blank">SASS API</a>
                 </div>
 
                 <div class="menu-category">UI工具</div>
@@ -87,8 +87,8 @@ declare let gtag: Function;
 
                 <div class="menu-category">PrimeFlex</div>
                 <div class="menu-items">
-                    <a href="https://www.primefaces.org/primeflex">PrimeFlex v3</a>
-                    <a href="https://github.com/primefaces/primeflex/wiki/PrimeFlex-v2">PrimeFlex v2</a>
+                    <a href="https://www.primefaces.org/primeflex" target="_blank">PrimeFlex v3</a>
+                    <a href="https://github.com/primefaces/primeflex/wiki/PrimeFlex-v2" target="_blank">PrimeFlex v2</a>
                 </div>
 
                 <div class="menu-category">PrimeIcons</div>

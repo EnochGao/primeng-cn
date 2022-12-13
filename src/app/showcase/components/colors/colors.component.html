@@ -1,51 +1,51 @@
 <div class="content-section documentation implementation">
     <h1>Colors</h1>
-    <p>Each PrimeNG theme exports its own color palette.</p>
+    <p>每个PrimeNG主题都导出自己的调色板.</p>
 
     <h5>准备开始</h5>
-    <p>Colors are exported as CSS variables and used with the standard <i>var</i> syntax such as <i>var(--text-color)</i>.</p>
+    <p>颜色以CSS变量的形式导出，使用标准的<i>var</i>语法如： <i>var(--text-color)</i>.</p>
 
 <app-code lang="markup" ngNonBindable ngPreserveWhitespaces>
 &lt;span [ngStyle]="&#123;color:'var(--text-color)'&#125;"&gt;&lt;/span&gt;
 </app-code>
-    <h5>General Colors</h5>
-    <p>These are common variables used throughout the theme.</p>
+    <h5>常规颜色</h5>
+    <p>这些是贯穿主题的常见变量.</p>
 
     <div class="doc-tablewrapper">
         <table class="doc-table">
             <thead>
                 <tr>
-                    <th>Variable</th>
+                    <th>变量</th>
                     <th>描述</th>
                 </tr>
             </thead>
             <tbody>
                 <tr>
                     <td><i>--text-color</i></td>
-                    <td>Font text color.</td>
+                    <td>字体文字颜色.</td>
                 </tr>
                 <tr>
                     <td><i>--text-secondary-color</i></td>
-                    <td>Muted font text color with a secondary level.</td>
+                    <td>柔和字体文本颜色第二等级.</td>
                 </tr>
                 <tr>
                     <td><i>--primary-color</i></td>
-                    <td>Primary color of the theme.</td>
+                    <td>主题的原色.</td>
                 </tr>
                 <tr>
                     <td><i>--primary-color-text</i></td>
-                    <td>Text color when background is primary color.</td>
+                    <td>背景为原色时的文本颜色.</td>
                 </tr>
                 <tr>
                     <td><i>--font-family</i></td>
-                    <td>Font family of the theme.</td>
+                    <td>主题字体.</td>
                 </tr>
             </tbody>
         </table>
     </div>
 
-    <h5>Color Palette</h5>
-    <p>A palette consists of 9 colors where each color provides tints/shades from 50 to 900.</p>
+    <h5>调色板</h5>
+    <p>调色板由9种颜色组成，每种颜色提供50到900的色调/阴影.</p>
 <app-code lang="markup" ngNonBindable ngPreserveWhitespaces>
 &lt;div [ngStyle]="&#123;backgroundColor:'var(--blue-500)'&#125;"&gt;&lt;/div&gt;
 </app-code>
@@ -61,8 +61,8 @@
             </div>
         </div>
     </div>
-    <h5>Surfaces</h5>
-    <p>In addition, a theme brings a special palette called surfaces that can be used as the base when designing the surface layers and separators.</p>
+    <h5>表面</h5>
+    <p>此外，主题带来了一个特殊的调色板称为表面，可以用作设计表面层和分隔符的基础.</p>
     <div class="card">
         <div class="color-stack">
             <div *ngFor="let shade of shades">
@@ -72,40 +72,40 @@
             </div>
         </div>
     </div>
-    <p>A theme also exports named surfaces for common use cases.</p>
+    <p>主题还为常见用例导出以surface命名的变量.</p>
 
     <div class="doc-tablewrapper">
         <table class="doc-table">
             <thead>
                 <tr>
-                    <th>Variable</th>
+                    <th>变量</th>
                     <th>描述</th>
                 </tr>
             </thead>
             <tbody>
                 <tr>
                     <td><i>--surface-ground</i></td>
-                    <td>Base ground color.</td>
+                    <td>底色.</td>
                 </tr>
                 <tr>
                     <td><i>--surface-section</i></td>
-                    <td>Color of a section on a ground surface.</td>
+                    <td>用作表面section的颜色.</td>
                 </tr>
                 <tr>
                     <td><i>--surface-card</i></td>
-                    <td>Color of a surface used as a card.</td>
+                    <td>用作卡片的表面的颜色.</td>
                 </tr>
                 <tr>
                     <td><i>--surface-overlay</i></td>
-                    <td>Color of overlay surfaces.</td>
+                    <td>用作表面 overlay 颜色.</td>
                 </tr>
                 <tr>
                     <td><i>--surface-border</i></td>
-                    <td>Color of a divider.</td>
+                    <td>分割线颜色.</td>
                 </tr>
                 <tr>
                     <td><i>--surface-hover</i></td>
-                    <td>Color of an element in hover state.</td>
+                    <td>悬停状态下元素的颜色.</td>
                 </tr>
             </tbody>
         </table>
