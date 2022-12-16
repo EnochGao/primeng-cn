@@ -1,82 +1,82 @@
 <div class="content-section introduction">
     <div class="feature-intro">
         <h1>Calendar</h1>
-        <p>Calendar is an input component to select a date.</p>
+        <p>Calendar是一个用于选择日期的输入组件.</p>
     </div>
     <app-demoActions github="calendar" stackblitz="calendar-demo"></app-demoActions>
 </div>
 
 <div class="content-section implementation">
     <div class="card">
-        <h5>Popup</h5>
+        <h5>弹窗形式</h5>
         <div class="p-fluid grid formgrid">
             <div class="field col-12 md:col-4">
-                <label for="basic">Basic</label>
+                <label for="basic">基本</label>
                 <p-calendar inputId="basic" [(ngModel)]="date1"></p-calendar>
             </div>
 
             <div class="field col-12 md:col-4">
-                <label for="dateformat">DateFormat</label>
+                <label for="dateformat">日期格式化</label>
                 <p-calendar [(ngModel)]="date2" dateFormat="mm-dd-yy" inputId="dateformat"></p-calendar>
             </div>
 
             <div class="field col-12 md:col-4">
-                <label for="icon">Icon</label>
+                <label for="icon">带图标</label>
                 <p-calendar [(ngModel)]="date3" [showIcon]="true" inputId="icon"></p-calendar>
             </div>
 
             <div class="field col-12 md:col-4">
-                <label for="min-max">MinMax</label>
+                <label for="min-max">最大最小</label>
                 <p-calendar [(ngModel)]="date4" [minDate]="minDate" [maxDate]="maxDate" [readonlyInput]="true" inputId="min-max"></p-calendar>
             </div>
 
             <div class="field col-12 md:col-4">
-                <label for="disabledays">Disabled Days</label>
+                <label for="disabledays">禁用天</label>
                 <p-calendar [(ngModel)]="date5" [disabledDates]="invalidDates" [disabledDays]="[0,6]" [readonlyInput]="true" inputId="disabledays"></p-calendar>
             </div>
 
             <div class="field col-12 md:col-4">
-                <label for="multiple">Multiple</label>
+                <label for="multiple">多选</label>
                 <p-calendar [(ngModel)]="dates" selectionMode="multiple" [readonlyInput]="true" inputId="multiple"></p-calendar>
             </div>
 
             <div class="field col-12 md:col-4">
-                <label for="range">Range</label>
+                <label for="range">范围选择</label>
                 <p-calendar [(ngModel)]="rangeDates" selectionMode="range" [readonlyInput]="true" inputId="range"></p-calendar>
             </div>
 
             <div class="field col-12 md:col-4">
-                <label for="buttonbar">Button Bar</label>
+                <label for="buttonbar">按钮栏</label>
                 <p-calendar [(ngModel)]="date6" showButtonBar="true" inputId="buttonbar"></p-calendar>
             </div>
 
             <div class="field col-12 md:col-4">
-                <label for="time">Time / 24h</label>
+                <label for="time">时间 / 24h</label>
                 <p-calendar [(ngModel)]="date7" [showTime]="true" [showSeconds]="true" inputId="time"></p-calendar>
             </div>
 
             <div class="field col-12 md:col-4">
-                <label for="timeonly">Time / 12h</label>
+                <label for="timeonly">时间 / 12h</label>
                 <p-calendar [(ngModel)]="date8" [timeOnly]="true" hourFormat="12" inputId="timeonly"></p-calendar>
             </div>
 
             <div class="field col-12 md:col-4">
-                <label for="monthpicker">Month Picker</label>
+                <label for="monthpicker">月份选择</label>
                 <p-calendar [(ngModel)]="date9" view="month" dateFormat="mm/yy" [readonlyInput]="true" inputId="monthpicker"></p-calendar>
             </div>
 
             <div class="field col-12 md:col-4">
-                <label for="yearpicker">Year Picker</label>
+                <label for="yearpicker">年选择</label>
                 <p-calendar [(ngModel)]="date10" view="year" dateFormat="yy" inputId="yearpicker"></p-calendar>
             </div>
 
             <div class="field col-12 md:col-4">
-                <label for="multiplemonths">Multiple Months</label>
+                <label for="multiplemonths">多月展示</label>
                 <p-calendar [(ngModel)]="date11" [numberOfMonths]="3" inputId="multiplemonths"></p-calendar>
             </div>
 
             <div class="field col-12 md:col-4">
-                <label for="template">Date Template</label>
+                <label for="template">日期模板</label>
                 <p-calendar [(ngModel)]="date12" inputId="template">
                     <ng-template pTemplate="date" let-date>
                         <span [ngStyle]="{textDecoration: (date.day < 21 && date.day > 10) ? 'line-through' : 'inherit'}">{{date.day}}</span>
@@ -90,7 +90,7 @@
             </div>
         </div>
 
-        <h5>Inline</h5>
+        <h5>内联形式</h5>
         <p-calendar [(ngModel)]="date14" [inline]="true" [showWeek]="true"></p-calendar>
     </div>
 
@@ -105,7 +105,7 @@ import &#123;CalendarModule&#125; from 'primeng/calendar';
 </app-code>
 
             <h5>准备开始</h5>
-            <p>Two-way value binding is defined using the standard ngModel directive referencing to a Date property.</p>
+            <p>使用标准的ngModel指令来双向值绑定Date类型属性值.</p>
 
 <app-code lang="markup" ngNonBindable ngPreserveWhitespaces>
 &lt;p-calendar [(ngModel)]="value"&gt;&lt;/p-calendar&gt;
@@ -120,55 +120,54 @@ export class MyModel &#123;
 </app-code>
 
             <h5>响应式表单</h5>
-            <p>Calendar can be used in a model driven form as well.</p>
+            <p>Calendar 同样可用于响应式表单.</p>
 <app-code lang="markup" ngNonBindable ngPreserveWhitespaces>
 &lt;p-calendar formControlName="date"&gt;&lt;/p-calendar&gt;
 </app-code>
 
-            <h5>Popup and Inline</h5>
-            <p>Calendar is displayed in a <i>popup</i> by default and <i>inline</i> property needs to be enabled for inline mode.</p>
+            <h5>弹框和内联</h5>
+            <p>Calendar默认是以弹框展示，要使用内联形式要加<i>inline</i> 属性启用</p>
 <app-code lang="markup" ngNonBindable ngPreserveWhitespaces>
 &lt;p-calendar [(ngModel)]="value" [inline]="true"&gt;&lt;/p-calendar&gt;
 </app-code>
 
-            <h5>Selection Mode</h5>
-            <p>By default calendar allows selecting one date and multiple dates can be selected by setting selectionMode to multiple. In this
-            case calendar updates the value with an array of dates where optionally number of selectable dates can be restricted with maxDateCount property.
-            Third alternative is the range mode that allows selecting a range based on an array of two values where first value is the start date and second value
-            is the end date.</p>
+            <h5>选择模式</h5>
+            <p>默认情况下，日历允许选择一个日期，可以通过将selectionMode设置为多个日期来选择多个日期。
+                在这个例子中，calendar用一个日期数组来更新值，其中可以通过maxDateCount属性限制可选择日期的数量。
+                第三种选择是范围模式，它允许根据包含两个值的数组选择范围，第一个值是开始日期，第二个值是结束日期.</p>
 
-            <h5>DateFormat</h5>
-            <p>Default date format is mm/dd/yy, to customize this use <i>dateFormat</i> property.</p>
+            <h5>日期格式化</h5>
+            <p>默认的日期格式是 mm/dd/yy, 想要自定义使用 <i>dateFormat</i> 属性.</p>
 <app-code lang="markup" ngNonBindable ngPreserveWhitespaces>
 &lt;p-calendar [(ngModel)]="dateValue" dateFormat="dd.mm.yy"&gt;&lt;/p-calendar&gt;
 </app-code>
 
-            <p>Following options can be a part of the format.</p>
+            <p>以下选项可以作为格式的一部分.</p>
             <ul>
-    			<li>d - day of month (no leading zero)</li>
-    			<li>dd - day of month (two digit)</li>
-    			<li>o - day of the year (no leading zeros)</li>
-    			<li>oo - day of the year (three digit)</li>
-    			<li>D - day name short</li>
-    			<li>DD - day name long</li>
-    			<li>m - month of year (no leading zero)</li>
-    			<li>mm - month of year (two digit)</li>
-    			<li>M - month name short</li>
-    			<li>MM - month name long</li>
-    			<li>y - year (two digit)</li>
-    			<li>yy - year (four digit)</li>
-    			<li>@ - Unix timestamp (ms since 01/01/1970)</li>
-    			<li> ! - Windows ticks (100ns since 01/01/0001)</li>
-    			<li>'...' - literal text</li>
-    			<li>'' - single quote</li>
-    			<li>anything else - literal text</li>
+    			<li>d - 月份中的某天 (没有前导零)</li>
+    			<li>dd - 月份中的某天 (两位)</li>
+    			<li>o - 一年中的某天 (没有前导零)</li>
+    			<li>oo - 一年中的某天 (三位)</li>
+    			<li>D - 日名称缩写</li>
+    			<li>DD - 日名称长</li>
+    			<li>m - 一年中的月份 (没有前导零)</li>
+    			<li>mm - 一年中的月份 (两位)</li>
+    			<li>M - 月份名称缩写t</li>
+    			<li>MM - 月份名称长</li>
+    			<li>y - 年 (两位)</li>
+    			<li>yy - 年 (四位)</li>
+    			<li>@ -  Unix 时间戳 (自 01/01/1970 以来的毫秒数)</li>
+    			<li> ! - Windows 滴答声 (自 0001 年 1 月 1 日起为 100ns)</li>
+    			<li>'...' - 文字</li>
+    			<li>'' - 单引号</li>
+    			<li>anything else - 文字</li>
             </ul>
 
             <h5>I18N</h5>
-            <p>Translations for the calendar are defined with the <a href="#" [routerLink]="['/i18n']">I18N API</a>.</p>
+            <p>日历的翻译是使用<a href="#" [routerLink]="['/i18n']">I18N API</a>来定义.</p>
 
-            <h5>Time</h5>
-            <p>TimePicker is enabled with  <i>showTime</i> property and 24 (default) or 12 hour mode is configured using <i>hourFormat</i> option.</p>
+            <h5>时间</h5>
+            <p>使用<i>showTime</i> 属性启用TimePicker，并且使用<i>hourFormat</i>选项配置 24 (默认) 或者 12 小时制模式.</p>
 <app-code lang="markup" ngNonBindable ngPreserveWhitespaces>
 &lt;p-calendar [(ngModel)]="value" showTime="true" [hourFormat]="12"&gt;&lt;/p-calendar&gt;
 &lt;p-calendar [(ngModel)]="value" showTime="true" [hourFormat]="24"&gt;&lt;/p-calendar&gt;

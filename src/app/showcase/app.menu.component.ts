@@ -99,7 +99,7 @@ declare let gtag: Function;
                 <div class="menu-category">表单</div>
                 <div class="menu-items">
                     <a [routerLink]="['autocomplete']" routerLinkActive="router-link-exact-active">AutoComplete 自动完成</a>
-                    <a [routerLink]="['calendar']" routerLinkActive="router-link-exact-active">Calendar</a>
+                    <a [routerLink]="['calendar']" routerLinkActive="router-link-exact-active">Calendar 日历</a>
                     <a [routerLink]="['cascadeselect']" routerLinkActive="router-link-exact-active">CascadeSelect</a>
                     <a [routerLink]="['checkbox']" routerLinkActive="router-link-exact-active">Checkbox</a>
                     <a [routerLink]="['chips']" routerLinkActive="router-link-exact-active">Chips</a>
