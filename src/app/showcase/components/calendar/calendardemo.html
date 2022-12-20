@@ -173,33 +173,32 @@ export class MyModel &#123;
 &lt;p-calendar [(ngModel)]="value" showTime="true" [hourFormat]="24"&gt;&lt;/p-calendar&gt;
 </app-code>
 
-            <h5>Date Restriction</h5>
-            <p>To disable entering dates manually, set <i>readonlyInput</i> to true and to restrict selectable dates use <i>minDate</i>
-                and <i>maxDate</i> options.</p>
+            <h5>日期约束</h5>
+            <p>要禁止手动输入日期，可以将<i>readonlyInput</i> 设置为true，并使用<i>minDate</i>和<i>maxDate</i>选项来限制可选择的日期。</p>
 <app-code lang="markup" ngNonBindable ngPreserveWhitespaces>
 &lt;p-calendar [(ngModel)]="dateValue" [minDate]="minDateValue" [maxDate]="maxDateValue" [readonlyInput]="true"&gt;&lt;/p-calendar&gt;
 </app-code>
 
-            <h5>Disable specific dates and/or days</h5>
-            <p>To disable specific dates or days, set readonlyInput to true and to restrict selectable dates use <i>disabledDates</i> and/or <i>disabledDays</i> options.</p>
+            <h5>禁用特定日期或星期</h5>
+            <p>要禁用特定的日期或星期，可以将readonlyInput设置为true，并使用<i>disabledDates</i>或<i>disabledDays</i>选项限制可选择的日期。</p>
 <app-code lang="markup" ngNonBindable ngPreserveWhitespaces>
 &lt;p-calendar [(ngModel)]="dateValue" [disabledDates]="invalidDates" [disabledDays]="[0,6]" [readonlyInput]="true"&gt;&lt;/p-calendar&gt;
 </app-code>
 
-            <h5>Button Bar</h5>
-            <p>Button bar displays today and clear buttons and enabled using <i>showButtonBar</i> property.</p>
+            <h5>按钮栏</h5>
+            <p>按钮栏显示今天和清除按钮，并使用<i>showButtonBar</i>属性启用。</p>
 <app-code lang="markup" ngNonBindable ngPreserveWhitespaces>
 &lt;p-calendar [(ngModel)]="dateValue" showButtonBar="true"&gt;&lt;/p-calendar&gt;
 </app-code>
 
-            <h5>Multiple Months</h5>
-            <p>Displaying multiple months is enabled by setting <i>numberOfMonths</i> property to a value greater than 1.</p>
+            <h5>多个月</h5>
+            <p>通过将<i>numberOfMonths</i>属性设置为大于1的值，可以显示多个月份。</p>
 <app-code lang="markup" ngNonBindable ngPreserveWhitespaces>
 &lt;p-calendar [(ngModel)]="dateValue" [numberOfMonths]="3"&gt;&lt;/p-calendar&gt;
 </app-code>
 
             <h5>自定义内容</h5>
-            <p>Calendar UI accepts custom content using header and footer templates.</p>
+            <p>日历UI使用header和footer模板接受自定义内容.</p>
 <app-code lang="markup" ngNonBindable ngPreserveWhitespaces>
 &lt;p-calendar [(ngModel)]="dateValue"&gt;
     &lt;ng-template pTemplate="header"&gt;Header&lt;/ng-template&gt;
@@ -207,10 +206,10 @@ export class MyModel &#123;
 &lt;/p-calendar&gt;
 </app-code>
 
-            <p>Cell contents can also be templated using an ng-template with a pTemplate directive whose value is "date". This is a handy feature to highlight specific dates. Note that the implicit
-            variable passed to the template is not a date instance but a metadata object to represent a Date with "day", "month" and "year" properties. Example below
-            changes the background color of dates between 10th and 21st of each month. </p>
-            <p>In addition, "disabledDateTemplate" is provided in case you need to customize the content of disabled dates as well.</p>
+            <p>单元格内容也可以使用ng-template和pTemplate指令来模板化，该指令的值是"date"。这是一个方便的功能，可以突出显示特定的日期。
+                注意，传递给模板的隐式变量不是一个date实例，而是一个元数据对象，表示具有"day"、"month"和"year"属性的日期。
+                下面的例子改变了每个月10号到21号之间日期的背景色.</p>
+            <p>此外，如果您需要自定义禁用日期的内容，还提供了"disabledDateTemplate".</p>
 
 <app-code lang="markup" ngNonBindable ngPreserveWhitespaces>
 &lt;p-calendar [(ngModel)]="date10"&gt;
@@ -220,30 +219,28 @@ export class MyModel &#123;
 &lt;/p-calendar&gt;
 </app-code>
 
-            <h5>Month Picker</h5>
-            <p>Month picker is used to select month and year only without the date, set <i>view</i> mode as "month" to activate month picker.</p>
+            <h5>月份选择器</h5>
+            <p>月份选择器用于只选择月份和年份而不选择日期，将 <i>view</i>模式设置为"month"以激活月份选择器。</p>
 <app-code lang="markup" ngNonBindable ngPreserveWhitespaces>
 &lt;p-calendar [(ngModel)]="dateValue" view="month" dateFormat="mm/yy"&gt;&lt;/p-calendar&gt;
 </app-code>
 
-            <h5>Year Picker</h5>
-            <p>Similar to the month picker, year picker can be used to select years only. Set <i>view</i> to "year" to display the year picker.</p>
+            <h5>年选择器</h5>
+            <p>与month选择器类似，year选择器只能选择年份。将 <i>view</i> 设置为"year"以显示年份选择器。</p>
 <app-code lang="markup" ngNonBindable ngPreserveWhitespaces>
 &lt;p-calendar [(ngModel)]="dateValue" view="year" dateFormat="yy"&gt;&lt;/p-calendar&gt;
 </app-code>
 
             <h5>Touch UI</h5>
             <p>
-                Touch UI mode displays the calendar overlay at the center of the screen as optimized for touch devices.
-                When using Touch UI mode you will typically want to set readonlyInput to prevent keyboard popup for mobile users.
+                触摸ui模式日历显示在屏幕中心的覆盖层，为触摸设备进行了优化。当使用触摸UI模式时，您通常需要设置readonlyInput以防止移动用户弹出键盘。
             </p>
 <app-code lang="markup" ngNonBindable ngPreserveWhitespaces>
 &lt;p-calendar [(ngModel)]="dateValue" [touchUI]="true" [readonlyInput]="true"&gt;&lt;/p-calendar&gt;
 </app-code>
 
             <h5>动画配置</h5>
-            <p>Transition of the open and hide animations can be customized using the <i>showTransitionOptions</i> and <i>hideTransitionOptions</i> properties,
-                example below disables the animations altogether.</p>
+            <p>打开和隐藏动画的过渡可以使用<i>showTransitionOptions</i>和<i>hideTransitionOptions</i>属性来定制，下面的例子完全禁用了动画。</p>
 <app-code lang="markup" ngNonBindable ngPreserveWhitespaces>
 &lt;p-calendar [(ngModel)]="dateValue" [showTransitionOptions]="'0ms'" [hideTransitionOptions]="'0ms'"&gt;&lt;/p-calendar&gt;
 </app-code>
@@ -264,109 +261,109 @@ export class MyModel &#123;
                             <td>defaultDate</td>
                             <td>Date</td>
                             <td>null</td>
-                            <td>Set the date to highlight on first opening if the field is blank.</td>
+                            <td>如果该字段为空，则设置日期在第一次打开时高亮显示。</td>
                         </tr>
                         <tr>
                             <td>selectionMode</td>
                             <td>string</td>
                             <td>single</td>
-                            <td>Defines the quantity of the selection, valid values are "single", "multiple" and "range".</td>
+                            <td>定义了选择的数量，有效值有 "single", "multiple" 和 "range".</td>
                         </tr>
                         <tr>
                             <td>style</td>
                             <td>string</td>
                             <td>null</td>
-                            <td>Inline style of the component.</td>
+                            <td>组件的内联样式.</td>
                         </tr>
                         <tr>
                             <td>styleClass</td>
                             <td>string</td>
                             <td>null</td>
-                            <td>Style class of the component.</td>
+                            <td>组件的样式类.</td>
                         </tr>
                         <tr>
                             <td>inputStyle</td>
                             <td>string</td>
                             <td>null</td>
-                            <td>Inline style of the input field.</td>
+                            <td>输入字段的内联样式.</td>
                         </tr>
                         <tr>
                             <td>inputStyleClass</td>
                             <td>string</td>
                             <td>null</td>
-                            <td>Style class of the input field.</td>
+                            <td>输入字段的样式类.</td>
                         </tr>
                         <tr>
                             <td>inputId</td>
                             <td>string</td>
                             <td>null</td>
-                            <td>Identifier of the focus input to match a label defined for the component.</td>
+                            <td>焦点输入框的标识符，以匹配为组件定义的标签.</td>
                         </tr>
                         <tr>
                             <td>name</td>
                             <td>string</td>
                             <td>null</td>
-                            <td>Name of the input element.</td>
+                            <td>输入元素的名称.</td>
                         </tr>
                         <tr>
                             <td>placeholder</td>
                             <td>string</td>
                             <td>null</td>
-                            <td>Placeholder text for the input.</td>
+                            <td>输入的占位符文本.</td>
                         </tr>
                         <tr>
                             <td>disabled</td>
                             <td>boolean</td>
                             <td>false</td>
-                            <td>When specified, disables the component.</td>
+                            <td>当指定时，禁用组件.</td>
                         </tr>
                         <tr>
                             <td>dateFormat</td>
                             <td>string</td>
                             <td>mm/dd/yy</td>
-                            <td>Format of the date which can also be defined at locale settings.</td>
+                            <td>日期的格式，也可以在地区设置中定义.</td>
                         </tr>
                         <tr>
                             <td>inline</td>
                             <td>boolean</td>
                             <td>false</td>
-                            <td>When enabled, displays the calendar as inline. Default is false for popup mode.</td>
+                            <td>启用时，以内联方式显示日历。弹框模式的默认值为false.</td>
                         </tr>
                         <tr>
                             <td>showOtherMonths</td>
                             <td>boolean</td>
                             <td>true</td>
-                            <td>Whether to display dates in other months (non-selectable) at the start or end of the current month. To make these days selectable use the selectOtherMonths option.</td>
+                            <td>是否在当月的开始或结束时显示其他月份的日期(不可选择)。要使这些日期可选择，请使用selectOtherMonths选项.</td>
                         </tr>
                         <tr>
                             <td>selectOtherMonths</td>
                             <td>boolean</td>
                             <td>false</td>
-                            <td>Whether days in other months shown before or after the current month are selectable. This only applies if the showOtherMonths option is set to true.</td>
+                            <td>可选择显示在当前月份之前或之后的其他月份中的日期。这只适用于showOtherMonths选项设置为true的情况.</td>
                         </tr>
                         <tr>
                             <td>showIcon</td>
                             <td>boolean</td>
                             <td>false</td>
-                            <td>When enabled, displays a button with icon next to input.</td>
+                            <td>启用时，在输入旁边显示一个带有图标的按钮.</td>
                         </tr>
                          <tr>
                             <td>showOnFocus</td>
                             <td>boolean</td>
                             <td>true</td>
-                            <td>When disabled, datepicker will not be visible with input focus.</td>
+                            <td>当禁用时，输入框聚焦datepicker将不可见.</td>
                         </tr>
                         <tr>
                             <td>showWeek</td>
                             <td>boolean</td>
                             <td>false</td>
-                            <td>When enabled, calendar will show week numbers.</td>
+                            <td>启用后，日历将显示周数.</td>
                         </tr>
                         <tr>
                             <td>icon</td>
                             <td>string</td>
                             <td>pi pi-calendar</td>
-                            <td>Icon of the calendar button.</td>
+                            <td>日历按钮图标.</td>
                         </tr>
                         <tr>
                             <td>appendTo</td>
