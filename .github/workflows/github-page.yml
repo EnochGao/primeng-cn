@@ -43,8 +43,8 @@ jobs:
 
       # 运行构建脚本
       - name: Build site
-        run: ng build --production --base-href=/primeng-cn/
-        
+        run: yarn build:page
+
       - name: Copy index.html
         run: cp dist/primeng/index.html dist/primeng/404.html
 
