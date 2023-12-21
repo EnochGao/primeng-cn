@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, ChangeDetectorRef, Component, Input, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, ChangeDetectorRef, Component, OnInit } from '@angular/core';
 import { MessageService } from 'primeng/api';
 import { Code } from '../../domain/code';
 import { Product } from '../../domain/product';
@@ -6,8 +6,7 @@ import { ProductService } from '../../service/productservice';
 
 @Component({
     selector: 'column-selection-doc',
-    template: ` <section>
-        <app-docsectiontext [title]="title" [id]="id">
+    template: ` <app-docsectiontext>
             <p>Selection using custom elements.</p>
         </app-docsectiontext>
         <div class="card">
@@ -35,19 +34,14 @@ import { ProductService } from '../../service/productservice';
                 </ng-template>
             </p-table>
         </div>
-        <app-code [code]="code" selector="table-column-selection-demo" [extFiles]="extFiles"></app-code>
-    </section>`,
+        <app-code [code]="code" selector="table-column-selection-demo" [extFiles]="extFiles"></app-code>`,
     changeDetection: ChangeDetectionStrategy.OnPush,
     providers: [MessageService]
 })
 export class ColumnSelectionDoc implements OnInit {
-    @Input() id: string;
+    products!: Product[];
 
-    @Input() title: string;
-
-    products: Product[];
-
-    selectedProduct: Product;
+    selectedProduct!: Product;
 
     constructor(private productService: ProductService, private messageService: MessageService, private cd: ChangeDetectorRef) {}
 
@@ -63,8 +57,7 @@ export class ColumnSelectionDoc implements OnInit {
     }
 
     code: Code = {
-        basic: `
-<p-toast></p-toast>
+        basic: `<p-toast></p-toast>
 <p-table [value]="products" [tableStyle]="{ 'min-width': '50rem' }">
     <ng-template pTemplate="header">
         <tr>
@@ -125,9 +118,9 @@ import { MessageService } from 'primeng/api';
     providers: [MessageService]
 })
 export class TableColumnSelectionDemo implements OnInit{
-    products: Product[];
+    products!: Product[];
 
-    selectedProduct: Product;
+    selectedProduct!: Product;
 
     constructor(private productService: ProductService, private messageService: MessageService) {}
 

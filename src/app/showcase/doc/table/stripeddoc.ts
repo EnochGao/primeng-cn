@@ -5,8 +5,7 @@ import { ProductService } from '../../service/productservice';
 
 @Component({
     selector: 'striped-doc',
-    template: ` <section>
-        <app-docsectiontext [title]="title" [id]="id">
+    template: ` <app-docsectiontext>
             <p>Adding <i>p-datatable-striped</i> class displays striped rows.</p>
         </app-docsectiontext>
         <div class="card">
@@ -29,16 +28,11 @@ import { ProductService } from '../../service/productservice';
                 </ng-template>
             </p-table>
         </div>
-        <app-code [code]="code" selector="table-striped-demo" [extFiles]="extFiles"></app-code>
-    </section>`,
+        <app-code [code]="code" selector="table-striped-demo" [extFiles]="extFiles"></app-code>`,
     changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class StripedDoc {
-    @Input() id: string;
-
-    @Input() title: string;
-
-    products: Product[];
+    products!: Product[];
 
     constructor(private productService: ProductService, private cd: ChangeDetectorRef) {}
 
@@ -50,8 +44,7 @@ export class StripedDoc {
     }
 
     code: Code = {
-        basic: `
-<p-table [value]="products" styleClass="p-datatable-striped" [tableStyle]="{'min-width': '50rem'}">
+        basic: `<p-table [value]="products" styleClass="p-datatable-striped" [tableStyle]="{'min-width': '50rem'}">
     <ng-template pTemplate="header">
         <tr>
             <th>Code</th>
@@ -100,7 +93,7 @@ import { ProductService } from '../../service/productservice';
     templateUrl: 'table-striped-demo.html'
 })
 export class TableStripedDemo {
-    products: Product[];
+    products!: Product[];
 
     constructor(private productService: ProductService) {}
 

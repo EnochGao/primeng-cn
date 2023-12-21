@@ -1,14 +1,12 @@
-import { ChangeDetectionStrategy, ChangeDetectorRef, Component, Input, OnInit, ViewChild } from '@angular/core';
+import { ChangeDetectionStrategy, ChangeDetectorRef, Component, OnInit } from '@angular/core';
 import { ConfirmationService, MessageService } from 'primeng/api';
 import { Code } from '../../domain/code';
 import { Product } from '../../domain/product';
-import { AppDocSectionTextComponent } from '../../layout/doc/docsectiontext/app.docsectiontext.component';
 import { ProductService } from '../../service/productservice';
 
 @Component({
     selector: 'products-doc',
-    template: ` <section>
-        <app-docsectiontext [title]="title" [id]="id" [level]="3" #docsectiontext>
+    template: ` <app-docsectiontext>
             <p>CRUD implementation example with a Dialog.</p>
         </app-docsectiontext>
         <div class="card">
@@ -152,29 +150,22 @@ import { ProductService } from '../../service/productservice';
 
             <p-confirmDialog [style]="{ width: '450px' }"></p-confirmDialog>
         </div>
-        <app-code [code]="code" selector="table-products-demo" [extFiles]="extFiles"></app-code>
-    </section>`,
+        <app-code [code]="code" selector="table-products-demo" [extFiles]="extFiles"></app-code>`,
     changeDetection: ChangeDetectionStrategy.OnPush,
     providers: [MessageService, ConfirmationService]
 })
 export class ProductsDoc implements OnInit {
-    @Input() id: string;
+    productDialog: boolean = false;
 
-    @Input() title: string;
+    products!: Product[];
 
-    @ViewChild('docsectiontext', { static: true }) docsectiontext: AppDocSectionTextComponent;
+    product!: Product;
 
-    productDialog: boolean;
+    selectedProducts!: Product[] | null;
 
-    products: Product[];
+    submitted: boolean = false;
 
-    product: Product;
-
-    selectedProducts: Product[];
-
-    submitted: boolean;
-
-    statuses: any[];
+    statuses!: any[];
 
     constructor(private productService: ProductService, private messageService: MessageService, private confirmationService: ConfirmationService, private cd: ChangeDetectorRef) {}
 
@@ -203,7 +194,7 @@ export class ProductsDoc implements OnInit {
             header: 'Confirm',
             icon: 'pi pi-exclamation-triangle',
             accept: () => {
-                this.products = this.products.filter((val) => !this.selectedProducts.includes(val));
+                this.products = this.products.filter((val) => !this.selectedProducts?.includes(val));
                 this.selectedProducts = null;
                 this.messageService.add({ severity: 'success', summary: 'Successful', detail: 'Products Deleted', life: 3000 });
             }
@@ -236,7 +227,7 @@ export class ProductsDoc implements OnInit {
     saveProduct() {
         this.submitted = true;
 
-        if (this.product.name.trim()) {
+        if (this.product.name?.trim()) {
             if (this.product.id) {
                 this.products[this.findIndexById(this.product.id)] = this.product;
                 this.messageService.add({ severity: 'success', summary: 'Successful', detail: 'Product Updated', life: 3000 });
@@ -286,8 +277,7 @@ export class ProductsDoc implements OnInit {
     }
 
     code: Code = {
-        basic: `
-<p-toast></p-toast>
+        basic: `<p-toast></p-toast>
 <p-toolbar styleClass="mb-4 gap-2">
     <ng-template pTemplate="left">
         <button pButton pRipple label="New" icon="pi pi-plus" class="p-button-success mr-2" (click)="openNew()"></button>
@@ -513,17 +503,17 @@ import { ProductService } from '../../service/productservice';
     providers: [MessageService, ConfirmationService]
 })
 export class TableProductsDemo implements OnInit{
-    productDialog: boolean;
+    productDialog: boolean = false;
 
-    products: Product[];
+    products!: Product[];
 
-    product: Product;
+    product!: Product;
 
-    selectedProducts: Product[];
+    selectedProducts!: Product[] | null;
 
-    submitted: boolean;
+    submitted: boolean = false;
 
-    statuses: any[];
+    statuses!: any[];
 
     constructor(private productService: ProductService, private messageService: MessageService, private confirmationService: ConfirmationService) {}
 
@@ -549,7 +539,7 @@ export class TableProductsDemo implements OnInit{
             header: 'Confirm',
             icon: 'pi pi-exclamation-triangle',
             accept: () => {
-                this.products = this.products.filter((val) => !this.selectedProducts.includes(val));
+                this.products = this.products.filter((val) => !this.selectedProducts?.includes(val));
                 this.selectedProducts = null;
                 this.messageService.add({ severity: 'success', summary: 'Successful', detail: 'Products Deleted', life: 3000 });
             }
@@ -582,7 +572,7 @@ export class TableProductsDemo implements OnInit{
     saveProduct() {
         this.submitted = true;
 
-        if (this.product.name.trim()) {
+        if (this.product.name?.trim()) {
             if (this.product.id) {
                 this.products[this.findIndexById(this.product.id)] = this.product;
                 this.messageService.add({ severity: 'success', summary: 'Successful', detail: 'Product Updated', life: 3000 });

@@ -26,7 +26,7 @@ import { ToastModule } from 'primeng/toast';
 import { ToggleButtonModule } from 'primeng/togglebutton';
 import { ToolbarModule } from 'primeng/toolbar';
 import { TooltipModule } from 'primeng/tooltip';
-import { AppCodeModule } from 'src/app/showcase/layout/doc/code/app.code.component';
+import { AppCodeModule } from 'src/app/showcase/layout/doc/app.code.component';
 import { AppDocModule } from '../../layout/doc/app.doc.module';
 import { ContextMenuDoc } from './contextmenudoc';
 import { BasicDoc } from './basicdoc';
@@ -65,6 +65,7 @@ import { RowEditDoc } from './roweditdoc';
 import { RowExpandDoc } from './rowexpanddoc';
 import { RowspanGroupingDoc } from './rowspangroupingdoc';
 import { SingleColumnSortDoc } from './singlecolumnsortdoc';
+import { MultipleColumnSortDoc } from './multiplecolumnsortdoc';
 import { SingleSelectionDoc } from './singleselectiondoc';
 import { SizeDoc } from './sizedoc';
 import { StatefulDoc } from './statefuldoc';
@@ -76,13 +77,10 @@ import { VerticalScrollDoc } from './verticalscrolldoc';
 import { VirtualScrollDoc } from './virtualscrolldoc';
 import { VirtualScrollLazyDoc } from './virtualscrolllazydoc';
 import { ColumnResizeFitModeDoc } from './columnresizefitmodedoc';
-import { PropsDoc } from './propsdoc';
-import { EventsDoc } from './eventsdoc';
 import { StylingDoc } from './stylingdoc';
-import { MethodsDoc } from './methodsdoc';
-import { TemplatesDoc } from './templatesdoc';
 import { SelectionEventsDoc } from './selectioneventsdoc';
 import { AccessibilityDoc } from './accessibilitydoc';
+import { PaginatorLocaleDoc } from './paginatorlocaledoc';
 
 @NgModule({
     imports: [
@@ -158,6 +156,7 @@ import { AccessibilityDoc } from './accessibilitydoc';
         RowExpandDoc,
         RowspanGroupingDoc,
         SingleColumnSortDoc,
+        MultipleColumnSortDoc,
         SingleSelectionDoc,
         SizeDoc,
         StatefulDoc,
@@ -168,13 +167,10 @@ import { AccessibilityDoc } from './accessibilitydoc';
         VerticalScrollDoc,
         VirtualScrollDoc,
         VirtualScrollLazyDoc,
-        PropsDoc,
-        EventsDoc,
         StylingDoc,
-        MethodsDoc,
-        TemplatesDoc,
         SelectionEventsDoc,
-        AccessibilityDoc
+        AccessibilityDoc,
+        PaginatorLocaleDoc
     ],
     exports: [AppDocModule]
 })

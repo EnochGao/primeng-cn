@@ -1,15 +1,5 @@
 import { TemplateRef } from '@angular/core';
-import { Message } from '../api/message';
-import { Toast } from './toast';
-/**
- * Breakpoints of toast element.
- */
-export interface ToastBreakpoints {
-    /**
-     * Breakpoint for responsive mode.
-     */
-    [key: string]: any;
-}
+import { Message } from 'primeng/api';
 
 /**
  * Defines valid templates in Toast.
@@ -25,10 +15,21 @@ export interface ToastTemplates {
          */
         $implicit: any;
     }): TemplateRef<{ $implicit: any }>;
+    /**
+     * Headless template.
+     */
+    headless(context: {
+        /**
+         * Data of the message.
+         */
+        $implicit: any;
+    }): TemplateRef<{ $implicit: any }>;
 }
+
 /**
  * Custom close event.
  * @see {@link Toast.onClose}
+ * @group Events
  */
 export interface ToastCloseEvent {
     /**
@@ -36,6 +37,7 @@ export interface ToastCloseEvent {
      */
     message: Message;
 }
+
 /**
  * Custom close event.
  * @see {@link ToastItem.onClose}
@@ -46,3 +48,5 @@ export interface ToastItemCloseEvent extends ToastCloseEvent {
      */
     index: number;
 }
+
+export type ToastPositionType = 'top-left' | 'top-center' | 'top-right' | 'bottom-left' | 'bottom-center' | 'bottom-right' | 'center';

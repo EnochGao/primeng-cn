@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, ChangeDetectorRef, Component, Input, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, ChangeDetectorRef, Component, OnInit } from '@angular/core';
 import { LazyLoadEvent } from 'primeng/api';
 import { Code } from '../../domain/code';
 import { Customer, Representative } from '../../domain/customer';
@@ -6,8 +6,7 @@ import { CustomerService } from '../../service/customerservice';
 
 @Component({
     selector: 'lazy-load-doc',
-    template: ` <section>
-        <app-docsectiontext [title]="title" [id]="id">
+    template: ` <app-docsectiontext>
             <p>
                 Lazy mode is handy to deal with large datasets, instead of loading the entire data, small chunks of data is loaded by invoking onLazyLoad callback everytime <i>paging</i>, <i>sorting</i> and <i>filtering</i> happens. Sample here loads
                 the data from remote datasource efficiently using lazy loading. Also, the implementation of <i>checkbox selection</i> in lazy tables is left entirely to the user. Since the table component does not know what will happen to the data on
@@ -81,26 +80,21 @@ import { CustomerService } from '../../service/customerservice';
                 </ng-template>
             </p-table>
         </div>
-        <app-code [code]="code" selector="table-lazy-load-demo" [extFiles]="extFiles"></app-code>
-    </section>`,
+        <app-code [code]="code" selector="table-lazy-load-demo" [extFiles]="extFiles"></app-code>`,
     changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class LazyLoadDoc implements OnInit {
-    @Input() id: string;
+    customers!: Customer[];
 
-    @Input() title: string;
+    totalRecords!: number;
 
-    customers: Customer[];
+    loading: boolean = false;
 
-    totalRecords: number;
-
-    loading: boolean;
-
-    representatives: Representative[];
+    representatives!: Representative[];
 
     selectAll: boolean = false;
 
-    selectedCustomers: Customer[];
+    selectedCustomers!: Customer[];
 
     constructor(private customerService: CustomerService, private cd: ChangeDetectorRef) {}
 
@@ -139,7 +133,7 @@ export class LazyLoadDoc implements OnInit {
         this.selectedCustomers = value;
     }
 
-    onSelectAllChange(event) {
+    onSelectAllChange(event: any) {
         const checked = event.checked;
 
         if (checked) {
@@ -154,8 +148,7 @@ export class LazyLoadDoc implements OnInit {
     }
 
     code: Code = {
-        basic: `
-<p-table
+        basic: `<p-table
     [value]="customers"
     [lazy]="true"
     (onLazyLoad)="loadCustomers($event)"
@@ -299,17 +292,17 @@ import { CustomerService } from '../../service/customerservice';
     templateUrl: 'table-lazy-load-demo.html'
 })
 export class TableLazyLoadDemo implements OnInit{
-    customers: Customer[];
+    customers!: Customer[];
 
-    totalRecords: number;
+    totalRecords!: number;
 
-    loading: boolean;
+    loading: boolean = false;
 
-    representatives: Representative[];
+    representatives!: Representative[];
 
     selectAll: boolean = false;
 
-    selectedCustomers: Customer[];
+    selectedCustomers!: Customer[];
 
     constructor(private customerService: CustomerService) {}
 
@@ -347,7 +340,7 @@ export class TableLazyLoadDemo implements OnInit{
         this.selectedCustomers = value;
     }
 
-    onSelectAllChange(event) {
+    onSelectAllChange(event: any) {
         const checked = event.checked;
 
         if (checked) {

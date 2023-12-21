@@ -1,13 +1,11 @@
-import { ChangeDetectionStrategy, ChangeDetectorRef, Component, Input, OnInit, ViewChild } from '@angular/core';
+import { ChangeDetectionStrategy, ChangeDetectorRef, Component, OnInit } from '@angular/core';
 import { Code } from '../../domain/code';
 import { Product } from '../../domain/product';
-import { AppDocSectionTextComponent } from '../../layout/doc/docsectiontext/app.docsectiontext.component';
 import { ProductService } from '../../service/productservice';
 
 @Component({
     selector: 'controlled-selection-doc',
-    template: ` <section>
-        <app-docsectiontext [title]="title" [id]="id" [level]="3" #docsectiontext>
+    template: ` <app-docsectiontext>
             <p>Row selection can be controlled by utilizing <i>rowSelectable</i> and <i>disabled</i> properties.</p>
         </app-docsectiontext>
         <div class="card">
@@ -36,20 +34,13 @@ import { ProductService } from '../../service/productservice';
                 </ng-template>
             </p-table>
         </div>
-        <app-code [code]="code" selector="table-controlled-selection-demo" [extFiles]="extFiles"></app-code>
-    </section>`,
+        <app-code [code]="code" selector="table-controlled-selection-demo" [extFiles]="extFiles"></app-code>`,
     changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class ControlledSelectionDoc implements OnInit {
-    @Input() id: string;
+    products!: Product[];
 
-    @Input() title: string;
-
-    @ViewChild('docsectiontext', { static: true }) docsectiontext: AppDocSectionTextComponent;
-
-    products: Product[];
-
-    selectedProducts: Product;
+    selectedProducts!: Product;
 
     constructor(private productService: ProductService, private cd: ChangeDetectorRef) {
         this.isRowSelectable = this.isRowSelectable.bind(this);
@@ -62,17 +53,16 @@ export class ControlledSelectionDoc implements OnInit {
         });
     }
 
-    isRowSelectable(event) {
+    isRowSelectable(event: any) {
         return !this.isOutOfStock(event.data);
     }
 
-    isOutOfStock(data) {
+    isOutOfStock(data: Product) {
         return data.inventoryStatus === 'OUTOFSTOCK';
     }
 
     code: Code = {
-        basic: `
-<p-table [value]="products" [(selection)]="selectedProducts" dataKey="code" [rowSelectable]="isRowSelectable" [tableStyle]="{'min-width': '50rem'}">
+        basic: `<p-table [value]="products" [(selection)]="selectedProducts" dataKey="code" [rowSelectable]="isRowSelectable" [tableStyle]="{'min-width': '50rem'}">
     <ng-template pTemplate="header">
         <tr>
             <th style="width: 4rem">
@@ -133,9 +123,9 @@ import { ProductService } from '../../service/productservice';
     templateUrl: 'table-controlled-selection-demo.html'
 })
 export class TableControlledSelectionDemo implements OnInit{
-    products: Product[];
+    products!: Product[];
 
-    selectedProducts: Product;
+    selectedProducts!: Product;
 
     constructor(private productService: ProductService) {
         this.isRowSelectable = this.isRowSelectable.bind(this);
@@ -147,11 +137,11 @@ export class TableControlledSelectionDemo implements OnInit{
         });
     }
 
-    isRowSelectable(event) {
+    isRowSelectable(event: any) {
         return !this.isOutOfStock(event.data);
     }
 
-    isOutOfStock(data) {
+    isOutOfStock(data: Product) {
         return data.inventoryStatus === 'OUTOFSTOCK';
     }
 }`,

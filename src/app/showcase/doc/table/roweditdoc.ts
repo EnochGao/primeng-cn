@@ -1,14 +1,12 @@
-import { ChangeDetectionStrategy, ChangeDetectorRef, Component, Input, OnInit, ViewChild } from '@angular/core';
+import { ChangeDetectionStrategy, ChangeDetectorRef, Component, OnInit } from '@angular/core';
 import { MessageService, SelectItem } from 'primeng/api';
 import { Code } from '../../domain/code';
 import { Product } from '../../domain/product';
-import { AppDocSectionTextComponent } from '../../layout/doc/docsectiontext/app.docsectiontext.component';
 import { ProductService } from '../../service/productservice';
 
 @Component({
     selector: 'row-edit-doc',
-    template: ` <section>
-        <app-docsectiontext [title]="title" [id]="id" [level]="3" #docsectiontext>
+    template: ` <app-docsectiontext>
             <p>
                 Row editing toggles the visibility of all the editors in the row at once and provides additional options to save and cancel editing. Row editing functionality is enabled by setting the <i>editMode</i> to "row" on table, defining a
                 dataKey to uniquely identify a row, adding <i>pEditableRow</i> directive to the editable rows and defining the UI Controls with <i>pInitEditableRow</i>, <i>pSaveEditableRow</i> and <i>pCancelEditableRow</i> directives respectively.
@@ -88,21 +86,14 @@ import { ProductService } from '../../service/productservice';
                 </ng-template>
             </p-table>
         </div>
-        <app-code [code]="code" selector="table-row-edit-demo" [extFiles]="extFiles"></app-code>
-    </section>`,
+        <app-code [code]="code" selector="table-row-edit-demo" [extFiles]="extFiles"></app-code>`,
     changeDetection: ChangeDetectionStrategy.OnPush,
     providers: [MessageService]
 })
 export class RowEditDoc implements OnInit {
-    @Input() id: string;
+    products!: Product[];
 
-    @Input() title: string;
-
-    @ViewChild('docsectiontext', { static: true }) docsectiontext: AppDocSectionTextComponent;
-
-    products: Product[];
-
-    statuses: SelectItem[];
+    statuses!: SelectItem[];
 
     clonedProducts: { [s: string]: Product } = {};
 
@@ -122,12 +113,12 @@ export class RowEditDoc implements OnInit {
     }
 
     onRowEditInit(product: Product) {
-        this.clonedProducts[product.id] = { ...product };
+        this.clonedProducts[product.id as string] = { ...product };
     }
 
     onRowEditSave(product: Product) {
         if (product.price > 0) {
-            delete this.clonedProducts[product.id];
+            delete this.clonedProducts[product.id as string];
             this.messageService.add({ severity: 'success', summary: 'Success', detail: 'Product is updated' });
         } else {
             this.messageService.add({ severity: 'error', summary: 'Error', detail: 'Invalid Price' });
@@ -135,13 +126,12 @@ export class RowEditDoc implements OnInit {
     }
 
     onRowEditCancel(product: Product, index: number) {
-        this.products[index] = this.clonedProducts[product.id];
-        delete this.clonedProducts[product.id];
+        this.products[index] = this.clonedProducts[product.id as string];
+        delete this.clonedProducts[product.id as string];
     }
 
     code: Code = {
-        basic: `
-<p-toast></p-toast>
+        basic: `<p-toast></p-toast>
 <p-table [value]="products" dataKey="id" editMode="row" [tableStyle]="{'min-width': '50rem'}">
     <ng-template pTemplate="header">
         <tr>
@@ -283,9 +273,9 @@ import { ProductService } from '../../service/productservice';
 })
 export class TableRowEditDemo implements OnInit{
 
-    products: Product[];
+    products!: Product[];
 
-    statuses: SelectItem[];
+    statuses!: SelectItem[];
 
     clonedProducts: { [s: string]: Product } = {};
 
@@ -304,12 +294,12 @@ export class TableRowEditDemo implements OnInit{
     }
 
     onRowEditInit(product: Product) {
-        this.clonedProducts[product.id] = { ...product };
+        this.clonedProducts[product.id as string] = { ...product };
     }
 
     onRowEditSave(product: Product) {
         if (product.price > 0) {
-            delete this.clonedProducts[product.id];
+            delete this.clonedProducts[product.id as string];
             this.messageService.add({ severity: 'success', summary: 'Success', detail: 'Product is updated' });
         } else {
             this.messageService.add({ severity: 'error', summary: 'Error', detail: 'Invalid Price' });
@@ -317,8 +307,8 @@ export class TableRowEditDemo implements OnInit{
     }
 
     onRowEditCancel(product: Product, index: number) {
-        this.products[index] = this.clonedProducts[product.id];
-        delete this.clonedProducts[product.id];
+        this.products[index] = this.clonedProducts[product.id as string];
+        delete this.clonedProducts[product.id as string];
     }
 }`,
         data: `{

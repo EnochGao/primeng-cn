@@ -1,13 +1,11 @@
-import { ChangeDetectionStrategy, ChangeDetectorRef, Component, Input, OnInit, ViewChild } from '@angular/core';
+import { ChangeDetectionStrategy, ChangeDetectorRef, Component, OnInit } from '@angular/core';
 import { Code } from '../../domain/code';
 import { Customer, Representative } from '../../domain/customer';
-import { AppDocSectionTextComponent } from '../../layout/doc/docsectiontext/app.docsectiontext.component';
 import { CustomerService } from '../../service/customerservice';
 
 @Component({
     selector: 'customers-doc',
-    template: ` <section>
-        <app-docsectiontext [title]="title" [id]="id" [level]="3" #docsectiontext>
+    template: ` <app-docsectiontext>
             <p>DataTable with selection, pagination, filtering, sorting and templating.</p>
         </app-docsectiontext>
         <div class="card">
@@ -171,24 +169,17 @@ import { CustomerService } from '../../service/customerservice';
                 </ng-template>
             </p-table>
         </div>
-        <app-code [code]="code" selector="table-customers-demo" [extFiles]="extFiles"></app-code>
-    </section>`,
+        <app-code [code]="code" selector="table-customers-demo" [extFiles]="extFiles"></app-code>`,
     changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class CustomersDoc implements OnInit {
-    @Input() id: string;
+    customers!: Customer[];
 
-    @Input() title: string;
+    selectedCustomers!: Customer[];
 
-    @ViewChild('docsectiontext', { static: true }) docsectiontext: AppDocSectionTextComponent;
+    representatives!: Representative[];
 
-    customers: Customer[];
-
-    selectedCustomers: Customer[];
-
-    representatives: Representative[];
-
-    statuses: any[];
+    statuses!: any[];
 
     loading: boolean = true;
 
@@ -201,7 +192,7 @@ export class CustomersDoc implements OnInit {
             this.customers = customers;
             this.loading = false;
 
-            this.customers.forEach((customer) => (customer.date = new Date(customer.date)));
+            this.customers.forEach((customer) => (customer.date = new Date(<Date>customer.date)));
             this.cd.markForCheck();
         });
 
@@ -228,7 +219,7 @@ export class CustomersDoc implements OnInit {
         ];
     }
 
-    getSeverity(status) {
+    getSeverity(status: string) {
         switch (status) {
             case 'unqualified':
                 return 'danger';
@@ -248,8 +239,7 @@ export class CustomersDoc implements OnInit {
     }
 
     code: Code = {
-        basic: `
-<p-table
+        basic: `<p-table
     #dt
     [value]="customers"
     [(selection)]="selectedCustomers"
@@ -581,13 +571,13 @@ import { CustomerService } from '../../service/customerservice';
     styleUrls: ['table-customers-demo.scss']
 })
 export class TableCustomersDemo implements OnInit{
-    customers: Customer[];
+    customers!: Customer[];
 
-    selectedCustomers: Customer[];
+    selectedCustomers!: Customer[];
 
-    representatives: Representative[];
+    representatives!: Representative[];
 
-    statuses: any[];
+    statuses!: any[];
 
     loading: boolean = true;
 
@@ -600,7 +590,7 @@ export class TableCustomersDemo implements OnInit{
             this.customers = customers;
             this.loading = false;
 
-            this.customers.forEach((customer) => (customer.date = new Date(customer.date)));
+            this.customers.forEach((customer) => (customer.date = new Date(<Date>customer.date)));
         });
 
         this.representatives = [
@@ -626,7 +616,7 @@ export class TableCustomersDemo implements OnInit{
         ];
     }
 
-    getSeverity(status) {
+    getSeverity(status: string) {
         switch (status) {
             case 'unqualified':
                 return 'danger';

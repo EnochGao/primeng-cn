@@ -1,12 +1,16 @@
-import { ChangeDetectionStrategy, ChangeDetectorRef, Component, Input, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, ChangeDetectorRef, Component, OnInit } from '@angular/core';
 import { Code } from '../../domain/code';
 import { Product } from '../../domain/product';
 import { ProductService } from '../../service/productservice';
 
+interface Column {
+    field: string;
+    header: string;
+}
+
 @Component({
     selector: 'template-doc',
-    template: ` <section>
-        <app-docsectiontext [title]="title" [id]="id">
+    template: ` <app-docsectiontext>
             <p>Custom content at <i>header</i>, <i>body</i> and <i>footer</i> sections are supported via templating.</p>
         </app-docsectiontext>
         <div class="card">
@@ -44,18 +48,13 @@ import { ProductService } from '../../service/productservice';
                 </ng-template>
             </p-table>
         </div>
-        <app-code [code]="code" selector="table-template-demo" [extFiles]="extFiles"></app-code>
-    </section>`,
+        <app-code [code]="code" selector="table-template-demo" [extFiles]="extFiles"></app-code>`,
     changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class TemplateDoc implements OnInit {
-    @Input() id: string;
+    products!: Product[];
 
-    @Input() title: string;
-
-    products: Product[];
-
-    cols: any[];
+    cols!: Column[];
 
     constructor(private productService: ProductService, private cd: ChangeDetectorRef) {}
 
@@ -85,8 +84,7 @@ export class TemplateDoc implements OnInit {
     }
 
     code: Code = {
-        basic: `
-<p-table [value]="products" [tableStyle]="{'min-width': '60rem'}">
+        basic: `<p-table [value]="products" [tableStyle]="{'min-width': '60rem'}">
     <ng-template pTemplate="caption">
         <div class="flex align-items-center justify-content-between">
             Products
@@ -165,7 +163,7 @@ import { ProductService } from '../../service/productservice';
     templateUrl: 'table-template-demo.html'
 })
 export class TableTemplateDemo implements OnInit {
-    products: Product[];
+    products!: Product[];
 
     constructor(private productService: ProductService) {}
 

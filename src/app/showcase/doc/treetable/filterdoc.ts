@@ -1,12 +1,17 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { TreeNode } from 'primeng/api';
 import { Code } from '../../domain/code';
 import { NodeService } from '../../service/nodeservice';
 
+interface Column {
+    field: string;
+    header: string;
+}
+
 @Component({
     selector: 'filter-doc',
-    template: ` <section>
-        <app-docsectiontext [title]="title" [id]="id">
+    template: `
+        <app-docsectiontext>
             <p>
                 The <i>filterMode</i> specifies the filtering strategy, in <i>lenient</i> mode when the query matches a node, children of the node are not searched further as all descendants of the node are included. On the other hand, in
                 <i>strict</i> mode when the query matches a node, filtering continues on all descendants. A general filled called <i>filterGlobal</i> is also provided to search all columns that support filtering.
@@ -38,7 +43,7 @@ import { NodeService } from '../../service/nodeservice';
                     </tr>
                 </ng-template>
                 <ng-template pTemplate="body" let-rowNode let-rowData="rowData">
-                    <tr>
+                    <tr [ttRow]="rowNode">
                         <td *ngFor="let col of cols; let i = index">
                             <p-treeTableToggler [rowNode]="rowNode" *ngIf="i === 0"></p-treeTableToggler>
                             {{ rowData[col.field] }}
@@ -53,13 +58,9 @@ import { NodeService } from '../../service/nodeservice';
             </p-treeTable>
         </div>
         <app-code [code]="code" selector="tree-table-filter-demo"></app-code>
-    </section>`
+    `
 })
 export class FilterDoc implements OnInit {
-    @Input() id: string;
-
-    @Input() title: string;
-
     filterMode = 'lenient';
 
     filterModes = [
@@ -67,9 +68,9 @@ export class FilterDoc implements OnInit {
         { label: 'Strict', value: 'strict' }
     ];
 
-    files: TreeNode[];
+    files!: TreeNode[];
 
-    cols: any[];
+    cols!: Column[];
 
     constructor(private nodeService: NodeService) {}
 
@@ -83,8 +84,7 @@ export class FilterDoc implements OnInit {
     }
 
     code: Code = {
-        basic: `
-<p-selectButton [options]="filterModes" [(ngModel)]="filterMode" optionLabel="label" optionValue="value"></p-selectButton>
+        basic: `<p-selectButton [options]="filterModes" [(ngModel)]="filterMode" optionLabel="label" optionValue="value"></p-selectButton>
 
 <p-treeTable #tt [value]="files" [columns]="cols" [filterMode]="filterMode" [scrollable]="true" [tableStyle]="{'min-width':'50rem'}">
     <ng-template pTemplate="caption">
@@ -108,7 +108,7 @@ export class FilterDoc implements OnInit {
         </tr>
     </ng-template>
     <ng-template pTemplate="body" let-rowNode let-rowData="rowData">
-        <tr>
+        <tr [ttRow]="rowNode">
             <td *ngFor="let col of cols; let i = index">
                 <p-treeTableToggler [rowNode]="rowNode" *ngIf="i === 0"></p-treeTableToggler>
                 {{ rowData[col.field] }}
@@ -149,7 +149,7 @@ export class FilterDoc implements OnInit {
             </tr>
         </ng-template>
         <ng-template pTemplate="body" let-rowNode let-rowData="rowData">
-            <tr>
+            <tr [ttRow]="rowNode">
                 <td *ngFor="let col of cols; let i = index">
                     <p-treeTableToggler [rowNode]="rowNode" *ngIf="i === 0"></p-treeTableToggler>
                     {{ rowData[col.field] }}
@@ -169,6 +169,11 @@ import { Component, OnInit } from '@angular/core';
 import { TreeNode } from 'primeng/api';
 import { NodeService } from '../../service/nodeservice';
 
+interface Column {
+    field: string;
+    header: string;
+}
+
 @Component({
     selector: 'tree-table-filter-demo',
     templateUrl: './tree-table-filter-demo.html'
@@ -181,9 +186,9 @@ export class TreeTableFilterDemo implements OnInit{
         { label: 'Strict', value: 'strict' }
     ];
 
-    files: TreeNode[];
+    files!: TreeNode[];
 
-    cols: any[];
+    cols!: Column[];
 
     constructor(private nodeService: NodeService) {}
 

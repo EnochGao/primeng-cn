@@ -1,12 +1,11 @@
-import { ChangeDetectionStrategy, ChangeDetectorRef, Component, Input, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, ChangeDetectorRef, Component, OnInit } from '@angular/core';
 import { Code } from '../../domain/code';
 import { Customer } from '../../domain/customer';
 import { CustomerService } from '../../service/customerservice';
 
 @Component({
     selector: 'stateful-doc',
-    template: ` <section>
-        <app-docsectiontext [title]="title" [id]="id">
+    template: ` <app-docsectiontext>
             <p>Stateful table allows keeping the state such as page, sort and filtering either at local storage or session storage so that when the page is visited again, table would render the data using the last settings.</p>
             <p>
                 Change the state of the table e.g paginate, navigate away and then return to this table again to test this feature, the setting is set as <i>session</i> with the <i>stateStorage</i> property so that Table retains the state until the
@@ -66,18 +65,13 @@ import { CustomerService } from '../../service/customerservice';
                 </ng-template>
             </p-table>
         </div>
-        <app-code [code]="code" selector="table-stateful-demo" [extFiles]="extFiles"></app-code>
-    </section>`,
+        <app-code [code]="code" selector="table-stateful-demo" [extFiles]="extFiles"></app-code>`,
     changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class StatefulDoc implements OnInit {
-    @Input() id: string;
+    customers!: Customer[];
 
-    @Input() title: string;
-
-    customers: Customer[];
-
-    selectedCustomers: Customer;
+    selectedCustomers!: Customer;
 
     constructor(private customerService: CustomerService, private cd: ChangeDetectorRef) {}
 
@@ -88,7 +82,7 @@ export class StatefulDoc implements OnInit {
         });
     }
 
-    getSeverity(status) {
+    getSeverity(status: string) {
         switch (status) {
             case 'unqualified':
                 return 'danger';
@@ -108,8 +102,7 @@ export class StatefulDoc implements OnInit {
     }
 
     code: Code = {
-        basic: `
-<p-table #dt1 [value]="customers" selectionMode="single" [(selection)]="selectedCustomers" dataKey="id" [tableStyle]="{'min-width': '50rem'}"
+        basic: `<p-table #dt1 [value]="customers" selectionMode="single" [(selection)]="selectedCustomers" dataKey="id" [tableStyle]="{'min-width': '50rem'}"
     [rows]="10" [paginator]="true" stateStorage="session" stateKey="statedemo-session">
     <ng-template pTemplate="header">
         <tr>
@@ -227,9 +220,9 @@ import { CustomerService } from '../../service/customerservice';
     styleUrls: ['table-stateful-demo.scss']
 })
 export class TableStatefulDemo implements OnInit{
-    customers: Customer[];
+    customers!: Customer[];
 
-    selectedCustomers: Customer;
+    selectedCustomers!: Customer;
 
     constructor(private customerService: CustomerService) {}
 
@@ -237,7 +230,7 @@ export class TableStatefulDemo implements OnInit{
         this.customerService.getCustomersMini().then((data) => (this.customers = data));
     }
 
-    getSeverity(status) {
+    getSeverity(status: string) {
         switch (status) {
             case 'unqualified':
                 return 'danger';

@@ -1,13 +1,11 @@
-import { ChangeDetectionStrategy, ChangeDetectorRef, Component, Input, OnInit, ViewChild } from '@angular/core';
+import { ChangeDetectionStrategy, ChangeDetectorRef, Component, OnInit } from '@angular/core';
 import { Code } from '../../domain/code';
 import { Customer } from '../../domain/customer';
-import { AppDocSectionTextComponent } from '../../layout/doc/docsectiontext/app.docsectiontext.component';
 import { CustomerService } from '../../service/customerservice';
 
 @Component({
     selector: 'expandable-row-group-doc',
-    template: ` <section>
-        <app-docsectiontext [title]="title" [id]="id" [level]="3" #docsectiontext>
+    template: ` <app-docsectiontext>
             <p>When <i>expandableRowGroups</i> is present in subheader based row grouping, groups can be expanded and collapsed. State of the expansions are controlled using the <i>expandedRows</i> and <i>onRowToggle</i> properties.</p>
         </app-docsectiontext>
         <div class="card">
@@ -58,18 +56,11 @@ import { CustomerService } from '../../service/customerservice';
                 </ng-template>
             </p-table>
         </div>
-        <app-code [code]="code" selector="table-expandable-row-group-demo" [extFiles]="extFiles"></app-code>
-    </section>`,
+        <app-code [code]="code" selector="table-expandable-row-group-demo" [extFiles]="extFiles"></app-code>`,
     changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class ExpandableRowGroupDoc implements OnInit {
-    @Input() id: string;
-
-    @Input() title: string;
-
-    @ViewChild('docsectiontext', { static: true }) docsectiontext: AppDocSectionTextComponent;
-
-    customers: Customer[];
+    customers!: Customer[];
 
     constructor(private customerService: CustomerService, private cd: ChangeDetectorRef) {}
 
@@ -80,12 +71,12 @@ export class ExpandableRowGroupDoc implements OnInit {
         });
     }
 
-    calculateCustomerTotal(name) {
+    calculateCustomerTotal(name: string) {
         let total = 0;
 
         if (this.customers) {
             for (let customer of this.customers) {
-                if (customer.representative.name === name) {
+                if (customer.representative?.name === name) {
                     total++;
                 }
             }
@@ -94,7 +85,7 @@ export class ExpandableRowGroupDoc implements OnInit {
         return total;
     }
 
-    getSeverity(status) {
+    getSeverity(status: string) {
         switch (status) {
             case 'unqualified':
                 return 'danger';
@@ -114,8 +105,7 @@ export class ExpandableRowGroupDoc implements OnInit {
     }
 
     code: Code = {
-        basic: `
-<p-table [value]="customers" sortField="representative.name" sortMode="single" dataKey="representative.name" rowGroupMode="subheader" groupRowsBy="representative.name" [tableStyle]="{'min-width': '70rem'}">
+        basic: `<p-table [value]="customers" sortField="representative.name" sortMode="single" dataKey="representative.name" rowGroupMode="subheader" groupRowsBy="representative.name" [tableStyle]="{'min-width': '70rem'}">
     <ng-template pTemplate="header">
         <tr>
             <th style="width:20%">Name</th>
@@ -221,7 +211,7 @@ import { CustomerService } from '../../service/customerservice';
     styleUrls: ['table-expandable-row-group-demo.scss']
 })
 export class TableExpandableRowGroupDemo implements OnInit{
-    customers: Customer[];
+    customers!: Customer[];
 
     constructor(private customerService: CustomerService) {}
 
@@ -231,12 +221,12 @@ export class TableExpandableRowGroupDemo implements OnInit{
         });
     }
 
-    calculateCustomerTotal(name) {
+    calculateCustomerTotal(name: string) {
         let total = 0;
 
         if (this.customers) {
             for (let customer of this.customers) {
-                if (customer.representative.name === name) {
+                if (customer.representative?.name === name) {
                     total++;
                 }
             }
@@ -245,7 +235,7 @@ export class TableExpandableRowGroupDemo implements OnInit{
         return total;
     }
 
-    getSeverity(status) {
+    getSeverity(status: string) {
         switch (status) {
             case 'unqualified':
                 return 'danger';

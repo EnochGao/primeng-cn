@@ -1,10 +1,9 @@
-import { ChangeDetectionStrategy, ChangeDetectorRef, Component, Input } from '@angular/core';
+import { ChangeDetectionStrategy, ChangeDetectorRef, Component } from '@angular/core';
 import { Code } from '../../domain/code';
 
 @Component({
     selector: 'column-group-doc',
-    template: ` <section>
-        <app-docsectiontext [title]="title" [id]="id">
+    template: ` <app-docsectiontext>
             <p>Columns can be grouped using rowspan and <i>colspan</i> properties.</p>
         </app-docsectiontext>
         <div class="card">
@@ -43,20 +42,15 @@ import { Code } from '../../domain/code';
                 </ng-template>
             </p-table>
         </div>
-        <app-code [code]="code" selector="table-column-group-demo"></app-code>
-    </section>`,
+        <app-code [code]="code" selector="table-column-group-demo"></app-code>`,
     changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class ColumnGroupDoc {
-    @Input() id: string;
+    sales!: any[];
 
-    @Input() title: string;
+    lastYearTotal!: number;
 
-    sales: any[];
-
-    lastYearTotal: number;
-
-    thisYearTotal: number;
+    thisYearTotal!: number;
 
     constructor(private cd: ChangeDetectorRef) {}
 
@@ -99,8 +93,7 @@ export class ColumnGroupDoc {
     }
 
     code: Code = {
-        basic: `
-<p-table [value]="sales" [tableStyle]="{'min-width': '50rem'}">
+        basic: `<p-table [value]="sales" [tableStyle]="{'min-width': '50rem'}">
     <ng-template pTemplate="header">
         <tr>
             <th rowspan="3">Product</th>
@@ -179,11 +172,11 @@ import { Component, OnInit } from '@angular/core';
     templateUrl: 'table-column-group-demo.html'
 })
 export class TableColumnGroupDemo implements OnInit {
-    sales: any[];
+    sales!: any[];
 
-    lastYearTotal: number;
+    lastYearTotal!: number;
 
-    thisYearTotal: number;
+    thisYearTotal!: number;
 
     ngOnInit() {
         this.sales = [

@@ -1,14 +1,12 @@
-import { ChangeDetectionStrategy, ChangeDetectorRef, Component, Input, OnInit, ViewChild } from '@angular/core';
+import { ChangeDetectionStrategy, ChangeDetectorRef, Component, OnInit } from '@angular/core';
 import { Table } from 'primeng/table';
 import { Code } from '../../domain/code';
 import { Customer, Representative } from '../../domain/customer';
-import { AppDocSectionTextComponent } from '../../layout/doc/docsectiontext/app.docsectiontext.component';
 import { CustomerService } from '../../service/customerservice';
 
 @Component({
     selector: 'filter-row-doc',
-    template: ` <section>
-        <app-docsectiontext [title]="title" [id]="id" [level]="3" #docsectiontext>
+    template: ` <app-docsectiontext>
             <p>Filters are displayed inline within a separate row.</p>
         </app-docsectiontext>
         <div class="card">
@@ -106,22 +104,15 @@ import { CustomerService } from '../../service/customerservice';
                 </ng-template>
             </p-table>
         </div>
-        <app-code [code]="code" selector="table-filter-row-demo" [extFiles]="extFiles"></app-code>
-    </section>`,
+        <app-code [code]="code" selector="table-filter-row-demo" [extFiles]="extFiles"></app-code>`,
     changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class FilterRowDoc implements OnInit {
-    @Input() id: string;
+    customers!: Customer[];
 
-    @Input() title: string;
+    representatives!: Representative[];
 
-    @ViewChild('docsectiontext', { static: true }) docsectiontext: AppDocSectionTextComponent;
-
-    customers: Customer[];
-
-    representatives: Representative[];
-
-    statuses: any[];
+    statuses!: any[];
 
     loading: boolean = true;
 
@@ -134,7 +125,7 @@ export class FilterRowDoc implements OnInit {
             this.customers = customers;
             this.loading = false;
 
-            this.customers.forEach((customer) => (customer.date = new Date(customer.date)));
+            this.customers.forEach((customer) => (customer.date = new Date(<Date>customer.date)));
 
             this.cd.markForCheck();
         });
@@ -166,7 +157,7 @@ export class FilterRowDoc implements OnInit {
         table.clear();
     }
 
-    getSeverity(status) {
+    getSeverity(status: string) {
         switch (status) {
             case 'unqualified':
                 return 'danger';
@@ -186,8 +177,7 @@ export class FilterRowDoc implements OnInit {
     }
 
     code: Code = {
-        basic: `
-<p-table
+        basic: `<p-table
     #dt2
     [value]="customers"
     dataKey="id"
@@ -387,11 +377,11 @@ import { CustomerService } from '../../service/customerservice';
     templateUrl: 'table-filter-row-demo.html'
 })
 export class TableFilterRowDemo implements OnInit {
-    customers: Customer[];
+    customers!: Customer[];
 
-    representatives: Representative[];
+    representatives!: Representative[];
 
-    statuses: any[];
+    statuses!: any[];
 
     loading: boolean = true;
 
@@ -404,7 +394,7 @@ export class TableFilterRowDemo implements OnInit {
             this.customers = customers;
             this.loading = false;
 
-            this.customers.forEach((customer) => (customer.date = new Date(customer.date)));
+            this.customers.forEach((customer) => (customer.date = new Date(<Date>customer.date)));
         });
 
         this.representatives = [
@@ -434,7 +424,7 @@ export class TableFilterRowDemo implements OnInit {
         table.clear();
     }
 
-    getSeverity(status) {
+    getSeverity(status: string) {
         switch (status) {
             case 'unqualified':
                 return 'danger';

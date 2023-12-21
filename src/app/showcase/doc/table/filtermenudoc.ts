@@ -2,13 +2,11 @@ import { ChangeDetectionStrategy, ChangeDetectorRef, Component, Input, OnInit, V
 import { Table } from 'primeng/table';
 import { Code } from '../../domain/code';
 import { Customer, Representative } from '../../domain/customer';
-import { AppDocSectionTextComponent } from '../../layout/doc/docsectiontext/app.docsectiontext.component';
 import { CustomerService } from '../../service/customerservice';
 
 @Component({
     selector: 'filter-menu-doc',
-    template: ` <section>
-        <app-docsectiontext [title]="title" [id]="id" [level]="3" #docsectiontext>
+    template: ` <app-docsectiontext>
             <p>Filters are displayed in an overlay.</p>
         </app-docsectiontext>
         <div class="card">
@@ -154,22 +152,15 @@ import { CustomerService } from '../../service/customerservice';
                 </ng-template>
             </p-table>
         </div>
-        <app-code [code]="code" selector="table-filter-menu-demo" [extFiles]="extFiles"></app-code>
-    </section>`,
+        <app-code [code]="code" selector="table-filter-menu-demo" [extFiles]="extFiles"></app-code>`,
     changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class FilterMenuDoc implements OnInit {
-    @Input() id: string;
+    customers!: Customer[];
 
-    @Input() title: string;
+    representatives!: Representative[];
 
-    @ViewChild('docsectiontext', { static: true }) docsectiontext: AppDocSectionTextComponent;
-
-    customers: Customer[];
-
-    representatives: Representative[];
-
-    statuses: any[];
+    statuses!: any[];
 
     loading: boolean = true;
 
@@ -182,7 +173,7 @@ export class FilterMenuDoc implements OnInit {
             this.customers = customers;
             this.loading = false;
 
-            this.customers.forEach((customer) => (customer.date = new Date(customer.date)));
+            this.customers.forEach((customer) => (customer.date = new Date(<Date>customer.date)));
             this.cd.markForCheck();
         });
 
@@ -213,7 +204,7 @@ export class FilterMenuDoc implements OnInit {
         table.clear();
     }
 
-    getSeverity(status) {
+    getSeverity(status: string) {
         switch (status) {
             case 'unqualified':
                 return 'danger';
@@ -233,8 +224,7 @@ export class FilterMenuDoc implements OnInit {
     }
 
     code: Code = {
-        basic: `
-<p-table
+        basic: `<p-table
     #dt1
     [value]="customers"
     dataKey="id"
@@ -531,11 +521,11 @@ import { CustomerService } from '../../service/customerservice';
     styleUrls: ['table-filter-menu-demo.scss']
 })
 export class TableFilterMenuDemo implements OnInit {
-    customers: Customer[];
+    customers!: Customer[];
 
-    representatives: Representative[];
+    representatives!: Representative[];
 
-    statuses: any[];
+    statuses!: any[];
 
     loading: boolean = true;
 
@@ -548,7 +538,7 @@ export class TableFilterMenuDemo implements OnInit {
             this.customers = customers;
             this.loading = false;
 
-            this.customers.forEach((customer) => (customer.date = new Date(customer.date)));
+            this.customers.forEach((customer) => (customer.date = new Date(<Date>customer.date)));
         });
 
         this.representatives = [
@@ -578,7 +568,7 @@ export class TableFilterMenuDemo implements OnInit {
         table.clear();
     }
 
-    getSeverity(status) {
+    getSeverity(status: string) {
         switch (status.toLowerCase()) {
             case 'unqualified':
                 return 'danger';
